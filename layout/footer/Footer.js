@@ -10,26 +10,30 @@ const Footer = () => {
         <Row>
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="m-b-20">Address</h5>
-            <p>71 Amsteroum Avenue Cronish Night, NY 35098</p>
+            <p>
+              Suite 105, 11523 100 Avenue
+              Lemarchand Mansion
+              Edmonton, AB T5K 0J8
+            </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="m-b-20">Phone</h5>
             <p>
-              Reception : +205 123 4567 <br />
-              Office : +207 235 7890
+              Office :  (780) 482-3322<br />
+              Fax: (780) 482-6889
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="m-b-20">Email</h5>
             <p>
               Office :
-              <Link href="#">
-                <a className="link">info@wrappixel.com</a>
+              <Link href="mailto:lemarchanddisp@gmail.com">
+                <a className="link">lemarchanddisp@gmail.com</a>
               </Link>
               <br />
               Site :
-              <Link href="https://www.wrappixel.com">
-                <a className="link">wrappixel.com</a>
+              <Link href="https://lemarchanddispensary.ca/">
+                <a className="link">lemarchanddispensary.ca</a>
               </Link>
             </p>
           </Col>
@@ -70,8 +74,8 @@ const Footer = () => {
               <div className="d-flex font-14">
                 <div className="m-t-10 m-b-10 copyright">
                   All Rights Reserved by{" "}
-                  <Link href="https://www.wrappixel.com">
-                    <a className="link">wrappixel.com</a>
+                  <Link href="https://lemarchanddispensary.ca/">
+                    <a className="link">lemarchanddispensary.ca</a>
                   </Link>
                 </div>
                 <div className="links ml-auto m-t-10 m-b-10">
