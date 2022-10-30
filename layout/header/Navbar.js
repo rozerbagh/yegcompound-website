@@ -26,7 +26,7 @@ const HeaderComponent = () => {
                 <Container>
                     <Navbar className="navbar-expand-lg h3-nav">
                         <NavbarBrand href="/">
-                            <Image src={logo} alt="lemarchandi-dispensary" style={{ transform: "scale(0.5)" }} />
+                            <Image src={logo} alt="lemarchandi-dispensary" className="logo-image" />
                         </NavbarBrand>
                         <NavbarToggler onClick={toggle}>
                             <span className="ti-menu"></span>

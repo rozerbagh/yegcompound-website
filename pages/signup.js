@@ -1,7 +1,6 @@
 import Head from "next/head";
+import React from "react";
 import Link from "next/link";
-import React, { useState } from "react";
-import axios from "axios";
 import {
     Row,
     Col,
@@ -12,22 +11,9 @@ import {
     Button,
 } from "reactstrap";
 import { useCookies } from "react-cookie";
-import { login } from "../services/apis"
 export default function Login() {
-    const [userData, setUserData] = useState({
-        email: "",
-        password: "",
-    })
     const [cookies, setCookie, removeCookie] = useCookies(['auth']);
-    const handleLogin = () => {
-        axios.post(login, {
-            email: userData.email,
-            password: userData.password,
-        }).then(({ data }) => {
-            setCookie("auth", data.user)
-        }).catch(err => {
-
-        });
+    const handleSignup = () => {
         localStorage.setItem("token", "weerisFKGehoweuhiEtvBdyDKBH")
     }
     return (
@@ -48,31 +34,41 @@ export default function Login() {
                                 <Row className="m-0 justify-content-center">
                                     <Col lg="6" className="text-center">
                                         <div className="contact-box p-r-40">
-                                            <h1 className="title">Login</h1>
+                                            <h1 className="title">Sign Up</h1>
                                             <Form>
                                                 <Row>
                                                     <Col lg="12">
                                                         <FormGroup className="m-t-15">
-                                                            <Input type="email" placeholder="email" value={userData.email} />
+                                                            <Input type="text" placeholder="full name" />
                                                         </FormGroup>
                                                     </Col>
                                                     <Col lg="12">
                                                         <FormGroup className="m-t-15">
-                                                            <Input type="password" placeholder="password" value={userData.password} />
+                                                            <Input type="email" placeholder="email" />
+                                                        </FormGroup>
+                                                    </Col>
+                                                    <Col lg="12">
+                                                        <FormGroup className="m-t-15">
+                                                            <Input type="password" placeholder="password" />
+                                                        </FormGroup>
+                                                    </Col>
+                                                    <Col lg="12">
+                                                        <FormGroup className="m-t-15">
+                                                            <Input type="number" placeholder="phone no." />
                                                         </FormGroup>
                                                     </Col>
                                                     <Col lg="12">
                                                         <Button
-                                                            onClick={handleLogin}
+                                                            onClick={handleSignup}
                                                             type="submit"
                                                             className="btn btn-danger-gradiant m-t-20 btn-arrow"
                                                         >
-                                                            Login
+                                                            Signup
                                                         </Button>
                                                     </Col>
                                                     <Col lg="12" className="m-0 justify-content-between">
-                                                        <p>Do not have an account </p>
-                                                        <Link href="/signup">Singup here</Link>
+                                                        <p>Already have account !</p>
+                                                        <Link href="/login">Please Login</Link>
                                                     </Col>
                                                 </Row>
                                             </Form>

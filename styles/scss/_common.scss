@@ -1506,3 +1506,15 @@ Modal in center
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
 }
+
+.notify-header {
+  width: 100%;
+  background-color: #0070f3;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 5px 20px;
+}
+.logo-image {
+  transform: scale(0.6);
+}

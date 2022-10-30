@@ -1,17 +1,17 @@
 import Head from "next/head";
-import ServicesComponent from "../components/services/services"
-export default function Services() {
+import CompoundingComponent from "../components/services/compounding"
+export default function Home() {
     return (
         <>
             <Head>
-                <title>LD | Services</title>
+                <title>LD | Compounding</title>
                 <meta
                     name="description"
                     content="Lemarchandi Dispensary contact form"
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <ServicesComponent />
+            <CompoundingComponent />
         </>
     );
 }

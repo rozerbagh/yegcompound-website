@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.notify-header {
+  width: 100%;
+  background-color: #0070f3;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 20px;
+}
