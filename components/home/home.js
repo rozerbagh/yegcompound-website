@@ -19,12 +19,12 @@ const Home = () => {
                                 Providing our patients and colleagues with quality compounded
                                 <br /> medications and pharmaceutical services.
                             </h4>
-                            <a
-                                href="/"
-                                className="btn btn-danger m-r-20 btn-md m-t-30"
-                            >
-                                Explore
-                            </a>
+                            <Link href="/">
+                                <div className="btn btn-danger m-r-20 btn-md m-t-30">
+                                    Explore
+                                </div>
+                            </Link>
+
                             <Link href="/signup">
                                 <a className="btn btn-md m-t-30  btn-outline-light ">
                                     Sign up

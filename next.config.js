@@ -4,6 +4,7 @@ module.exports = {
     loader: 'akamai',
     path: '',
   },
+  optimizeFonts: false,
   exportPathMap: async function (
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
