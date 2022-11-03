@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link"
 import {
     UncontrolledDropdown,
     DropdownToggle,
@@ -16,9 +17,10 @@ import {
 import Image from "next/image";
 import logo from "../../assets/images/logos/logo.png";
 import logo2 from "../../assets/images/logos/white-logo.png";
+import { useCookies } from "react-cookie";
 const HeaderComponent = () => {
     const [isOpen, setIsOpen] = useState(false);
-
+    const [cookies, setCookie, removeCookie] = useCookies(['auth']);
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div id="section">
@@ -26,7 +28,7 @@ const HeaderComponent = () => {
                 <Container>
                     <Navbar className="navbar-expand-lg h3-nav">
                         <NavbarBrand href="/">
-                            <Image src={logo} alt="lemarchandi-dispensary" className="logo-image" />
+                            <Image src={logo} alt="lemarchandi-dispensary" className="logo-image" height={60} />
                         </NavbarBrand>
                         <NavbarToggler onClick={toggle}>
                             <span className="ti-menu"></span>
@@ -36,34 +38,34 @@ const HeaderComponent = () => {
                                 <NavItem className="active">
                                     <NavLink href="/">Home</NavLink>
                                 </NavItem>
-                                <NavItem>
-                                    <NavLink href="/compounding">Compounding</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="/services">Services</NavLink>
-                                </NavItem>
                                 <UncontrolledDropdown nav inNavbar>
                                     <DropdownToggle nav>
-                                        Options <i className="fa fa-angle-down m-l-5"></i>
+                                        Services <i className="fa fa-angle-down m-l-5"></i>
                                     </DropdownToggle>
                                     <DropdownMenu className="b-none animated fadeInUp">
-                                        <DropdownItem>Action</DropdownItem>
-                                        <DropdownItem>Another action</DropdownItem>
-                                        <DropdownItem>Something else here</DropdownItem>
+                                        <DropdownItem>
+                                            <NavItem>
+                                                <NavLink href="/compounding">Compounding</NavLink>
+                                            </NavItem>
+                                        </DropdownItem>
+                                        <DropdownItem>
+                                            <NavItem>
+                                                <NavLink href="/services">Services</NavLink>
+                                            </NavItem>
+                                        </DropdownItem>
                                         <DropdownItem divider />
-                                        <DropdownItem>Something else here</DropdownItem>
-                                        <DropdownItem>Separated link</DropdownItem>
-                                        <DropdownItem divider />
-                                        <DropdownItem>One more separated link</DropdownItem>
+                                        <DropdownItem>Referals</DropdownItem>
                                     </DropdownMenu>
                                 </UncontrolledDropdown>
-                                <NavItem>
+                                {cookies.auth?.token && <NavItem>
                                     <NavLink href="/orders">Orders</NavLink>
-                                </NavItem>
+                                </NavItem>}
                                 <NavItem>
-                                    <a className="btn btn-outline-info" href="/login">
-                                        Login
-                                    </a>
+                                    <Link href="/login">
+                                        <div className="btn btn-outline-info">
+                                            Login
+                                        </div>
+                                    </Link>
                                 </NavItem>
                             </Nav>
                         </Collapse>

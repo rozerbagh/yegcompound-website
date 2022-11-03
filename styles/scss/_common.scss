@@ -1516,5 +1516,6 @@ Modal in center
   padding: 5px 20px;
 }
 .logo-image {
-  transform: scale(0.6);
+  width: 100px;
+  object-fit: contain;
 }
