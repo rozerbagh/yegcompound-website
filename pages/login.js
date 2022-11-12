@@ -36,27 +36,49 @@ export default function Login() {
             validFunc: (val) => validator.isStrongPassword(val),
             validText: "contains at least 8 charracters , 1 capital, 1 small , 1 symbol and 1 no."
         },
-    })
+    });
+    const [errorMsg, setErrorMsg] = useState(null)
+    const [showPwd, setShowPwd] = useState(false);
     const [cookies, setCookie, removeCookie] = useCookies(['auth']);
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log(login)
         axios.post(login, {
             email: userData.email.value,
             password: userData.password.value,
         }).then(({ data }) => {
             console.log(data)
             setCookie("auth", data)
-            localStorage.setItem("user_data", JSON.stringify(data))
+            localStorage.setItem("user_data", JSON.stringify(data));
+            window.location.href = "/"
         }).catch(err => {
-            console.log(err.response)
+            if (err.response) {
+                setErrorMsg(err.response.data.message)
+            } else {
+                alert("something went wrong")
+            }
         });
 
     }
-
-    useEffect(() => {
-        console.log(cookies.auth)
-    }, [cookies.auth])
+    const handleShowPassword = (e) => {
+        setShowPwd(e.target.checked);
+        if (e.target.checked) {
+            setUserData(ps => ({
+                ...ps,
+                password: {
+                    ...ps.password,
+                    type: "text"
+                }
+            }))
+        } else {
+            setUserData(ps => ({
+                ...ps,
+                password: {
+                    ...ps.password,
+                    type: "password"
+                }
+            }))
+        }
+    };
 
     const handleInputChange = (e, controlName) => {
         console.log(controlName)
@@ -69,7 +91,8 @@ export default function Login() {
             }
 
         }))
-    }
+    };
+
     return (
         <>
             <Head>
@@ -89,9 +112,10 @@ export default function Login() {
                                     <Col lg="6" className="text-center">
                                         <div className="contact-box p-r-40">
                                             <h1 className="title">Login</h1>
+                                            {errorMsg && <h6 className="text-danger">{errorMsg}</h6>}
                                             <Form>
                                                 <Row>
-                                                    {Object.keys(userData).map((key, idx) => <Col lg="12">
+                                                    {Object.keys(userData).map((key, idx) => <Col lg="12" key={idx}>
                                                         <FormGroup className="m-t-15">
                                                             <Input
                                                                 key={idx}
@@ -104,6 +128,14 @@ export default function Login() {
                                                             {!userData[key].valid && <label>{userData[key].validText}</label>}
                                                         </FormGroup>
                                                     </Col>)}
+                                                    <Col xs={12} className="w-100 d-flex justify-content-start">
+                                                        <Input
+                                                            addon
+                                                            type="checkbox"
+                                                            checked={showPwd}
+                                                            onChange={handleShowPassword}
+                                                        /> &nbsp;&nbsp;Show Password
+                                                    </Col>
                                                     <Col lg="12">
                                                         <Button
                                                             onClick={handleLogin}

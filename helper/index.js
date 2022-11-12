@@ -1,3 +1,17 @@
+export const formConstant = {
+    orders: {
+        ingredient: "ingredient",
+        percentage: 'percent',
+    }
+}
+
+export const orderStatus = {
+    order: 'ordered',
+    dispatch: 'dispatched',
+    ship: 'shipped',
+    deliver: 'delivered',
+}
+
 export const services = [
     {
         name: "Prescribing",
@@ -47,4 +61,6 @@ export const compounding = [
         description: `Compounding is the scientific art of developing and creating custom pharmaceuticals for patients who require treatment for any number of conditions. Thus, the need to compound medications as capsules, suppositories, suspensions, oils, and lozenges is not uncommon. At Lemarchand Dispensary we are happy to offer these services to our patients and colleagues. If you have any questions about our compounding services please do not hesitate to contact us today!`,
         icon: "fa fa-star"
     }
-]
+];
+
+

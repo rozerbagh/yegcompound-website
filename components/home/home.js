@@ -1,11 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "reactstrap";
+import { useCookies } from "react-cookie";
 import Image from "next/image";
 import bannerimg from "../../assets/images/landingpage/banner-img.png";
 import TestimonialComponent from "../custom/sections/testimonialcomponent";
 
 const Home = () => {
+
+    const [cookies] = useCookies(['auth']);
     return (
         <>
             <div className="static-slider-head banner2">
@@ -25,11 +28,11 @@ const Home = () => {
                                 </div>
                             </Link>
 
-                            <Link href="/signup">
+                            {!cookies?.auth?.token && <Link href="/signup">
                                 <a className="btn btn-md m-t-30  btn-outline-light ">
                                     Sign up
                                 </a>
-                            </Link>
+                            </Link>}
                         </Col>
                         <Col lg="6" md="6">
                             <Image src={bannerimg} alt="hero banner" />

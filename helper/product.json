@@ -1,0 +1,1887 @@
+{
+  "Custom": [
+    {
+      "Compound:": "Quantity",
+      "Diclo 10 % PLO Gel": 200,
+      "Column3": "gm",
+      "Column4": "Mark-Up:",
+      "Column5": 0.8,
+      "Column7": "Default Mark Up: 80%"
+    },
+    {
+      "Compound:": "Rebate",
+      "Diclo 10 % PLO Gel": 0.2
+    },
+    null,
+    {
+      "Compound:": "Ingredients",
+      "Diclo 10 % PLO Gel": "Pack Size",
+      "Column3": "Price",
+      "Column4": "Percentage",
+      "Column5": "Amount",
+      "Column6": "Ingredient Cost",
+      "Column9": "Compound:",
+      "Column10": "Diclo 10 % PLO Gel"
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.02,
+      "Column5": 4,
+      "Column6": 0
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0,
+      "Column9": "Profit:",
+      "Column10": 0.8,
+      "Column11": "Need to Pay",
+      "Column12": "G.P",
+      "Column13": 0.2,
+      "Column14": "Need to Pay",
+      "Column15": "G.P"
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.0002,
+      "Column5": 0.04,
+      "Column6": 0,
+      "Column9": 200,
+      "Column10": 90.053695,
+      "Column11": 72.042956,
+      "Column12": 72.042956,
+      "Column13": 90.053695,
+      "Column14": 72.042956,
+      "Column15": 72.042956
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 1,
+      "Column5": 200,
+      "Column6": 0,
+      "Column8": "Rate",
+      "Column9": "100 gm",
+      "Column10": 90.053695,
+      "Column11": 72.042956,
+      "Column12": 72.042956,
+      "Column13": 90.053695,
+      "Column14": 72.042956,
+      "Column15": 72.042956
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0,
+      "Column9": "250 gm",
+      "Column10": 101.8144388,
+      "Column11": 81.451551,
+      "Column12": 81.451551,
+      "Column13": 101.8144388,
+      "Column14": 81.451551,
+      "Column15": 81.451551
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.88,
+      "Column5": 176,
+      "Column6": 0,
+      "Column9": "500 gm",
+      "Column10": 113.5751825,
+      "Column11": 90.860146,
+      "Column12": 90.860146,
+      "Column13": 113.5751825,
+      "Column14": 90.860146,
+      "Column15": 90.860146
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0,
+      "Column9": "1000gm",
+      "Column10": 137.09667,
+      "Column11": 109.677336,
+      "Column12": 109.677336,
+      "Column13": 137.09667,
+      "Column14": 109.677336,
+      "Column15": 109.677336
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column6": 0
+    },
+    {
+      "Column4": "Total Cost of All Ingredients:",
+      "Column6": 0
+    },
+    {
+      "Compound:": "LEVEL 2",
+      "Column3": "PROFIT:",
+      "Column4": 0.8,
+      "Column7": "CUSTOM PROFIT:",
+      "Column9": 0.2,
+      "Column11": "Cheaper Compounds",
+      "Column13": "PROFIT:",
+      "Column14": 1.4
+    },
+    {
+      "Diclo 10 % PLO Gel": "Hours",
+      "Column3": "Rate",
+      "Column7": "Hours",
+      "Column8": "Rate",
+      "Column12": "Hours",
+      "Column13": "Rate"
+    },
+    {
+      "Compound:": "Cost of All Ingredients:",
+      "Column4": 0,
+      "Column6": "Cost of All Ingredients:",
+      "Column9": 0,
+      "Column11": "Cost of All Ingredients:",
+      "Column14": 0
+    },
+    {
+      "Compound:": "Mark Up",
+      "Column4": 0,
+      "Column6": "Mark Up",
+      "Column9": 0,
+      "Column11": "Mark Up",
+      "Column13": "`",
+      "Column14": 0
+    },
+    {
+      "Compound:": "Labour Cost",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 35,
+      "Column4": 35,
+      "Column6": "Labour Cost",
+      "Column7": 1,
+      "Column8": 35,
+      "Column9": 35,
+      "Column11": "Labour Cost",
+      "Column13": 20,
+      "Column14": 20
+    },
+    {
+      "Compound:": "Conatiner Cost",
+      "Column4": 2,
+      "Column6": "Conatiner Cost",
+      "Column9": 2,
+      "Column11": "Conatiner Cost",
+      "Column14": 1
+    },
+    {
+      "Compound:": "Delivery Fee",
+      "Column4": 30,
+      "Column6": "Delivery Fee",
+      "Column9": 30,
+      "Column11": "Delivery Fee",
+      "Column14": 7
+    },
+    {
+      "Compound:": "SUB TOTAL",
+      "Column4": 67,
+      "Column6": "SUB TOTAL",
+      "Column9": 67,
+      "Column11": "SUB TOTAL",
+      "Column14": 28
+    },
+    {
+      "Compound:": "Franchise Fee",
+      "Column4": 5.042956,
+      "Column6": "Franchise Fee",
+      "Column9": 5.042956,
+      "Column11": "Franchise Fee",
+      "Column14": 0
+    },
+    {
+      "Compound:": "Cost to Buyer",
+      "Column4": 72.042956,
+      "Column6": "Cost to Buyer",
+      "Column9": 72.042956,
+      "Column11": "Cost to Buyer",
+      "Column14": 28
+    },
+    {
+      "Compound:": "Rebate",
+      "Column4": 18.010739,
+      "Column6": "Rebate",
+      "Column9": 18.010739,
+      "Column11": "Rebate",
+      "Column14": 7
+    },
+    null,
+    {
+      "Compound:": "Total Price:",
+      "Column4": 90.053695,
+      "Column6": "Total Price:",
+      "Column9": 90.053695,
+      "Column11": "Total Price:",
+      "Column14": 35
+    },
+    {
+      "Compound:": "Need to Pay",
+      "Column4": 72.042956,
+      "Column6": "Need to Pay",
+      "Column9": 72.042956,
+      "Column11": "Need to Pay",
+      "Column14": 28
+    },
+    null,
+    {
+      "Compound:": "Net Profit",
+      "Column4": 0,
+      "Column6": "Net Profit",
+      "Column9": 0,
+      "Column11": "Net Profit",
+      "Column14": 0
+    },
+    {
+      "Compound:": "Gross Profit",
+      "Column4": 72.042956,
+      "Column5": 1,
+      "Column6": "Gross Profit",
+      "Column9": 72.042956,
+      "Column10": 1,
+      "Column11": "Gross Profit",
+      "Column14": 28,
+      "Column15": 1
+    },
+    {
+      "Compound:": "PROFIT",
+      "Column4": "#DIV/0!",
+      "Column6": "PROFIT",
+      "Column9": "#DIV/0!",
+      "Column11": "PROFIT",
+      "Column14": "#DIV/0!"
+    },
+    {
+      "Compound:": "FOR MOST OF THE COMPOUNDS FOLLOW 80% PROFIT STRATEGY"
+    }
+  ],
+  "Ingredients": [
+    {
+      "PACK SIZE": 1,
+      "PRICE": 0
+    },
+    {
+      "NAME": "Aquaphor",
+      "PACK SIZE": 396,
+      "PRICE": 17.28
+    },
+    {
+      "NAME": "Amcinonide 0.1% Cream",
+      "PACK SIZE": 60,
+      "PRICE": 16
+    },
+    {
+      "NAME": "Amitryptyline",
+      "PACK SIZE": 5,
+      "PRICE": 22
+    },
+    {
+      "NAME": "Ascorbic Acid",
+      "PACK SIZE": 100,
+      "PRICE": 17
+    },
+    {
+      "NAME": "Baclofen",
+      "PACK SIZE": 100,
+      "PRICE": 452
+    },
+    {
+      "NAME": "Betaderm",
+      "PACK SIZE": 454,
+      "PRICE": 43.39
+    },
+    {
+      "NAME": "betamethasone valerate",
+      "PACK SIZE": 1,
+      "PRICE": 21
+    },
+    {
+      "NAME": "Bitterness Supressor",
+      "PACK SIZE": 30,
+      "PRICE": 30
+    },
+    {
+      "NAME": "Butylated Hydroxy Toluene",
+      "PACK SIZE": 100,
+      "PRICE": 22
+    },
+    {
+      "NAME": "Bupivacaine",
+      "PACK SIZE": 5,
+      "PRICE": 57
+    },
+    {
+      "NAME": "Ca. Edetate",
+      "PACK SIZE": 100,
+      "PRICE": 80
+    },
+    {
+      "NAME": "Camphor",
+      "PACK SIZE": 100,
+      "PRICE": 18
+    },
+    {
+      "NAME": "Capsaicin",
+      "PACK SIZE": 1,
+      "PRICE": 210
+    },
+    {
+      "NAME": "Capsublend H",
+      "PACK SIZE": 100,
+      "PRICE": 22
+    },
+    {
+      "NAME": "Capsublend S",
+      "PACK SIZE": 100,
+      "PRICE": 22
+    },
+    {
+      "NAME": "Capsule # 3",
+      "PACK SIZE": 1000,
+      "PRICE": 24
+    },
+    {
+      "NAME": "Capsule #1",
+      "PACK SIZE": 1000,
+      "PRICE": 24
+    },
+    {
+      "NAME": "Cellulose",
+      "PACK SIZE": 100,
+      "PRICE": 8.55
+    },
+    {
+      "NAME": "Cerave Cream",
+      "PACK SIZE": 453,
+      "PRICE": 16.28
+    },
+    {
+      "NAME": "Cetyl Alcohol",
+      "PACK SIZE": 500,
+      "PRICE": 16.67
+    },
+    {
+      "NAME": "Chocholate Base",
+      "PACK SIZE": 100,
+      "PRICE": 5
+    },
+    {
+      "NAME": "Clindamycin",
+      "PACK SIZE": 10,
+      "PRICE": 26
+    },
+    {
+      "NAME": "Clobetasol cream",
+      "PACK SIZE": 450,
+      "PRICE": 110.26
+    },
+    {
+      "NAME": "Clotrimazole",
+      "PACK SIZE": 5,
+      "PRICE": 9
+    },
+    {
+      "NAME": "Coal Tar",
+      "PACK SIZE": 100,
+      "PRICE": 8
+    },
+    {
+      "NAME": "Cyanocobalamine",
+      "PACK SIZE": 1,
+      "PRICE": 65
+    },
+    {
+      "NAME": "Cyclobenzaprine",
+      "PACK SIZE": 100,
+      "PRICE": 380
+    },
+    {
+      "NAME": "DHEA",
+      "PACK SIZE": 10,
+      "PRICE": 59
+    },
+    {
+      "NAME": "Diclofenac",
+      "PACK SIZE": 2000,
+      "PRICE": 500
+    },
+    {
+      "NAME": "Diffusimax",
+      "PACK SIZE": 500,
+      "PRICE": 72.03
+    },
+    {
+      "NAME": "Diltiazem",
+      "PACK SIZE": 25,
+      "PRICE": 70.33
+    },
+    {
+      "NAME": "DMSO",
+      "PACK SIZE": 100,
+      "PRICE": 12.1
+    },
+    {
+      "NAME": "Doxepine",
+      "PACK SIZE": 5,
+      "PRICE": 25
+    },
+    {
+      "NAME": "Epinephrine",
+      "PACK SIZE": 1,
+      "PRICE": 250
+    },
+    {
+      "NAME": "Erythrosine Red",
+      "PACK SIZE": 25,
+      "PRICE": 35
+    },
+    {
+      "NAME": "Erythromycin",
+      "PACK SIZE": 2,
+      "PRICE": 8
+    },
+    {
+      "NAME": "Estradiol",
+      "PACK SIZE": 1,
+      "PRICE": 25
+    },
+    {
+      "NAME": "Estriol",
+      "PACK SIZE": 1,
+      "PRICE": 135
+    },
+    {
+      "NAME": "Ethoxy Diglycol",
+      "PACK SIZE": 500,
+      "PRICE": 29.62
+    },
+    {
+      "NAME": "Falvouring Agent",
+      "PACK SIZE": 30,
+      "PRICE": 30
+    },
+    {
+      "NAME": "Foamaderm",
+      "PACK SIZE": 50,
+      "PRICE": 15
+    },
+    {
+      "NAME": "Foamil",
+      "PACK SIZE": 500,
+      "PRICE": 91
+    },
+    {
+      "NAME": "Fucidin Cream",
+      "PACK SIZE": 30,
+      "PRICE": 21.98
+    },
+    {
+      "NAME": "Fucidin H",
+      "PACK SIZE": 30,
+      "PRICE": 47.34
+    },
+    {
+      "NAME": "Gabapentin",
+      "PACK SIZE": 100,
+      "PRICE": 297
+    },
+    {
+      "NAME": "Glaxal Base",
+      "PACK SIZE": 450,
+      "PRICE": 16.42
+    },
+    {
+      "NAME": "Glycerin",
+      "PACK SIZE": 500,
+      "PRICE": 15
+    },
+    {
+      "NAME": "Gum Base",
+      "PACK SIZE": 100,
+      "PRICE": 20
+    },
+    {
+      "NAME": "HRT Base",
+      "PACK SIZE": 500,
+      "PRICE": 95
+    },
+    {
+      "NAME": "Hydrocortizone",
+      "PACK SIZE": 5,
+      "PRICE": 14
+    },
+    {
+      "NAME": "Hydroquinone",
+      "PACK SIZE": 100,
+      "PRICE": 52.14
+    },
+    {
+      "NAME": "Hypromellose",
+      "PACK SIZE": 100,
+      "PRICE": 23
+    },
+    {
+      "NAME": "Ibuprofen",
+      "PACK SIZE": 100,
+      "PRICE": 16.4
+    },
+    {
+      "NAME": "Indigo Blue",
+      "PACK SIZE": 25,
+      "PRICE": 21
+    },
+    {
+      "NAME": "Ketamine",
+      "PACK SIZE": 25,
+      "PRICE": 110
+    },
+    {
+      "NAME": "Ketoprofen",
+      "PACK SIZE": 100,
+      "PRICE": 68.37
+    },
+    {
+      "NAME": "Ketorolac",
+      "PACK SIZE": 5,
+      "PRICE": 290
+    },
+    {
+      "NAME": "Kojic Acid",
+      "PACK SIZE": 5,
+      "PRICE": 29.3
+    },
+    {
+      "NAME": "Lamisil 2% cream",
+      "PACK SIZE": 30,
+      "PRICE": 17.68
+    },
+    {
+      "NAME": "Lansoprazole",
+      "PACK SIZE": 5,
+      "PRICE": 56
+    },
+    {
+      "NAME": "Lanolin Anhydrous Cream",
+      "PACK SIZE": 500,
+      "PRICE": 24.33
+    },
+    {
+      "NAME": "Levothyroxine T4",
+      "PACK SIZE": 0.25,
+      "PRICE": 129
+    },
+    {
+      "NAME": "Lidocaine",
+      "PACK SIZE": 25,
+      "PRICE": 10
+    },
+    {
+      "NAME": "Lipoderm",
+      "PACK SIZE": 500,
+      "PRICE": 96.67
+    },
+    {
+      "NAME": "Liquigel",
+      "PACK SIZE": 50,
+      "PRICE": 35
+    },
+    {
+      "NAME": "Lyderm 0.05% Cream",
+      "PACK SIZE": 60,
+      "PRICE": 20.34
+    },
+    {
+      "NAME": "MDI Pump",
+      "PACK SIZE": 25,
+      "PRICE": 175
+    },
+    {
+      "NAME": "Mediderm Base ",
+      "PACK SIZE": 500,
+      "PRICE": 20
+    },
+    {
+      "NAME": "Miconazole ",
+      "PACK SIZE": 5,
+      "PRICE": 16.18
+    },
+    {
+      "NAME": "Medi RDT Base",
+      "PACK SIZE": 100,
+      "PRICE": 27.94
+    },
+    {
+      "NAME": "Menthol",
+      "PACK SIZE": 500,
+      "PRICE": 65
+    },
+    {
+      "NAME": "Methoxsalen",
+      "PACK SIZE": 1,
+      "PRICE": 272
+    },
+    {
+      "NAME": "N-Acetylcysteine",
+      "PACK SIZE": 25,
+      "PRICE": 24
+    },
+    {
+      "NAME": "Neomycin",
+      "PACK SIZE": 10,
+      "PRICE": 15
+    },
+    {
+      "NAME": "Nifedipine",
+      "PACK SIZE": 5,
+      "PRICE": 77
+    },
+    {
+      "NAME": "Nitrofurantoin",
+      "PACK SIZE": 100,
+      "PRICE": 83.44
+    },
+    {
+      "NAME": "Nortriptyline",
+      "PACK SIZE": 5,
+      "PRICE": 93
+    },
+    {
+      "NAME": "Nystatin",
+      "PACK SIZE": 17.66,
+      "PRICE": 25.47
+    },
+    {
+      "NAME": "Ora Plus",
+      "PACK SIZE": 473,
+      "PRICE": 25.83
+    },
+    {
+      "NAME": "Ora Sweet",
+      "PACK SIZE": 473,
+      "PRICE": 25.83
+    },
+    {
+      "NAME": "Pentoxyfylline",
+      "PACK SIZE": 25,
+      "PRICE": 35
+    },
+    {
+      "NAME": "Phenobarbital",
+      "PACK SIZE": 25,
+      "PRICE": 29
+    },
+    {
+      "NAME": "Phenol",
+      "PACK SIZE": 100,
+      "PRICE": 19
+    },
+    {
+      "NAME": "PLO Gel",
+      "PACK SIZE": 1000,
+      "PRICE": 66.25
+    },
+    {
+      "NAME": "Piroxicam",
+      "PACK SIZE": 5,
+      "PRICE": 33
+    },
+    {
+      "NAME": "Ppt Sulfur",
+      "PACK SIZE": 500,
+      "PRICE": 17
+    },
+    {
+      "NAME": "Progesterone",
+      "PACK SIZE": 100,
+      "PRICE": 80
+    },
+    {
+      "NAME": "Propylene Glycol",
+      "PACK SIZE": 500,
+      "PRICE": 8.05
+    },
+    {
+      "NAME": "Retinoic Acid",
+      "PACK SIZE": 1,
+      "PRICE": 31.15
+    },
+    {
+      "NAME": "Salicylic Acid",
+      "PACK SIZE": 100,
+      "PRICE": 7
+    },
+    {
+      "NAME": "Sildenafil",
+      "PACK SIZE": 25,
+      "PRICE": 95
+    },
+    {
+      "NAME": "Silica Gel",
+      "PACK SIZE": 100,
+      "PRICE": 24
+    },
+    {
+      "NAME": "Silver Nitrate",
+      "PACK SIZE": 10,
+      "PRICE": 247
+    },
+    {
+      "NAME": "Sodium Bicarbonate",
+      "PACK SIZE": 100,
+      "PRICE": 6
+    },
+    {
+      "NAME": "Sodium Chloride",
+      "PACK SIZE": 1000,
+      "PRICE": 5
+    },
+    {
+      "NAME": "Sodium Lauryl Sulfate",
+      "PACK SIZE": 500,
+      "PRICE": 69.88
+    },
+    {
+      "NAME": "SPG Supp Base",
+      "PACK SIZE": 100,
+      "PRICE": 12
+    },
+    {
+      "NAME": "Sunset Yellow",
+      "PACK SIZE": 25,
+      "PRICE": 12
+    },
+    {
+      "NAME": "Tacrolimus",
+      "PACK SIZE": 0.5,
+      "PRICE": 495
+    },
+    {
+      "NAME": "Tadalafil",
+      "PACK SIZE": 5,
+      "PRICE": 160
+    },
+    {
+      "NAME": "Talc",
+      "PACK SIZE": 500,
+      "PRICE": 12
+    },
+    {
+      "NAME": "Testosterone",
+      "PACK SIZE": 25,
+      "PRICE": 125
+    },
+    {
+      "NAME": "Tetracaine",
+      "PACK SIZE": 5,
+      "PRICE": 30
+    },
+    {
+      "NAME": "Thyroid",
+      "PACK SIZE": 25,
+      "PRICE": 165
+    },
+    {
+      "NAME": "Topiclick",
+      "PACK SIZE": 1,
+      "PRICE": 7
+    },
+    {
+      "NAME": "Tramadol",
+      "PACK SIZE": 25,
+      "PRICE": 155
+    },
+    {
+      "NAME": "Transderm",
+      "PACK SIZE": 500,
+      "PRICE": 90
+    },
+    {
+      "NAME": "Tretinoin"
+    },
+    {
+      "NAME": "Troche Base",
+      "PACK SIZE": 100,
+      "PRICE": 16
+    },
+    {
+      "NAME": "Troche Mold",
+      "PACK SIZE": 30,
+      "PRICE": 90
+    },
+    {
+      "NAME": "Urea",
+      "PACK SIZE": 100,
+      "PRICE": 6.19
+    },
+    {
+      "NAME": "Vanish Pen Base",
+      "PACK SIZE": 100,
+      "PRICE": 18
+    },
+    {
+      "NAME": "Vaseline",
+      "PACK SIZE": 375,
+      "PRICE": 3.95
+    },
+    {
+      "NAME": "Versapro Cream",
+      "PACK SIZE": 500,
+      "PRICE": 72.57
+    },
+    {
+      "NAME": "Versapro Gel",
+      "PACK SIZE": 100,
+      "PRICE": 25
+    },
+    {
+      "NAME": "Zinc Oxide",
+      "PACK SIZE": 100,
+      "PRICE": 8
+    },
+    {
+      "NAME": "versa pro lotion ",
+      "PACK SIZE": 500,
+      "PRICE": 90
+    }
+  ],
+  "100 GM": [
+    {
+      "Compound:": "Qauntity",
+      "Diclo 10 % PLO Gel": 100,
+      "Column3": "gm"
+    },
+    {
+      "Compound:": "Rebate",
+      "Diclo 10 % PLO Gel": 0.2
+    },
+    null,
+    {
+      "Diclo 10 % PLO Gel": "Pack Size",
+      "Column3": "Price",
+      "Column4": "Percentage",
+      "Column5": "Amount",
+      "Column6": "Ingredient Cost",
+      "Column9": "Compound:",
+      "Column10": "Diclo 10 % PLO Gel"
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.02,
+      "Column5": 2,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0,
+      "Column9": "Profit:",
+      "Column10": 80,
+      "Column11": 0.2
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.0002,
+      "Column5": 0.02,
+      "Column6": 0,
+      "Column9": "Price:",
+      "Column10": 90.053695,
+      "Column11": 90.053695
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 1,
+      "Column5": 100,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.88,
+      "Column5": 88,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": "",
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": "",
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Column4": "Total Cost of All Ingredients:",
+      "Column6": 0
+    },
+    {
+      "Compound:": "LEVEL 2",
+      "Column3": "PROFIT=",
+      "Column4": 0.8,
+      "Column7": "CUSTOM GROSS PROFIT:",
+      "Column9": 0.2
+    },
+    {
+      "Diclo 10 % PLO Gel": "Hours",
+      "Column3": "Rate",
+      "Column7": "Hours",
+      "Column8": "Rate"
+    },
+    {
+      "Compound:": "Cost of All Ingredients:",
+      "Column4": 0,
+      "Column6": "Cost of All Ingredients:",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Mark Up",
+      "Column4": 0,
+      "Column6": "Mark Up",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Labour Cost",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 35,
+      "Column4": 35,
+      "Column6": "Labour Cost",
+      "Column7": 1,
+      "Column8": 35,
+      "Column9": 35
+    },
+    {
+      "Compound:": "Conatiner Cost",
+      "Column4": 2,
+      "Column6": "Conatiner Cost",
+      "Column9": 2
+    },
+    {
+      "Compound:": "Delivery Fee",
+      "Column4": 30,
+      "Column6": "Delivery Fee",
+      "Column9": 30
+    },
+    {
+      "Compound:": "SUB TOTAL",
+      "Column4": 67,
+      "Column6": "SUB TOTAL",
+      "Column9": 67
+    },
+    {
+      "Compound:": "Franchise Fee",
+      "Column4": 5.042956,
+      "Column6": "Franchise Fee",
+      "Column9": 5.042956
+    },
+    {
+      "Compound:": "Cost to Buyer",
+      "Column4": 72.042956,
+      "Column6": "Cost to Buyer",
+      "Column9": 72.042956
+    },
+    {
+      "Compound:": "Rebate",
+      "Column4": 18.010739,
+      "Column6": "Rebate",
+      "Column9": 18.010739
+    },
+    null,
+    {
+      "Compound:": "Total Price:",
+      "Column4": 90.053695,
+      "Column6": "Total Price:",
+      "Column9": 90.053695
+    },
+    {
+      "Compound:": "Need to Pay",
+      "Column4": 72.042956,
+      "Column6": "Need to Pay",
+      "Column9": 72.042956
+    },
+    null,
+    {
+      "Compound:": "Net Profit",
+      "Column4": 0,
+      "Column6": "Net Profit",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Gross Profit",
+      "Column4": 72.042956,
+      "Column6": "Gross Profit",
+      "Column9": 72.042956
+    },
+    {
+      "Compound:": "PROFIT",
+      "Column4": "#DIV/0!",
+      "Column6": "PROFIT",
+      "Column9": "#DIV/0!"
+    }
+  ],
+  "250 GM": [
+    {
+      "Compound:": "Qauntity",
+      "Diclo 10 % PLO Gel": 250,
+      "Column3": "gm"
+    },
+    {
+      "Compound:": "Rebate",
+      "Diclo 10 % PLO Gel": 0.2
+    },
+    null,
+    {
+      "Diclo 10 % PLO Gel": "Pack Size",
+      "Column3": "Price",
+      "Column4": "Percentage",
+      "Column5": "Amount",
+      "Column6": "Ingredient Cost",
+      "Column9": "Compound:",
+      "Column10": "Diclo 10 % PLO Gel"
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.02,
+      "Column5": 5,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0,
+      "Column9": "Profit:",
+      "Column10": 80,
+      "Column11": 0.2
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.0002,
+      "Column5": 0.05,
+      "Column6": 0,
+      "Column9": "Price:",
+      "Column10": 101.8144388,
+      "Column11": 101.8144388
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 1,
+      "Column5": 250,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.88,
+      "Column5": 220,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": "",
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": "",
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Column4": "Total Cost of All Ingredients:",
+      "Column6": 0
+    },
+    {
+      "Compound:": "LEVEL 2",
+      "Column3": "PROFIT=",
+      "Column4": 0.8,
+      "Column7": "CUSTOM GROSS PROFIT:",
+      "Column9": 0.2
+    },
+    {
+      "Diclo 10 % PLO Gel": "Hours",
+      "Column3": "Rate",
+      "Column7": "Hours",
+      "Column8": "Rate"
+    },
+    {
+      "Compound:": "Cost of All Ingredients:",
+      "Column4": 0,
+      "Column6": "Cost of All Ingredients:",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Mark Up",
+      "Column4": 0,
+      "Column6": "Mark Up",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Labour Cost",
+      "Diclo 10 % PLO Gel": 1.25,
+      "Column3": 35,
+      "Column4": 43.75,
+      "Column6": "Labour Cost",
+      "Column7": 1.25,
+      "Column8": 35,
+      "Column9": 43.75
+    },
+    {
+      "Compound:": "Conatiner Cost",
+      "Column4": 2,
+      "Column6": "Conatiner Cost",
+      "Column9": 2
+    },
+    {
+      "Compound:": "Delivery Fee",
+      "Column4": 30,
+      "Column6": "Delivery Fee",
+      "Column9": 30
+    },
+    {
+      "Compound:": "SUB TOTAL",
+      "Column4": 75.75,
+      "Column6": "SUB TOTAL",
+      "Column9": 75.75
+    },
+    {
+      "Compound:": "Franchise Fee",
+      "Column4": 5.701551,
+      "Column6": "Franchise Fee",
+      "Column9": 5.701551
+    },
+    {
+      "Compound:": "Cost to Buyer",
+      "Column4": 81.451551,
+      "Column6": "Cost to Buyer",
+      "Column9": 81.451551
+    },
+    {
+      "Compound:": "Rebate",
+      "Column4": 20.36288775,
+      "Column6": "Rebate",
+      "Column9": 20.36288775
+    },
+    null,
+    {
+      "Compound:": "Total Price:",
+      "Column4": 101.8144388,
+      "Column6": "Total Price:",
+      "Column9": 101.8144388
+    },
+    {
+      "Compound:": "Need to Pay",
+      "Column4": 81.451551,
+      "Column6": "Need to Pay",
+      "Column9": 81.451551
+    },
+    null,
+    {
+      "Compound:": "Net Profit",
+      "Column4": 0,
+      "Column6": "Net Profit",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Gross Profit",
+      "Column4": 81.451551,
+      "Column6": "Gross Profit",
+      "Column9": 81.451551
+    },
+    {
+      "Compound:": "PROFIT",
+      "Column4": "#DIV/0!",
+      "Column6": "PROFIT",
+      "Column9": "#DIV/0!"
+    }
+  ],
+  "500 GM": [
+    {
+      "Compound:": "Qauntity",
+      "Diclo 10 % PLO Gel": 500,
+      "Column3": "gm"
+    },
+    {
+      "Compound:": "Rebate",
+      "Diclo 10 % PLO Gel": 0.2
+    },
+    null,
+    {
+      "Diclo 10 % PLO Gel": "Pack Size",
+      "Column3": "Price",
+      "Column4": "Percentage",
+      "Column5": "Amount",
+      "Column6": "Ingredient Cost",
+      "Column9": "Compound:",
+      "Column10": "Diclo 10 % PLO Gel"
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.02,
+      "Column5": 10,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0,
+      "Column9": "Profit:",
+      "Column10": 80,
+      "Column11": 0.2
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.0002,
+      "Column5": 0.1,
+      "Column6": 0,
+      "Column9": "Price:",
+      "Column10": 113.5751825,
+      "Column11": 113.5751825
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 1,
+      "Column5": 500,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.88,
+      "Column5": 440,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": "",
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": "",
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Column4": "Total Cost of All Ingredients:",
+      "Column6": 0
+    },
+    {
+      "Compound:": "LEVEL 2",
+      "Column3": "PROFIT=",
+      "Column4": 0.8,
+      "Column7": "CUSTOM GROSS PROFIT:",
+      "Column9": 0.2
+    },
+    {
+      "Diclo 10 % PLO Gel": "Hours",
+      "Column3": "Rate",
+      "Column7": "Hours",
+      "Column8": "Rate"
+    },
+    {
+      "Compound:": "Cost of All Ingredients:",
+      "Column4": 0,
+      "Column6": "Cost of All Ingredients:",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Mark Up",
+      "Column4": 0,
+      "Column6": "Mark Up",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Labour Cost",
+      "Diclo 10 % PLO Gel": 1.5,
+      "Column3": 35,
+      "Column4": 52.5,
+      "Column6": "Labour Cost",
+      "Column7": 1.5,
+      "Column8": 35,
+      "Column9": 52.5
+    },
+    {
+      "Compound:": "Conatiner Cost",
+      "Column4": 2,
+      "Column6": "Conatiner Cost",
+      "Column9": 2
+    },
+    {
+      "Compound:": "Delivery Fee",
+      "Column4": 30,
+      "Column6": "Delivery Fee",
+      "Column9": 30
+    },
+    {
+      "Compound:": "SUB TOTAL",
+      "Column4": 84.5,
+      "Column6": "SUB TOTAL",
+      "Column9": 84.5
+    },
+    {
+      "Compound:": "Franchise Fee",
+      "Column4": 6.360146,
+      "Column6": "Franchise Fee",
+      "Column9": 6.360146
+    },
+    {
+      "Compound:": "Cost to Buyer",
+      "Column4": 90.860146,
+      "Column6": "Cost to Buyer",
+      "Column9": 90.860146
+    },
+    {
+      "Compound:": "Rebate",
+      "Column4": 22.7150365,
+      "Column6": "Rebate",
+      "Column9": 22.7150365
+    },
+    null,
+    {
+      "Compound:": "Total Price:",
+      "Column4": 113.5751825,
+      "Column6": "Total Price:",
+      "Column9": 113.5751825
+    },
+    {
+      "Compound:": "Need to Pay",
+      "Column4": 90.860146,
+      "Column6": "Need to Pay",
+      "Column9": 90.860146
+    },
+    null,
+    {
+      "Compound:": "Net Profit",
+      "Column4": 0,
+      "Column6": "Net Profit",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Gross Profit",
+      "Column4": 90.860146,
+      "Column6": "Gross Profit",
+      "Column9": 90.860146
+    },
+    {
+      "Compound:": "PROFIT",
+      "Column4": "#DIV/0!",
+      "Column6": "PROFIT",
+      "Column9": "#DIV/0!"
+    }
+  ],
+  "1000 GM": [
+    {
+      "Compound:": "Qauntity",
+      "Diclo 10 % PLO Gel": 1000,
+      "Column3": "gm"
+    },
+    {
+      "Compound:": "Rebate",
+      "Diclo 10 % PLO Gel": 0.2
+    },
+    null,
+    {
+      "Diclo 10 % PLO Gel": "Pack Size",
+      "Column3": "Price",
+      "Column4": "Percentage",
+      "Column5": "Amount",
+      "Column6": "Ingredient Cost",
+      "Column9": "Compound:",
+      "Column10": "Diclo 10 % PLO Gel"
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.02,
+      "Column5": 20,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0,
+      "Column9": "Profit:",
+      "Column10": 80,
+      "Column11": 0.2
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.0002,
+      "Column5": 0.2,
+      "Column6": 0,
+      "Column9": "Price:",
+      "Column10": 137.09667,
+      "Column11": 137.09667
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 1,
+      "Column5": 1000,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0.88,
+      "Column5": 880,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": 0,
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": "",
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Compound:": "",
+      "Diclo 10 % PLO Gel": 1,
+      "Column3": 0,
+      "Column4": "",
+      "Column5": 0,
+      "Column6": 0
+    },
+    {
+      "Column4": "Total Cost of All Ingredients:",
+      "Column6": 0
+    },
+    {
+      "Compound:": "LEVEL 2",
+      "Column3": "PROFIT=",
+      "Column4": 0.8,
+      "Column7": "CUSTOM GROSS PROFIT:",
+      "Column9": 0.2
+    },
+    {
+      "Diclo 10 % PLO Gel": "Hours",
+      "Column3": "Rate",
+      "Column7": "Hours",
+      "Column8": "Rate"
+    },
+    {
+      "Compound:": "Cost of All Ingredients:",
+      "Column4": 0,
+      "Column6": "Cost of All Ingredients:",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Mark Up",
+      "Column4": 0,
+      "Column6": "Mark Up",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Labour Cost",
+      "Diclo 10 % PLO Gel": 2,
+      "Column3": 35,
+      "Column4": 70,
+      "Column6": "Labour Cost",
+      "Column7": 2,
+      "Column8": 35,
+      "Column9": 70
+    },
+    {
+      "Compound:": "Conatiner Cost",
+      "Column4": 2,
+      "Column6": "Conatiner Cost",
+      "Column9": 2
+    },
+    {
+      "Compound:": "Delivery Fee",
+      "Column4": 30,
+      "Column6": "Delivery Fee",
+      "Column9": 30
+    },
+    {
+      "Compound:": "SUB TOTAL",
+      "Column4": 102,
+      "Column6": "SUB TOTAL",
+      "Column9": 102
+    },
+    {
+      "Compound:": "Franchise Fee",
+      "Column4": 7.677336,
+      "Column6": "Franchise Fee",
+      "Column9": 7.677336
+    },
+    {
+      "Compound:": "Cost to Buyer",
+      "Column4": 109.677336,
+      "Column6": "Cost to Buyer",
+      "Column9": 109.677336
+    },
+    {
+      "Compound:": "Rebate",
+      "Column4": 27.419334,
+      "Column6": "Rebate",
+      "Column9": 27.419334
+    },
+    null,
+    {
+      "Compound:": "Total Price:",
+      "Column4": 137.09667,
+      "Column6": "Total Price:",
+      "Column9": 137.09667
+    },
+    {
+      "Compound:": "Need to Pay",
+      "Column4": 109.677336,
+      "Column6": "Need to Pay",
+      "Column9": 109.677336
+    },
+    null,
+    {
+      "Compound:": "Net Profit",
+      "Column4": 0,
+      "Column6": "Net Profit",
+      "Column9": 0
+    },
+    {
+      "Compound:": "Gross Profit",
+      "Column4": 109.677336,
+      "Column6": "Gross Profit",
+      "Column9": 109.677336
+    },
+    {
+      "Compound:": "PROFIT",
+      "Column4": "#DIV/0!",
+      "Column6": "PROFIT",
+      "Column9": "#DIV/0!"
+    }
+  ],
+  "Akabutus Solution": [
+    {
+      "Compound:": "Quantity",
+      "Akabutus' Solution": 700,
+      "Column3": "ml",
+      "Column4": "Mark-Up:",
+      "Column5": 0.8,
+      "Column7": "Default Mark Up: 80%"
+    },
+    {
+      "Compound:": "Rebate",
+      "Akabutus' Solution": 0.2
+    },
+    null,
+    {
+      "Compound:": "Ingredients",
+      "Akabutus' Solution": "Pack Size",
+      "Column3": "Price",
+      "Column4": "Percentage",
+      "Column5": "Amount",
+      "Column6": "Ingredient Cost",
+      "Column9": "Compound:",
+      "Column10": "Akabutus' Solution"
+    },
+    {
+      "Compound:": "Lidodan Viscous 2%",
+      "Akabutus' Solution": 100,
+      "Column3": 5.93,
+      "Column4": 0.166667,
+      "Column5": 116.6669,
+      "Column6": 6.91834717
+    },
+    {
+      "Compound:": "Nystatin Oral Suspension 100000 u/ml",
+      "Akabutus' Solution": 100,
+      "Column3": 5.57,
+      "Column4": 0.14,
+      "Column5": 98,
+      "Column6": 5.4586,
+      "Column9": "Profit:",
+      "Column10": 0.8,
+      "Column11": "Need to Pay",
+      "Column12": "G.P",
+      "Column13": "",
+      "Column14": "Need to Pay",
+      "Column15": "G.P"
+    },
+    {
+      "Compound:": "Hydrocortisone USP",
+      "Akabutus' Solution": 10,
+      "Column3": 30.27,
+      "Column4": 0.000167,
+      "Column5": 0.1169,
+      "Column6": 0.3538563,
+      "Column9": 700,
+      "Column10": 97.70739475,
+      "Column11": 78.1659158,
+      "Column12": 65.31873733,
+      "Column13": "",
+      "Column14": "",
+      "Column15": ""
+    },
+    {
+      "Compound:": "Glycerin",
+      "Akabutus' Solution": 4000,
+      "Column3": 50,
+      "Column4": 0.0133,
+      "Column5": 9.31,
+      "Column6": 0.116375,
+      "Column9": "100 ml",
+      "Column10": 90.053695,
+      "Column11": 72.042956,
+      "Column12": 72.042956,
+      "Column13": 90.053695,
+      "Column14": 72.042956,
+      "Column15": 72.042956
+    },
+    {
+      "Compound:": "Distilled Water",
+      "Akabutus' Solution": 1,
+      "Column3": 0,
+      "Column4": 0.673866,
+      "Column5": 471.7062,
+      "Column6": 0,
+      "Column9": "250 ml",
+      "Column10": 101.8144388,
+      "Column11": 81.451551,
+      "Column12": 81.451551,
+      "Column13": 101.8144388,
+      "Column14": 81.451551,
+      "Column15": 81.451551
+    },
+    {
+      "Compound:": "Sodium Chloride",
+      "Akabutus' Solution": 1,
+      "Column3": 0,
+      "Column4": 0.006,
+      "Column5": 4.2,
+      "Column9": "500 ml",
+      "Column10": 113.5751825,
+      "Column11": 90.860146,
+      "Column12": 90.860146,
+      "Column13": 113.5751825,
+      "Column14": 90.860146,
+      "Column15": 90.860146
+    },
+    {
+      "Column9": "1000 ml",
+      "Column10": 137.09667,
+      "Column11": 109.677336,
+      "Column12": 109.677336,
+      "Column13": 137.09667,
+      "Column14": 109.677336,
+      "Column15": 109.677336
+    },
+    null,
+    null,
+    {
+      "Column4": "Total Cost of All Ingredients:",
+      "Column6": 12.84717847
+    },
+    {
+      "Compound:": "LEVEL 2",
+      "Column3": "PROFIT:",
+      "Column4": 1
+    },
+    {
+      "Akabutus' Solution": "Hours",
+      "Column3": "Rate"
+    },
+    {
+      "Compound:": "Cost of All Ingredients:",
+      "Column4": 12.84717847
+    },
+    {
+      "Compound:": "Mark Up",
+      "Column4": 12.84717847
+    },
+    {
+      "Compound:": "Labour Cost",
+      "Akabutus' Solution": 1,
+      "Column3": 35,
+      "Column4": 35
+    },
+    {
+      "Compound:": "Conatiner Cost",
+      "Column4": 2
+    },
+    {
+      "Compound:": "Delivery Fee",
+      "Column4": 10
+    },
+    {
+      "Compound:": "SUB TOTAL",
+      "Column4": 72.69435694
+    },
+    {
+      "Compound:": "Franchise Fee",
+      "Column4": 5.471558858
+    },
+    {
+      "Compound:": "Cost to Buyer",
+      "Column4": 78.1659158
+    },
+    {
+      "Compound:": "Rebate",
+      "Column4": 19.54147895
+    },
+    null,
+    {
+      "Compound:": "Total Price:",
+      "Column4": 97.70739475
+    },
+    {
+      "Compound:": "Need to Pay",
+      "Column4": 78.1659158
+    },
+    null,
+    {
+      "Compound:": "Net Profit",
+      "Column4": 12.84717847
+    },
+    {
+      "Compound:": "Gross Profit",
+      "Column4": 65.31873733,
+      "Column5": 0.8356421934,
+      "Column15": "#DIV/0!"
+    },
+    {
+      "Compound:": "PROFIT",
+      "Column4": 1
+    },
+    {
+      "Compound:": "FOR MOST OF THE COMPOUNDS FOLLOW 80% PROFIT STRATEGY"
+    }
+  ]
+}
