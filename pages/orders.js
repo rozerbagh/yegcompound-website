@@ -58,12 +58,12 @@ const Order = (props) => {
 };
 export default React.memo(Order);
 
-// This gets called on every request
-export async function getServerSideProps() {
-    // Fetch data from external API
-    const res = await fetch("https://dummyjson.com/products");
-    const data = await res.json();
+// // This gets called on every request
+// export async function getServerSideProps() {
+//     // Fetch data from external API
+//     const res = await fetch("https://dummyjson.com/products");
+//     const data = await res.json();
 
-    // Pass data to the page via props
-    return { props: { ...data } };
-}
+//     // Pass data to the page via props
+//     return { props: { ...data } };
+// }

@@ -4,6 +4,11 @@ module.exports = {
     loader: 'akamai',
     path: '',
   },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
   optimizeFonts: false,
   exportPathMap: async function (
     defaultPathMap,
@@ -16,6 +21,7 @@ module.exports = {
       '/login': { page: '/login' },
       '/signup': { page: '/signup' },
       '/services': { page: '/services' },
+      '/orders': { page: '/orders' },
       // '/p/hello-nextjs': { page: '/post', query: { title: 'hello-nextjs' } },
       // '/p/learn-nextjs': { page: '/post', query: { title: 'learn-nextjs' } },
       // '/p/deploy-nextjs': { page: '/post', query: { title: 'deploy-nextjs' } },
