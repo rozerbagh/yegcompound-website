@@ -1,15 +1,17 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import axios from "axios";
 import { Row, Col, Button, Input, Form, Label } from "reactstrap";
 import { formConstant, orderStatus } from "../../helper/index";
-import { addIngredientsCost, restAllCalculations } from "../../helper/calculation";
-import { createOrders } from "../../services/apis";
+import {
+    addIngredientsCost,
+    restAllCalculations,
+} from "../../helper/calculation";
+import { createOrders, fetchSetting } from "../../services/apis";
 import ingredients from "../../helper/ingredients.json";
 
 function PlaceOrder() {
     const [cookies, setCookie] = useCookies(["auth", "orders"]);
-    const [costOfAllIngredients, setCostOfAllIngredients] = useState(0);
     const [formValues, setFormValues] = useState({
         compoundname: {
             label: "Compound Name",
@@ -46,6 +48,48 @@ function PlaceOrder() {
             percent: "",
         },
     ]);
+    const [setting, setSetting] = useState({
+        markup: 80,
+        rebate: 20,
+        labour_hour_rate: 35,
+        container_cost: 2,
+        delivery_fee: 30,
+        setting_name: "compound",
+    })
+    const _000 = {
+
+    }
+
+    const fetchSettings = () => {
+        const token = cookies?.auth?.token;
+        axios
+            .get(fetchSetting, {
+                headers: { Authorization: `bearer ${token}` },
+            })
+            .then(({ data }) => {
+                debugger;
+                console.log(data.data[0]);
+                setSetting(ps => ({
+                    ...ps,
+                    markup: data.data[0].markup,
+                    rebate: data.data[0].rebate,
+                    labour_hour_rate: data.data[0].labour_hour_rate,
+                    container_cost: data.data[0].container_cost,
+                    delivery_fee: data.data[0].delivery_fee,
+                }))
+                setFormValues((ps) => ({
+                    ...ps,
+                    rebate: {
+                        ...ps.rebate,
+                        value: data.data[0].rebate,
+                    }
+                }))
+            })
+            .catch((error) => { });
+    };
+    useEffect(() => {
+        fetchSettings();
+    }, [])
     const handleInputChange = useCallback(
         (e, controlName) => {
             console.log(controlName);
@@ -116,7 +160,7 @@ function PlaceOrder() {
                     debugger;
                     ingredients.push({
                         ...JSON.parse(ingredientForm[ele].value),
-                        percentage: ingredientForm[ele].percent
+                        percentage: ingredientForm[ele].percent,
                     });
                 }
             });
@@ -132,16 +176,15 @@ function PlaceOrder() {
         } else {
             return 0;
         }
-    }
+    };
     const handleCalculatePrice = (e) => {
         const sumIngredients = handleSumOfAllIngredients();
         if (sumIngredients > 0) {
-            debugger;
-            const containerCost = 2;
-            const deliveryFee = 30;
-            const profit = 80;
-            const rebate = formValues.rebate.value;
-            const labourCost = 10 * 35; // hour * rate;
+            const containerCost = setting.container_cost;
+            const deliveryFee = setting.delivery_fee;
+            const profit = setting.markup;
+            const rebate = setting.rebate;
+            const labourCost = setting.labour_hour_rate * 10; // hour * rate;
             const restAllValues = restAllCalculations(
                 sumIngredients,
                 profit,
@@ -150,13 +193,12 @@ function PlaceOrder() {
                 deliveryFee,
                 rebate
             );
-            debugger;
-            console.log(":::: restAllValues ::::", restAllValues)
+
+            console.log(":::: restAllValues ::::", restAllValues);
             setCustomerInfoPay(restAllValues);
         } else {
             alert("ingredeints are not added");
         }
-
     };
 
     const handleOrderSubmit = (e) => {
@@ -180,7 +222,7 @@ function PlaceOrder() {
             franchiseFee: customerInfoPay.franchiseFee,
             costToBuyer: customerInfoPay.costToBuyer,
             rebaate: customerInfoPay.rebaate,
-            status: orderStatus.order
+            status: orderStatus.order,
         };
         axios
             .post(createOrders, orderDetails, {
@@ -243,11 +285,7 @@ function PlaceOrder() {
                                 id={"ingredients-select-" + idx}
                                 value={ingInput.value}
                                 onChange={(e) =>
-                                    handleIngredientChange(
-                                        e,
-                                        idx,
-                                        formConstant.orders.ingredient
-                                    )
+                                    handleIngredientChange(e, idx, formConstant.orders.ingredient)
                                 }
                             >
                                 {ingInput.ingredients.map((ingredient, idx) => (
@@ -268,11 +306,7 @@ function PlaceOrder() {
                             <Input
                                 value={ingInput.percent}
                                 onChange={(e) =>
-                                    handleIngredientChange(
-                                        e,
-                                        idx,
-                                        formConstant.orders.percentage
-                                    )
+                                    handleIngredientChange(e, idx, formConstant.orders.percentage)
                                 }
                             />
                         </Col>
@@ -319,7 +353,7 @@ function PlaceOrder() {
                 </Button>
             </div>
         </Form>
-    )
+    );
 }
 
-export default PlaceOrder
+export default PlaceOrder;

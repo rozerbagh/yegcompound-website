@@ -33,7 +33,9 @@ const HeaderComponent = () => {
                                 alt="lemarchandi-dispensary"
                                 className="logo-image"
                                 height={60}
+                                width={100}
                             />
+                            {/* yegcompounding */}
                         </NavbarBrand>
                         <NavbarToggler onClick={toggle}>
                             <span className="ti-menu"></span>

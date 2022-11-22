@@ -28,12 +28,12 @@ const Footer = () => {
             <p>
               Office :
               <Link href="mailto:lemarchanddisp@gmail.com">
-                <a className="link">lemarchanddisp@gmail.com</a>
+                <a className="link">yegc@gmail.com</a>
               </Link>
               <br />
               Site :
-              <Link href="https://lemarchanddispensary.ca/">
-                <a className="link">lemarchanddispensary.ca</a>
+              <Link href="https://yegcompounding.com/">
+                <span className="link">yegcompounding.com</span>
               </Link>
             </p>
           </Col>
@@ -73,9 +73,9 @@ const Footer = () => {
             <Col md="12">
               <div className="d-flex font-14">
                 <div className="m-t-10 m-b-10 copyright">
-                  All Rights Reserved by{" "}
-                  <Link href="https://lemarchanddispensary.ca/">
-                    <a className="link">lemarchanddispensary.ca</a>
+                  Copyrights &nbsp; {new Date().getFullYear()} &nbsp; All Rights Reserved by{" "}
+                  <Link href="https://yegcompounding.com/">
+                    <a className="link">yegcompounding.com</a>
                   </Link>
                 </div>
                 <div className="links ml-auto m-t-10 m-b-10">
