@@ -226,7 +226,7 @@ function PlaceOrder() {
         };
         axios
             .post(createOrders, orderDetails, {
-                headers: { authorization: cookies?.auth?.token },
+                headers: { authorization: `bearer ${cookies?.auth?.token}` },
             })
             .then(({ data }) => {
                 alert(data.message);
