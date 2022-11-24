@@ -11,5 +11,5 @@
     #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     #RewriteCond %{REQUEST_URI} ^/404/$
     #RewriteRule ^(.*)$ index.html [L]
-    #ErrorDocument 404 ^(.*)$ index.html [L,QSA]
+    #ErrorDocument 404 ^(.*)$ index.html [L,QSA] 
 </IfModule>

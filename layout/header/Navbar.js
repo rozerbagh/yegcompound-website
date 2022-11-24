@@ -40,7 +40,7 @@ const HeaderComponent = () => {
                             <span className="ti-menu"></span>
                         </NavbarToggler>
                         <Collapse isOpen={isOpen} navbar id="header1">
-                            <Nav navbar className="ml-auto mt-2 mt-lg-0">
+                            <Nav navbar className="ml-auto mt-2 mt-lg-0 align-items-center">
                                 <NavItem className="active">
                                     <Link href="/">Home</Link>
                                 </NavItem>
