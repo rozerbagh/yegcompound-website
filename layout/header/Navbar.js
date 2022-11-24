@@ -10,7 +10,6 @@ import {
     Navbar,
     Nav,
     NavItem,
-    NavLink,
     NavbarToggler,
     Collapse,
 } from "reactstrap";
@@ -43,7 +42,7 @@ const HeaderComponent = () => {
                         <Collapse isOpen={isOpen} navbar id="header1">
                             <Nav navbar className="ml-auto mt-2 mt-lg-0">
                                 <NavItem className="active">
-                                    <NavLink href="/">Home</NavLink>
+                                    <Link href="/">Home</Link>
                                 </NavItem>
                                 <UncontrolledDropdown nav inNavbar>
                                     <DropdownToggle nav>
@@ -52,12 +51,12 @@ const HeaderComponent = () => {
                                     <DropdownMenu className="b-none animated fadeInUp">
                                         <DropdownItem>
                                             <NavItem>
-                                                <NavLink href="/compounding">Compounding</NavLink>
+                                                <Link href="/compounding">Compounding</Link>
                                             </NavItem>
                                         </DropdownItem>
                                         <DropdownItem>
                                             <NavItem>
-                                                <NavLink href="/services">Services</NavLink>
+                                                <Link href="/services">Services</Link>
                                             </NavItem>
                                         </DropdownItem>
                                         <DropdownItem divider />
@@ -66,7 +65,7 @@ const HeaderComponent = () => {
                                 </UncontrolledDropdown>
                                 {cookies.auth?.token && (
                                     <NavItem>
-                                        <NavLink href="/orders">Orders</NavLink>
+                                        <Link href="/orders">Orders</Link>
                                     </NavItem>
                                 )}
                                 {cookies.auth?.token ? null : (
@@ -86,12 +85,12 @@ const HeaderComponent = () => {
                                         <DropdownMenu className="b-none animated fadeInUp">
                                             <DropdownItem>
                                                 <NavItem>
-                                                    <NavLink href="/profile">Profile</NavLink>
+                                                    <Link href="/profile">Profile</Link>
                                                 </NavItem>
                                             </DropdownItem>
                                             <DropdownItem>
                                                 <NavItem>
-                                                    <NavLink href="/profile">Settings</NavLink>
+                                                    <Link href="/profile">Settings</Link>
                                                 </NavItem>
                                             </DropdownItem>
                                             <DropdownItem divider />
