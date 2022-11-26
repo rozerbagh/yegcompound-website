@@ -16,7 +16,7 @@ const Home = () => {
                     <Row className="">
                         <Col lg="6" md="6" className="align-self-center">
                             <h1 className="title">
-                                Lemarchand Dispensary
+                                Niks Pharmacy
                             </h1>
                             <h4 className="subtitle font-light">
                                 Providing our patients and colleagues with quality compounded

@@ -6,7 +6,7 @@ export const formConstant = {
 }
 
 export const orderStatus = {
-    order: 'ordered',
+    order: 'pending',
     dispatch: 'dispatched',
     ship: 'shipped',
     deliver: 'delivered',

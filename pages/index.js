@@ -7,7 +7,7 @@ export default function Home() {
         <title>Lemarchandi</title>
         <meta
           name="description"
-          content="Lemarchandi Dispensary"
+          content="Niks Pharmacy"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
