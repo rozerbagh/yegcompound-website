@@ -12,6 +12,7 @@ import ingredients from "../../helper/ingredients.json";
 
 function PlaceOrder() {
     const [cookies, setCookie] = useCookies(["auth", "orders"]);
+    const [comments, setComments] = useState("");
     const [formValues, setFormValues] = useState({
         compoundname: {
             label: "Compound Name",
@@ -56,9 +57,6 @@ function PlaceOrder() {
         delivery_fee: 30,
         setting_name: "compound",
     })
-    const _000 = {
-
-    }
 
     const fetchSettings = () => {
         const token = cookies?.auth?.token;
@@ -67,7 +65,6 @@ function PlaceOrder() {
                 headers: { Authorization: `bearer ${token}` },
             })
             .then(({ data }) => {
-                debugger;
                 console.log(data.data[0]);
                 setSetting(ps => ({
                     ...ps,
@@ -107,17 +104,23 @@ function PlaceOrder() {
 
     const handleIngredientChange = useCallback(
         (event, index, controlType) => {
+            const { name, value } = event.target;
+            console.log(value, "handleIngredientChange")
             let updateForm = [...ingredientForm];
             if (controlType === formConstant.orders.ingredient) {
-                updateForm[index].value = event.target.value;
+                updateForm[index].value = value;
             } else if (controlType === formConstant.orders.percentage) {
-                updateForm[index].percent = event.target.value;
+                updateForm[index].percent = value;
             }
             setIngredientForm(updateForm);
+            // const ingredients = [];
+            // ingredients.push(JSON.parse(value));
+            // window.ingredients = ingredients;
+            // if (value != "" && value != null && value != undefined) {
 
-            const ingredients = [];
-            ingredients.push(JSON.parse(event.target.value));
-            window.ingredients = ingredients;
+            // } else {
+
+            // }
         },
         [ingredientForm]
     );
@@ -201,9 +204,27 @@ function PlaceOrder() {
         }
     };
 
+    const ingredeintsvalidations = (ing_data = []) => {
+        const retunArr = ing_data.filter(ele => ele.value === "" || ele.percent === "" || ele.percent === 0)
+        if (retunArr.length > 0) {
+            return {
+                data: ing_data,
+                filterData: retunArr,
+                valid: false
+            }
+        } else {
+            return {
+                data: [],
+                filterData: [],
+                valid: true
+            }
+        }
+    }
+
     const handleOrderSubmit = (e) => {
         e.preventDefault();
         const ingredients = [];
+        const validIngredients = ingredeintsvalidations(ingredientForm)
         Object.keys(ingredientForm).map((ele) =>
             ingredients.push({
                 ...JSON.parse(ingredientForm[ele].value),
@@ -223,7 +244,10 @@ function PlaceOrder() {
             costToBuyer: customerInfoPay.costToBuyer,
             rebaate: customerInfoPay.rebaate,
             status: orderStatus.order,
+            comments: comments,
         };
+        debugger
+        console.log(orderDetails)
         axios
             .post(createOrders, orderDetails, {
                 headers: { authorization: `bearer ${cookies?.auth?.token}` },
@@ -304,7 +328,7 @@ function PlaceOrder() {
                             className="my-1"
                         >
                             <Input
-                                value={ingInput.percent}
+                                value={ingInput.percent || ""}
                                 onChange={(e) =>
                                     handleIngredientChange(e, idx, formConstant.orders.percentage)
                                 }
@@ -347,8 +371,23 @@ function PlaceOrder() {
                 </Col>
             </Row>
             <br />
+            <Row>
+                <Col xs={12}>
+                    <Label>Comments</Label>
+                    <Input
+                        placeholder="Enter comments or any additional message for this orders"
+                        type="textarea"
+                        name="comments"
+                        id="comments" value={comments}
+                        onChange={(e) => {
+                            const { name, value } = e.target
+                            setComments(value)
+                        }} />
+                </Col>
+            </Row>
+            <br />
             <div className="w-100 d-flex flex-row-reverse">
-                <Button type="submit" color="success">
+                <Button type="submit" color="success" disabled={!ingredeintsvalidations(ingredientForm).valid}>
                     Place Orders
                 </Button>
             </div>

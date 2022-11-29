@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Lemarchandi</title>
+        <title>Nikis Pharmacy</title>
         <meta
           name="description"
           content="Niks Pharmacy"

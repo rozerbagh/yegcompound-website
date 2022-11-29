@@ -11,15 +11,13 @@ const Footer = () => {
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="m-b-20">Address</h5>
             <p>
-              Suite 105, 11523 100 Avenue
-              Lemarchand Mansion
-              Edmonton, AB T5K 0J8
+              6610 132 Ave NW, Edmonton, AB T5C 2A5
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="m-b-20">Phone</h5>
             <p>
-              Office :  (780) 482-3322<br />
+              Office :  +1 (587) 937-3030<br />
               Fax: (780) 482-6889
             </p>
           </Col>

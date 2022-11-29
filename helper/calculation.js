@@ -1,3 +1,4 @@
+export const roundOf5 = (val) => Math.ceil(val / 5) * 5
 export const addIngredientsCost = (ingredients, quantity) => {
     var sum = 0;
     ingredients.map(ele => {
@@ -30,7 +31,7 @@ export const restAllCalculations = (
         franchiseFee,
         costToBuyer,
         rebaate,
-        totalPrice,
-        needToPay,
+        totalPrice: roundOf5(totalPrice),
+        needToPay: roundOf5(needToPay),
     }
 }

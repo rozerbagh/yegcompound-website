@@ -124,8 +124,8 @@ export default function Login() {
     return (
         <>
             <Head>
-                <title>Lemarchandi | login</title>
-                <meta name="description" content="Lemarchandi Dispensary login form" />
+                <title>Nikis Pharmacy | login</title>
+                <meta name="description" content="Nikis Pharmacy Dispensary login form" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <>

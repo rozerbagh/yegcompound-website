@@ -4,10 +4,10 @@ export default function Services() {
     return (
         <>
             <Head>
-                <title>LD | Services</title>
+                <title>Nikis Pharmacy | Services</title>
                 <meta
                     name="description"
-                    content="Lemarchandi Dispensary contact form"
+                    content="Nikis Pharmacy Dispensary contact form"
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

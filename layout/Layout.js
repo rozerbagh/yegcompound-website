@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     return (
         <CookiesProvider>
             <div id="main-wrapper">
-                <NotifyHeader />
+                {/* <NotifyHeader /> */}
                 <Header />
                 <div className="page-wrapper">
                     <div className="container-fluid">{children}</div>

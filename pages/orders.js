@@ -11,8 +11,8 @@ const Order = (props) => {
     return (
         <>
             <Head>
-                <title>Lemarchandi | Orders</title>
-                <meta name="description" content="Lemarchandi Dispensary" />
+                <title>Nikis Pharmacy | Orders</title>
+                <meta name="description" content="Nikis Pharmacy Dispensary" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Banner

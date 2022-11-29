@@ -96,10 +96,10 @@ export default function Login() {
     return (
         <>
             <Head>
-                <title>Lemarchandi | login</title>
+                <title>Nikis Pharmacy | login</title>
                 <meta
                     name="description"
-                    content="Lemarchandi Dispensary login form"
+                    content="Nikis Pharmacy login form"
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

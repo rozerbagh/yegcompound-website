@@ -1,23 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "reactstrap";
 import { useCookies } from "react-cookie";
 import Image from "next/image";
 import bannerimg from "../../assets/images/landingpage/banner-img.png";
 import TestimonialComponent from "../custom/sections/testimonialcomponent";
+import axios from "axios";
+import { testimonials } from "../../services/apis";
 
-const Home = () => {
+const Home = (props) => {
+    const [cookies] = useCookies(["auth"]);
 
-    const [cookies] = useCookies(['auth']);
+    const fetchTestimonials = () => {
+        axios
+            .get(testimonials, {
+                headers: { Authorization: "bearer " + cookies.auth.token },
+            })
+            .then(({ data }) => { })
+            .catch((error) => { });
+    };
+    useEffect(() => {
+        fetchTestimonials()
+    }, [])
     return (
         <>
             <div className="static-slider-head banner2">
                 <Container>
                     <Row className="">
                         <Col lg="6" md="6" className="align-self-center">
-                            <h1 className="title">
-                                Niks Pharmacy
-                            </h1>
+                            <h1 className="title">Nikis Pharmacy</h1>
                             <h4 className="subtitle font-light">
                                 Providing our patients and colleagues with quality compounded
                                 <br /> medications and pharmaceutical services.
@@ -28,11 +39,13 @@ const Home = () => {
                                 </div>
                             </Link>
 
-                            {!cookies?.auth?.token && <Link href="/signup">
-                                <a className="btn btn-md m-t-30  btn-outline-light ">
-                                    Sign up
-                                </a>
-                            </Link>}
+                            {!cookies?.auth?.token && (
+                                <Link href="/signup">
+                                    <a className="btn btn-md m-t-30  btn-outline-light ">
+                                        Sign up
+                                    </a>
+                                </Link>
+                            )}
                         </Col>
                         <Col lg="6" md="6">
                             <Image src={bannerimg} alt="hero banner" />
@@ -46,11 +59,8 @@ const Home = () => {
                         <Col md="7" className="text-center">
                             <h1 className="title font-bold">Pharmacy Services</h1>
                             <h6 className="subtitle">
-                                Compounding,
-                                Medication Assessments,
-                                Injections,
-                                Free Prescription Delivery,
-                                Compliance or Blister Packaging,
+                                Compounding, Medication Assessments, Injections, Free
+                                Prescription Delivery, Compliance or Blister Packaging,
                             </h6>
                         </Col>
                     </Row>
@@ -60,9 +70,17 @@ const Home = () => {
                 <Container>
                     <Row className="justify-content-center">
                         <Col md="7" className="text-center">
-                            <h1 className="title font-bold">Lemarchand Dispensary, part of your community</h1>
+                            <h1 className="title font-bold">
+                                Nikis Pharmacy, part of your community
+                            </h1>
                             <h6 className="subtitle">
-                                Lemarchand Dispensary was established in 1990 in Edmonton, Alberta. We were one of the first compounding pharmacies in the Edmonton area. Today, we pride ourselves on providing our patients and colleagues with quality compounded medications and pharmaceutical services. Our practice has evolved into a client centric approach that focuses on premium product combined with superior customer service.
+                                Nikis Pharmacy was established in 1990 in 6610 132 Ave NW,
+                                Edmonton, AB T5C 2A5. We were one of the first compounding
+                                pharmacies in the Edmonton area. Today, we pride ourselves on
+                                providing our patients and colleagues with quality compounded
+                                medications and pharmaceutical services. Our practice has
+                                evolved into a client centric approach that focuses on premium
+                                product combined with superior customer service.
                             </h6>
                         </Col>
                     </Row>
