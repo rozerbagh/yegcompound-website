@@ -11,17 +11,17 @@ import { testimonials } from "../../services/apis";
 const Home = (props) => {
     const [cookies] = useCookies(["auth"]);
 
-    const fetchTestimonials = () => {
-        axios
-            .get(testimonials, {
-                headers: { Authorization: "bearer " + cookies.auth.token },
-            })
-            .then(({ data }) => { })
-            .catch((error) => { });
-    };
-    useEffect(() => {
-        fetchTestimonials()
-    }, [])
+    // const fetchTestimonials = () => {
+    //     axios
+    //         .get(testimonials, {
+    //             headers: { Authorization: "bearer " + cookies.auth.token },
+    //         })
+    //         .then(({ data }) => { })
+    //         .catch((error) => { });
+    // };
+    // useEffect(() => {
+    //     fetchTestimonials()
+    // }, [])
     return (
         <>
             <div className="static-slider-head banner2">
