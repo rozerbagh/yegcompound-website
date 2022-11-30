@@ -75,31 +75,31 @@ export default function Login() {
     };
     const handleSignup = (e) => {
         e.preventDefault();
-        axios
-            .post(signup, {
-                username: userData.fullname.value,
-                fullname: userData.fullname.value,
-                email: userData.email.value,
-                password: userData.password.value,
-                phoneno: userData.phoneno.value,
-                role: 0,
-                status: 1,
-                image: "https://storebucket.fra1.digitaloceanspaces.com/user.png",
-            })
-            .then(({ data }) => {
-                console.log(data);
-                setCookie("auth", data);
-                localStorage.setItem("user_data", JSON.stringify(data));
-                setErrorMsg(null);
-                window.location.href = '/orders';
-            })
-            .catch((err) => {
-                if (err.response) {
-                    setErrorMsg(err.response.data.message);
-                } else {
-                    setErrorMsg("something went wrong");
-                }
-            });
+        // axios
+        //     .post(signup, {
+        //         username: userData.fullname.value,
+        //         fullname: userData.fullname.value,
+        //         email: userData.email.value,
+        //         password: userData.password.value,
+        //         phoneno: userData.phoneno.value,
+        //         role: 0,
+        //         status: 1,
+        //         image: "https://storebucket.fra1.digitaloceanspaces.com/user.png",
+        //     })
+        //     .then(({ data }) => {
+        //         console.log(data);
+        //         setCookie("auth", data);
+        //         localStorage.setItem("user_data", JSON.stringify(data));
+        //         setErrorMsg(null);
+        //         window.location.href = '/orders';
+        //     })
+        //     .catch((err) => {
+        //         if (err.response) {
+        //             setErrorMsg(err.response.data.message);
+        //         } else {
+        //             setErrorMsg("something went wrong");
+        //         }
+        //     });
     };
     const handleShowPassword = (e) => {
         setShowPwd(e.target.checked);
@@ -129,7 +129,8 @@ export default function Login() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <>
-                <div className="login">
+                <h1>Site is under maintainance</h1>
+                {/* <div className="login">
                     <Row>
                         <Container>
                             <div className="spacer">
@@ -186,7 +187,7 @@ export default function Login() {
                             </div>
                         </Container>
                     </Row>
-                </div>
+                </div> */}
             </>
         </>
     );

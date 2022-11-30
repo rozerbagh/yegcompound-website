@@ -21,7 +21,8 @@ const Order = (props) => {
                 btnFlag={0}
             />
             <br />
-            <Container>
+            <h1>Site is under maintainance</h1>
+            {/* <Container>
                 <Nav tabs>
                     <NavItem>
                         <NavLink
@@ -52,7 +53,7 @@ const Order = (props) => {
                     </TabPane>
                 </TabContent>
             </Container>
-            <br />
+            <br /> */}
         </>
     );
 };

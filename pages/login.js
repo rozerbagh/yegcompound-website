@@ -42,21 +42,21 @@ export default function Login() {
     const [cookies, setCookie, removeCookie] = useCookies(['auth']);
     const handleLogin = (e) => {
         e.preventDefault();
-        axios.post(login, {
-            email: userData.email.value,
-            password: userData.password.value,
-        }).then(({ data }) => {
-            console.log(data)
-            setCookie("auth", data)
-            localStorage.setItem("user_data", JSON.stringify(data));
-            window.location.href = "/"
-        }).catch(err => {
-            if (err.response) {
-                setErrorMsg(err.response.data.message)
-            } else {
-                alert("something went wrong")
-            }
-        });
+        // axios.post(login, {
+        //     email: userData.email.value,
+        //     password: userData.password.value,
+        // }).then(({ data }) => {
+        //     console.log(data)
+        //     setCookie("auth", data)
+        //     localStorage.setItem("user_data", JSON.stringify(data));
+        //     window.location.href = "/"
+        // }).catch(err => {
+        //     if (err.response) {
+        //         setErrorMsg(err.response.data.message)
+        //     } else {
+        //         alert("something went wrong")
+        //     }
+        // });
 
     }
     const handleShowPassword = (e) => {
@@ -104,8 +104,9 @@ export default function Login() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <>
+                <h1>Site is under maintainance</h1>
                 <div className="login">
-                    <Row>
+                    {/* <Row>
                         <Container>
                             <div className="spacer">
                                 <Row className="m-0 justify-content-center">
@@ -156,7 +157,7 @@ export default function Login() {
                                 </Row>
                             </div>
                         </Container>
-                    </Row>
+                    </Row> */}
                 </div>
             </>
         </>

@@ -7,11 +7,11 @@ const Layout = ({ children }) => {
         <CookiesProvider>
             <div id="main-wrapper">
                 {/* <NotifyHeader /> */}
-                <Header />
+                {/* <Header /> */}
                 <div className="page-wrapper">
                     <div className="container-fluid">{children}</div>
                 </div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </CookiesProvider>
     );

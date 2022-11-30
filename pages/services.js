@@ -11,7 +11,8 @@ export default function Services() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <ServicesComponent />
+            <h1>Site is under maintainance</h1>
+            {/* <ServicesComponent /> */}
         </>
     );
 }

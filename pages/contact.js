@@ -11,7 +11,8 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <ContactComponent />
+            <h1>Site is under maintainance</h1>
+            {/* <ContactComponent /> */}
         </>
     );
 }
