@@ -11,14 +11,18 @@ const Footer = () => {
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="m-b-20">Address</h5>
             <p>
-              6610 132 Ave NW, Edmonton, AB T5C 2A5
+              THE MEDICINE SHOPPE PHARMACY #212
+              <br />
+              2905 17th Ave S E
+              <br />
+              Calgary, (Alberta), T2A 0P7
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="m-b-20">Phone</h5>
             <p>
-              Office :  +1 (587) 937-3030<br />
-              Fax: (780) 482-6889
+              Office :  <a id="link-pharmacy-detail-page-phone" href="tel:403.235.0888">403.235.0888</a><br />
+              Fax: 403.235.0878
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
@@ -38,7 +42,7 @@ const Footer = () => {
           <Col lg="3" md="6">
             <h5 className="m-b-20">Social</h5>
             <div className="round-social light">
-              <Link href="#">
+              <Link href="https://www.facebook.com/medicineshoppecanada/">
                 <a className="link">
                   <i className="fa fa-facebook"></i>
                 </a>

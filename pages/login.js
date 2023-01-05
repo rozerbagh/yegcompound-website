@@ -106,7 +106,7 @@ export default function Login() {
             <>
                 <h1>Site is under maintainance</h1>
                 <div className="login">
-                    {/* <Row>
+                    <Row>
                         <Container>
                             <div className="spacer">
                                 <Row className="m-0 justify-content-center">
@@ -157,7 +157,7 @@ export default function Login() {
                                 </Row>
                             </div>
                         </Container>
-                    </Row> */}
+                    </Row>
                 </div>
             </>
         </>

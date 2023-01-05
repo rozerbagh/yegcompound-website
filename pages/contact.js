@@ -4,15 +4,15 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Lemarchandi | Contact</title>
+                <title>Nikis Pharmacy | Contact</title>
                 <meta
                     name="description"
                     content="Lemarchandi Dispensary contact form"
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <h1>Site is under maintainance</h1>
-            {/* <ContactComponent /> */}
+            {/* <h1>Site is under maintainance</h1> */}
+            <ContactComponent />
         </>
     );
 }

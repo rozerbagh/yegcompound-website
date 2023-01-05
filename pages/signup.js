@@ -129,8 +129,8 @@ export default function Login() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <>
-                <h1>Site is under maintainance</h1>
-                {/* <div className="login">
+                {/* <h1>Site is under maintainance</h1> */}
+                <div className="login">
                     <Row>
                         <Container>
                             <div className="spacer">
@@ -187,7 +187,7 @@ export default function Login() {
                             </div>
                         </Container>
                     </Row>
-                </div> */}
+                </div>
             </>
         </>
     );

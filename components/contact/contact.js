@@ -79,14 +79,17 @@ const ContactComponent = () => {
                                     <div className="detail-box p-40 bg-info">
                                         <h2 className="text-white">Lemarchand Dispensary</h2>
                                         <p className="text-white m-t-30 op-8">
-                                            (780) 482-3322
+                                            Office :  <a className="text-white" id="link-pharmacy-detail-page-phone" href="tel:403.235.0888">403.235.0888</a>
                                             <br />
-                                            lemarchanddisp@gmail.com
+                                            Fax: 403.235.0878<br />
+                                            <a href="mailto:lemarchanddisp@gmail.com" className="text-white link">yegc@gmail.com</a>
                                         </p>
                                         <p className="text-white op-8">
-                                            Suite 105, 11523 100 Avenue<br />
-                                            Lemarchand Mansion<br />
-                                            Edmonton, AB T5K 0J8
+                                            THE MEDICINE SHOPPE PHARMACY #212
+                                            <br />
+                                            2905 17th Ave S E
+                                            <br />
+                                            Calgary, (Alberta), T2A 0P7
                                         </p>
                                     </div>
                                 </Col>

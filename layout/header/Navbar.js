@@ -14,7 +14,7 @@ import {
     Collapse,
 } from "reactstrap";
 import Image from "next/image";
-import logo from "../../assets/images/logos/logo.png";
+import logo from "../../assets/images/logos/logo.svg";
 import logo2 from "../../assets/images/logos/white-logo.png";
 import { useCookies } from "react-cookie";
 const HeaderComponent = () => {
@@ -24,17 +24,16 @@ const HeaderComponent = () => {
     return (
         <div id="section">
             <div className="header1 po-relative">
-                <Container>
+                <Container fluid="xl">
                     <Navbar className="navbar-expand-lg h3-nav">
                         <NavbarBrand href="/">
                             <Image
                                 src={logo}
-                                alt="lemarchandi-dispensary"
+                                alt="yegcompunding.com"
                                 className="logo-image"
-                                height={60}
-                                width={100}
+                                height={"60px"}
+                                width={"200px"}
                             />
-                            {/* yegcompounding */}
                         </NavbarBrand>
                         <NavbarToggler onClick={toggle}>
                             <span className="ti-menu"></span>
@@ -49,6 +48,7 @@ const HeaderComponent = () => {
                                         Services <i className="fa fa-angle-down m-l-5"></i>
                                     </DropdownToggle>
                                     <DropdownMenu className="b-none animated fadeInUp">
+                                        <DropdownItem header>Vaccines</DropdownItem>
                                         <DropdownItem>
                                             <NavItem>
                                                 <Link href="/compounding">Compounding</Link>
