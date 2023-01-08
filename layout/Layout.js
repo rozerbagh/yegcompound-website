@@ -1,8 +1,8 @@
 import Header from "./header/Navbar";
 import C2aComponent from "../components/contact/c2a";
-import NotifyHeader from "./header/NotifyHeader";
+// import NotifyHeader from "./header/NotifyHeader";
 import Footer from "./footer/Footer";
-import { CookiesProvider } from "react-cookie"
+import { CookiesProvider } from "react-cookie";
 const Layout = ({ children }) => {
     return (
         <CookiesProvider>

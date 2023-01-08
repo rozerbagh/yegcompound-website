@@ -15,7 +15,7 @@ import {
 import { useCookies } from "react-cookie";
 import { signup } from "../services/apis";
 
-export default function Login() {
+export default function Signup(props) {
     const [cookies, setCookie, removeCookie] = useCookies(["auth"]);
     const [userData, setUserData] = useState({
         fullname: {
@@ -124,7 +124,7 @@ export default function Login() {
     return (
         <>
             <Head>
-                <title>Nikis Pharmacy | login</title>
+                <title>{props.websiteTitle} | login</title>
                 <meta name="description" content="Nikis Pharmacy Dispensary login form" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

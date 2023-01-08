@@ -1,10 +1,10 @@
 import Head from "next/head";
 import HomeComponent from "../components/home/home";
-export default function Home() {
+export default function Home(props) {
   return (
     <div>
       <Head>
-        <title>Nikis Pharmacy</title>
+        <title>{props.websiteTitle}</title>
         <meta
           name="description"
           content="Niks Pharmacy"
@@ -12,7 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <h1>Site is under maintainance</h1> */}
-      <HomeComponent />
+      <HomeComponent websiteTitle={props.websiteTitle}/>
     </div>
   );
 }

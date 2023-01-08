@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import React, { useState } from "react";
 import Link from "next/link";
 import {
@@ -48,15 +49,29 @@ const HeaderComponent = () => {
                                         Services <i className="fa fa-angle-down m-l-5"></i>
                                     </DropdownToggle>
                                     <DropdownMenu className="b-none animated fadeInUp">
-                                        <DropdownItem header>Vaccines</DropdownItem>
-                                        <DropdownItem>
+                                        <DropdownItem header>
                                             <NavItem>
-                                                <Link href="/compounding">Compounding</Link>
+                                                <Link href="/prescriptions">Prescriptions</Link>
                                             </NavItem>
                                         </DropdownItem>
-                                        <DropdownItem>
+                                        <DropdownItem header>
                                             <NavItem>
-                                                <Link href="/services">Services</Link>
+                                                <Link href="/vaccines">Vaccines</Link>
+                                            </NavItem>
+                                        </DropdownItem>
+                                        <DropdownItem header>
+                                            <NavItem>
+                                                <Link href="/assesments-monitoring">Assesments & Monitoring</Link>
+                                            </NavItem>
+                                        </DropdownItem>
+                                        <DropdownItem header>
+                                            <NavItem>
+                                                <Link href="/medicine-customization">Medication Customization</Link>
+                                            </NavItem>
+                                        </DropdownItem>
+                                        <DropdownItem header>
+                                            <NavItem>
+                                                <Link href="/wellness-consultation">Wellness Consultation</Link>
                                             </NavItem>
                                         </DropdownItem>
                                         <DropdownItem divider />
@@ -68,6 +83,9 @@ const HeaderComponent = () => {
                                         <Link href="/orders">Orders</Link>
                                     </NavItem>
                                 )}
+                                <NavItem className="active">
+                                    <Link href="/contact">Contact Us</Link>
+                                </NavItem> &nbsp;
                                 {cookies.auth?.token ? null : (
                                     <NavItem>
                                         <Link href="/login">

@@ -1,34 +1,21 @@
+/* eslint-disable @next/next/link-passhref */
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Card, CardBody } from "reactstrap";
 import { useCookies } from "react-cookie";
 import Image from "next/image";
 import bannerimg from "../../assets/images/landingpage/banner-img.png";
 import TestimonialComponent from "../custom/sections/testimonialcomponent";
-import axios from "axios";
-import { testimonials } from "../../services/apis";
-
+import { services, products } from "../../helper/index";
 const Home = (props) => {
     const [cookies] = useCookies(["auth"]);
-
-    // const fetchTestimonials = () => {
-    //     axios
-    //         .get(testimonials, {
-    //             headers: { Authorization: "bearer " + cookies.auth.token },
-    //         })
-    //         .then(({ data }) => { })
-    //         .catch((error) => { });
-    // };
-    // useEffect(() => {
-    //     fetchTestimonials()
-    // }, [])
     return (
         <>
             <div className="static-slider-head banner2">
                 <Container>
                     <Row className="">
                         <Col lg="6" md="6" className="align-self-center">
-                            <h1 className="title">Nikis Pharmacy</h1>
+                            <h1 className="title">{props.websiteTitle}</h1>
                             <h4 className="subtitle font-light">
                                 Providing our patients and colleagues with quality compounded
                                 <br /> medications and pharmaceutical services.
@@ -58,11 +45,24 @@ const Home = (props) => {
                     <Row className="justify-content-center">
                         <Col md="7" className="text-center">
                             <h1 className="title font-bold">Pharmacy Services</h1>
-                            <h6 className="subtitle">
-                                Compounding, Medication Assessments, Injections, Free
-                                Prescription Delivery, Compliance or Blister Packaging,
-                            </h6>
+                            <h6 className="subtitle">lorem ipsum</h6>
                         </Col>
+                    </Row>
+                    <Row className="m-t-40">
+                        {services.map((ele, key) => (
+                            <Col md="6" className="wrap-feature4-box" key={key}>
+                                <Card>
+                                    <CardBody>
+                                        <div className="icon-round bg-light-info">{ele.icon}</div>
+                                        <h5 className="font-medium">{ele.name}</h5>
+                                        <p className="m-t-20">{ele.description}</p>
+                                        <a href="#" className="linking text-themecolor">
+                                            Explore More<i className="ti-arrow-right"></i>
+                                        </a>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        ))}
                     </Row>
                 </Container>
             </div>
@@ -70,11 +70,38 @@ const Home = (props) => {
                 <Container>
                     <Row className="justify-content-center">
                         <Col md="7" className="text-center">
+                            <h1 className="title font-bold">Pharmacy Services</h1>
+                            <h6 className="subtitle">lorem ipsum</h6>
+                        </Col>
+                    </Row>
+                    <Row className="m-t-40">
+                        {products.map((ele, key) => (
+                            <Col md="6" className="wrap-feature4-box" key={key}>
+                                <Card className="card-shadow">
+                                    <a href="#" className="img-ho">
+                                        <Image
+                                            className="card-img-top"
+                                            src={ele.img}
+                                            alt="wrappixel kit"
+                                        />
+                                    </a>
+                                    <CardBody>
+                                        <h5 className="font-medium m-b-0">
+                                            {ele.name}
+                                        </h5>
+                                        <p className="m-b-0 font-14">{ele.description}</p>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
+                    {/* <Row className="justify-content-center">
+                        <Col md="7" className="text-center">
                             <h1 className="title font-bold">
-                                Nikis Pharmacy, part of your community
+                                {props.websiteTitle}, part of your community
                             </h1>
                             <h6 className="subtitle">
-                                Nikis Pharmacy was established in 1990 in 6610 132 Ave NW,
+                                {props.websiteTitle} was established in 1990 in 6610 132 Ave NW,
                                 Edmonton, AB T5C 2A5. We were one of the first compounding
                                 pharmacies in the Edmonton area. Today, we pride ourselves on
                                 providing our patients and colleagues with quality compounded
@@ -83,7 +110,7 @@ const Home = (props) => {
                                 product combined with superior customer service.
                             </h6>
                         </Col>
-                    </Row>
+                    </Row> */}
                 </Container>
             </div>
             <TestimonialComponent />

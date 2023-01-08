@@ -125,7 +125,7 @@ form-banner 1
 *******************/
 
 #banner1 {
-  background: right -3em center no-repeat #e9f3f8;
+  background: right -3em center no-repeat transparent;
   background-image: $form-banner;
   h2 {
     font-size: 48px;
@@ -291,8 +291,12 @@ Feature 20
   }
   .linking {
     width: 100%;
+    height: 100%;
     display: block;
     padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

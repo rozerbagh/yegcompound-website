@@ -1,10 +1,10 @@
 import Head from "next/head";
 import ContactComponent from "../components/contact/contact"
-export default function Home() {
+export default function Contact(props) {
     return (
         <>
             <Head>
-                <title>Nikis Pharmacy | Contact</title>
+                <title>{props.websiteTitle} | Contact</title>
                 <meta
                     name="description"
                     content="Lemarchandi Dispensary contact form"

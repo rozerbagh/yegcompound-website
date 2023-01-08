@@ -11,7 +11,7 @@ const Order = (props) => {
     return (
         <>
             <Head>
-                <title>Nikis Pharmacy | Orders</title>
+                <title>{props.websiteTitle} | Orders</title>
                 <meta name="description" content="Nikis Pharmacy Dispensary" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

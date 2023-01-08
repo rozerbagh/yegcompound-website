@@ -14,7 +14,7 @@ import {
 import { useCookies } from "react-cookie";
 import validator from "validator"
 import { login } from "../services/apis";
-export default function Login() {
+export default function Login(props) {
     const [userData, setUserData] = useState({
         email: {
             name: "email",
@@ -96,7 +96,7 @@ export default function Login() {
     return (
         <>
             <Head>
-                <title>Nikis Pharmacy | login</title>
+                <title>{props.websiteTitle} | login</title>
                 <meta
                     name="description"
                     content="Nikis Pharmacy login form"
