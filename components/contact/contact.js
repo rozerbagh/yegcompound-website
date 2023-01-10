@@ -9,7 +9,7 @@ import {
     Button,
 } from "reactstrap";
 
-const ContactComponent = () => {
+const ContactComponent = (props) => {
     return (
         <div>
             <div className="spacer bg-light">
@@ -77,12 +77,12 @@ const ContactComponent = () => {
                                 </Col>
                                 <Col lg="4">
                                     <div className="detail-box p-40 bg-info">
-                                        <h2 className="text-white">Lemarchand Dispensary</h2>
+                                        <h2 className="text-white">{props.websiteTitle}</h2>
                                         <p className="text-white m-t-30 op-8">
                                             Office :  <a className="text-white" id="link-pharmacy-detail-page-phone" href="tel:403.235.0888">403.235.0888</a>
                                             <br />
                                             Fax: 403.235.0878<br />
-                                            <a href="mailto:lemarchanddisp@gmail.com" className="text-white link">yegc@gmail.com</a>
+                                            <a href="mailto:yegc@gmail.com" className="text-white link">yegc@gmail.com</a>
                                         </p>
                                         <p className="text-white op-8">
                                             THE MEDICINE SHOPPE PHARMACY #212

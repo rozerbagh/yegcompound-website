@@ -29,7 +29,7 @@ const Footer = () => {
             <h5 className="m-b-20">Email</h5>
             <p>
               Office :
-              <Link href="mailto:lemarchanddisp@gmail.com">
+              <Link href="mailto:yegc@gmail.com">
                 <a className="link">yegc@gmail.com</a>
               </Link>
               <br />

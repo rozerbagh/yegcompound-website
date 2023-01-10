@@ -8,6 +8,7 @@ import bannerimg from "../../assets/images/landingpage/banner-img.png";
 import TestimonialComponent from "../custom/sections/testimonialcomponent";
 import { services, products } from "../../helper/index";
 const Home = (props) => {
+    console.log(props)
     const [cookies] = useCookies(["auth"]);
     return (
         <>
@@ -119,3 +120,12 @@ const Home = (props) => {
 };
 
 export default Home;
+// This gets called on every request
+export async function getServerSideProps() {
+    // Fetch data from external API
+    const res = await fetch(`https://.../data`)
+    const data = await res.json()
+  
+    // Pass data to the page via props
+    return { props: { data } }
+  }
