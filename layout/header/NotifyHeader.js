@@ -4,7 +4,9 @@ import React from 'react'
 // } from "reactstrap";
 function NotifyHeader() {
     return (
-        <div className="notify-header">We have moved to Suite 105, 11523 100 Avenue, Lemarchand Mansion, Edmonton, Alberta T5K0J8</div>
+        <div className="notify-header">
+            We have moved to THE MEDICINE SHOPPE PHARMACY #212 2905 17th Ave S E Calgary, (Alberta), T2A 0P7
+        </div>
     )
 }
 

@@ -7,12 +7,12 @@ export default function Contact(props) {
                 <title>{props.websiteTitle} | Contact</title>
                 <meta
                     name="description"
-                    content="Lemarchandi Dispensary contact form"
+                    content={`${props.websiteTitle} description`}
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             {/* <h1>Site is under maintainance</h1> */}
-            <ContactComponent />
+            <ContactComponent websiteTitle={props.websiteTitle} />
         </>
     );
 }
