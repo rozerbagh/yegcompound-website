@@ -103,7 +103,6 @@ export default function Login(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-        <h1>Site is under maintainance</h1>
         <div className="login">
           <Row>
             <Container>
@@ -154,8 +153,10 @@ export default function Login(props) {
                             </Button>
                           </Col>
                           <Col lg="12" className="m-0 justify-content-between">
-                            <p>Do not have an account </p>
-                            <Link href="/signup">Singup here</Link>
+                            <p>
+                              Do not have an account !{" "}
+                              <Link href="/signup">SignUp Here</Link>
+                            </p>
                           </Col>
                         </Row>
                       </Form>

@@ -61,8 +61,7 @@ Header 6
 .static-slider-head {
   min-height: 600px;
   display: flex;
-
-  background-color: #607df9;
+  background-color: $themecolor;
 
   .title {
     color: $white;
@@ -1463,6 +1462,13 @@ common-innerpage-banner
 Footer 4
 *******************/
 .footer4 {
+  color: $light !important;
+  a {
+    color: $light !important;
+  }
+  hr {
+    border-top: 1px solid $light;
+  }
   .f4-bottom-bar {
     padding-top: 10px;
     margin-top: 20px;

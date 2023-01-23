@@ -2,52 +2,83 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Link from "next/link";
-
+import { footerMenus } from "../../helper/index";
+import { TiLocation, TiPhone, TiMail } from "react-icons/ti";
 const Footer = () => {
   return (
-    <div className="footer4 b-t spacer">
+    <div className="footer4 b-t spacer bg-primary">
       <Container>
         <Row>
+          {footerMenus.map((item, idx) => (
+            <Col lg="3" md="6" className="m-b-30" key={idx}>
+              <h5 className="text-white m-b-20 text-uppercase">
+                {item.mainmenu}
+              </h5>
+              {item.lists.map((list, id) => (
+                <div key={idx + "-" + id}>
+                  <a href={list.path}>{list.name}</a>
+                </div>
+              ))}
+            </Col>
+          ))}
+        </Row>
+      </Container>
+      <Container>
+        <hr className="m-b-30" />
+        <Row>
           <Col lg="3" md="6" className="m-b-30">
-            <h5 className="m-b-20">Address</h5>
+            <h5 className="text-white m-b-20">
+              {/* <TiLocation /> */}
+              &nbsp; Address
+            </h5>
             <p>
-              THE MEDICINE SHOPPE PHARMACY #212
+              THE MEDICINE SHOPPE PHARMACY #377
               <br />
-              2905 17th Ave S E
+              6610 132 Ave NW
               <br />
-              Calgary, (Alberta), T2A 0P7
+              Edmonton AB
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
-            <h5 className="m-b-20">Phone</h5>
+            <h5 className="text-white m-b-20">
+              {/* <TiPhone /> */}
+              &nbsp; Phone
+            </h5>
             <p>
-              Office :  <a id="link-pharmacy-detail-page-phone" href="tel:403.235.0888">403.235.0888</a><br />
-              Fax: 403.235.0878
+              Office :{" "}
+              <a id="link-pharmacy-detail-page-phone" href="tel:403.235.0888">
+                ‭78070 57150‬
+              </a>
+              <br />
+              Fax: ‭78070 57140‬
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
-            <h5 className="m-b-20">Email</h5>
+            <h5 className="text-white m-b-20">
+              {/* <TiMail /> */}
+              &nbsp; Email
+            </h5>
             <p>
               Office :
-              <Link href="mailto:yegc@gmail.com">
-                <a className="link">yegc@gmail.com</a>
-              </Link>
+              <a href="mailto:valayrajgor@gmail.com" className="link">
+                &nbsp;valayrajgor@gmail.com
+              </a>
               <br />
               Site :
-              <Link href="https://yegcompounding.com/">
-                <span className="link">yegcompounding.com</span>
-              </Link>
+              <a href="https://yegcompounding.com/" className="link">
+                &nbsp;yegcompounding.com
+              </a>
             </p>
           </Col>
           <Col lg="3" md="6">
-            <h5 className="m-b-20">Social</h5>
-            <div className="round-social light">
+            <h5 className="text-white m-b-20">Social</h5>
+            <div className="footer-sq-icons">
               <Link href="https://www.facebook.com/medicineshoppecanada/">
                 <a className="link">
                   <i className="fa fa-facebook"></i>
                 </a>
               </Link>
-              <Link href="#">
+              {/* <Link href="#">
                 <a className="link">
                   <i className="fa fa-twitter"></i>
                 </a>
@@ -66,7 +97,7 @@ const Footer = () => {
                 <a className="link">
                   <i className="fa fa-instagram"></i>
                 </a>
-              </Link>
+              </Link> */}
             </div>
           </Col>
         </Row>
@@ -75,7 +106,8 @@ const Footer = () => {
             <Col md="12">
               <div className="d-flex font-14">
                 <div className="m-t-10 m-b-10 copyright">
-                  Copyrights &nbsp; {new Date().getFullYear()} &nbsp; All Rights Reserved by{" "}
+                  Copyrights &nbsp; {new Date().getFullYear()} &nbsp; All Rights
+                  Reserved by{" "}
                   <Link href="https://yegcompounding.com/">
                     <a className="link">yegcompounding.com</a>
                   </Link>
@@ -90,7 +122,22 @@ const Footer = () => {
                   <Link href="#">
                     <a className="p-10">Privacy Policy</a>
                   </Link>
+                  <a
+                    href="https://storebucket.fra1.digitaloceanspaces.com/License77073.jpg"
+                    target="_blank"
+                    className="p-10"
+                  >
+                    View License
+                  </a>
                 </div>
+              </div>
+              <div className="links font-14 d-flex flex-row-reverse">
+                <a
+                  href="https://storebucket.fra1.digitaloceanspaces.com/PatientConcernPoster.pdf"
+                  target="_blank"
+                >
+                  Click here to view the Alberta College of Pharmacy Patient
+                </a>
               </div>
             </Col>
           </Row>

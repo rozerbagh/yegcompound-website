@@ -587,6 +587,13 @@ Text Colors
   text-fill-color: transparent;
 }
 
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
 html body {
   .text-blue {
     color: $blue;
@@ -610,6 +617,10 @@ html body {
 
   .text-themecolor {
     color: $themecolor;
+  }
+
+  .text-white {
+    color: $light;
   }
 }
 
@@ -769,7 +780,15 @@ Rounds
 .round.round-primary {
   background: $primary;
 }
-
+.round-5 {
+  border-radius: 5px;
+}
+.round-10 {
+  border-radius: 10px;
+}
+.round-15 {
+  border-radius: 15px;
+}
 /*******************
 Labels
 *******************/
@@ -1730,4 +1749,34 @@ a.btn-outline-success {
   background-size: cover;
   background-position: top 20% center;
   background-image: $c2a-image;
+}
+
+.round-pcca {
+  border-radius: 5px;
+}
+.banner-img {
+  border-radius: 15px;
+}
+.p-cursor {
+  cursor: pointer;
+}
+.searchbar {
+  height: 100%;
+  border-radius: 5px;
+  margin-right: 10px;
+  input {
+    height: 100%;
+  }
+}
+.footer-sq-icons {
+  border-radius: 5px;
+  transition: 0.5s;
+  :hover {
+    transform: scale(1.5);
+  }
+}
+
+.detail-box {
+  box-shadow: 30px 40px 100px #bebdbd;
+  border-radius: 20px;
 }

@@ -6,9 +6,9 @@ import img1 from "../../assets/images/features/feature48/app-store.png";
 import img2 from "../../assets/images/features/feature48/play-store.png";
 
 const C2aComponent = () => {
-    return (
-        <div>
-            <div className="mini-spacer bg-info text-white c2a7">
+  return (
+    <div>
+      {/* <div className="mini-spacer bg-info text-white c2a7">
                 <Container>
                     <div className="d-flex">
                         <div className="display-7 align-self-center">
@@ -43,31 +43,36 @@ const C2aComponent = () => {
                         </Col>
                     </Row>
                 </Container>
-            </div>
-            <div className="spacer bg-white">
-                <Container>
-                    <Row>
-                        <Col>
-                            <div className="d-flex">
-                                <p className="align-self-center">
-                                    <em>
-                                        The pharmacy services presented in this section are offered by Medicine Shoppe pharmacists.
-                                        The pharmacists are solely responsible for the professional activities carried out during the practice of pharmacy.
-                                        These services are offered in participating pharmacies only. Certain fees and conditions may apply.
-                                        * The information contained herein is provided for informational purposes only and is not intended to
-                                        provide complete information on the subject matter or to replace the advice of a health professional.
-                                        This information does not constitute medical consultation, diagnosis or opinion and should not be
-                                        interpreted as such. Please consult your health care provider if you have any questions about your
-                                        health, medications or treatment.
-                                    </em>
-                                </p>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-        </div>
-    );
+            </div> */}
+      <div className="spacer bg-white">
+        <Container>
+          <Row>
+            <Col>
+              <div className="d-flex">
+                <p className="align-self-center">
+                  <em>
+                    The pharmacy services presented in this section are offered
+                    by Medicine Shoppe pharmacists. The pharmacists are solely
+                    responsible for the professional activities carried out
+                    during the practice of pharmacy. These services are offered
+                    in participating pharmacies only. Certain fees and
+                    conditions may apply. * The information contained herein is
+                    provided for informational purposes only and is not intended
+                    to provide complete information on the subject matter or to
+                    replace the advice of a health professional. This
+                    information does not constitute medical consultation,
+                    diagnosis or opinion and should not be interpreted as such.
+                    Please consult your health care provider if you have any
+                    questions about your health, medications or treatment.
+                  </em>
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </div>
+  );
 };
 
 export default C2aComponent;
