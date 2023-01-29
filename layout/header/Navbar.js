@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/link-passhref */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   UncontrolledDropdown,
   DropdownToggle,
@@ -15,11 +16,10 @@ import {
   Collapse,
   Input,
 } from "reactstrap";
-import Image from "next/image";
 import logo from "../../assets/images/logos/logo-white.svg";
-import logo2 from "../../assets/images/logos/white-logo.png";
+import { RiSearch2Fill } from "react-icons/ri";
 import { useCookies } from "react-cookie";
-const HeaderComponent = () => {
+const HeaderComponent = ({ mweb }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["auth"]);
   const toggle = () => setIsOpen(!isOpen);
@@ -30,171 +30,208 @@ const HeaderComponent = () => {
     }
   };
   return (
-    <div id="section" className="bg-primary">
+    <header id="header-section">
       <div className="header1 po-relative">
-        <Container fluid="xl">
-          <Navbar className="navbar-expand-lg h3-nav">
-            <div className="w-100">
-              <NavbarBrand href="/">
-                <Image
-                  src={logo}
-                  alt="yegcompunding.com"
-                  className="logo-image"
-                  height={"60px"}
-                  width={"200px"}
-                />
-              </NavbarBrand>
-            </div>
-            <NavbarToggler onClick={toggle}>
-              <span className="ti-menu"></span>
-            </NavbarToggler>
-            <div className="w-100 d-flex align-items-center bg-white searchbar">
-              <Input
-                type="text"
-                placeholder="Search..."
-                onChange={(e) => handleSearch(e)}
-              />
-            </div>
-            {cookies.auth?.token ? null : (
-              <div>
-                <Link href="/login">
-                  <div className="btn btn-primary">Login</div>
+        <Navbar className="navbar-expand-lg h3-nav navbar fixed-top navbar-dark bg-primary">
+          <Container fluid="xl" className="d-flex flex-column">
+            <div className="w-100 d-flex align-items-center">
+              <div className="p-cursor m-r-10">
+                <Link href="/">
+                  <Image
+                    src={logo}
+                    alt="yegcompunding.com"
+                    className="logo-image"
+                    // height={"80px"}
+                    width={"150px"}
+                  />
                 </Link>
               </div>
-            )}
-            {cookies.auth?.token && (
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav>
-                  <i className="fa fa-user"></i>&nbsp;&nbsp;
-                  <span>{cookies.auth?.userName}</span>{" "}
-                  <i className="fa fa-angle-down m-l-5"></i>
-                </DropdownToggle>
-                <DropdownMenu className="b-none animated fadeInUp">
-                  <DropdownItem>
-                    <NavItem>
-                      <Link href="/profile">Profile</Link>
-                    </NavItem>
-                  </DropdownItem>
-                  <DropdownItem>
-                    <NavItem>
-                      <Link href="/profile">Settings</Link>
-                    </NavItem>
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem
-                    onClick={() => {
-                      localStorage.clear();
-                      removeCookie("auth");
-                      window.location.href = "/";
-                    }}
-                  >
-                    Logout
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            )}
-          </Navbar>
-          <Navbar className="navbar-expand-lg h3-nav">
-            <Collapse isOpen={isOpen} navbar id="header1">
-              <Nav
-                navbar
-                className="text-white w-100 mb-3 mt-2 mt-lg-0 align-items-center d-flex justify-content-between"
-              >
-                <NavItem className="active">
-                  <Link href="/">
-                    <span className="text-white p-cursor">Home</span>
+              <NavbarToggler onClick={toggle}>
+                <span className="ti-menu text-white"></span>
+              </NavbarToggler>
+              {/* <RiSearch2Fill /> */}
+              <div className="w-100 d-flex align-items-center bg-white searchbar">
+                {mweb ? (
+                  <RiSearch2Fill />
+                ) : (
+                  <Input
+                    type="text"
+                    placeholder="Search..."
+                    onChange={(e) => handleSearch(e)}
+                  />
+                )}
+              </div>
+              {cookies.auth?.token ? null : (
+                <div>
+                  <Link href="/login">
+                    <div className="btn btn-primary">Login</div>
                   </Link>
-                </NavItem>
-                <NavItem>
-                  <Link className="text-white" href="/prescriptions">
-                    <span className="text-white p-cursor">Prescriptions</span>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/vaccines">
-                    <span className="text-white p-cursor">Vaccines</span>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/assesments-monitoring">
-                    <span className="text-white p-cursor">
-                      Assesments & Monitoring
-                    </span>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/medicine-customization">
-                    <span className="text-white p-cursor">
-                      Medication Customization
-                    </span>
-                  </Link>
-                </NavItem>
-                <NavItem>
-                  <Link href="/wellness-consultation">
-                    <span className="text-white p-cursor">
-                      {" "}
-                      Wellness Consultation
-                    </span>
-                  </Link>
-                </NavItem>
-                {/* <UncontrolledDropdown nav inNavbar>
+                </div>
+              )}
+              {cookies.auth?.token && (
+                <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav>
-                    Services <i className="fa fa-angle-down m-l-5"></i>
+                    <i className="fa fa-user"></i>&nbsp;&nbsp;
+                    <span>{cookies.auth?.userName}</span>{" "}
+                    <i className="fa fa-angle-down m-l-5"></i>
                   </DropdownToggle>
                   <DropdownMenu className="b-none animated fadeInUp">
-                    <DropdownItem header>
+                    <DropdownItem>
                       <NavItem>
-                        <Link href="/prescriptions">Prescriptions</Link>
+                        <Link href="/profile">Profile</Link>
                       </NavItem>
                     </DropdownItem>
-                    <DropdownItem header>
+                    <DropdownItem>
                       <NavItem>
-                        <Link href="/vaccines">Vaccines</Link>
-                      </NavItem>
-                    </DropdownItem>
-                    <DropdownItem header>
-                      <NavItem>
-                        <Link href="/assesments-monitoring">
-                          Assesments & Monitoring
-                        </Link>
-                      </NavItem>
-                    </DropdownItem>
-                    <DropdownItem header>
-                      <NavItem>
-                        <Link href="/medicine-customization">
-                          Medication Customization
-                        </Link>
-                      </NavItem>
-                    </DropdownItem>
-                    <DropdownItem header>
-                      <NavItem>
-                        <Link href="/wellness-consultation">
-                          Wellness Consultation
-                        </Link>
+                        <Link href="/profile">Settings</Link>
                       </NavItem>
                     </DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem>Referals</DropdownItem>
+                    <DropdownItem
+                      onClick={() => {
+                        localStorage.clear();
+                        removeCookie("auth");
+                        window.location.href = "/";
+                      }}
+                    >
+                      Logout
+                    </DropdownItem>
                   </DropdownMenu>
-                </UncontrolledDropdown> */}
-                {cookies.auth?.token && (
-                  <NavItem>
-                    <Link href="/orders">
-                      <span className="text-white p-cursor">Orders</span>
+                </UncontrolledDropdown>
+              )}
+            </div>
+            <div className="w-100">
+              <Collapse isOpen={isOpen} navbar id="header1">
+                <Nav
+                  navbar
+                  className="text-white w-100 mb-3 mt-2 mt-lg-0 align-items-center d-flex justify-content-start"
+                >
+                  <NavItem className="active m-r-10">
+                    <Link href="/">
+                      <span className="text-white p-cursor">Home</span>
                     </Link>
                   </NavItem>
-                )}
-                <NavItem>
-                  <Link href="/contact">
-                    <span className="text-white p-cursor">Contact Us</span>
-                  </Link>
-                </NavItem>{" "}
-              </Nav>
-            </Collapse>
-          </Navbar>
-        </Container>
+                  <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav className="m-r-10">
+                      <span className="text-white p-cursor">Services</span>
+                      <i className="fa fa-angle-down m-l-5 text-white "></i>
+                    </DropdownToggle>
+                    <DropdownMenu className="b-none animated fadeInUp">
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link className="text-white" href="/prescriptions">
+                            <span className="text-primary p-cursor">
+                              Prescriptions
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link href="/vaccines">
+                            <span className="text-primary p-cursor">
+                              Vaccines
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link href="/assesments-monitoring">
+                            <span className="text-primary p-cursor">
+                              Assesments & Monitoring
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link href="/medicine-customization">
+                            <span className="text-primary p-cursor">
+                              Medication Customization
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link href="/wellness-consultation">
+                            <span className="text-primary p-cursor">
+                              {" "}
+                              Wellness Consultation
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem>Referals</DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                  <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav className="m-r-10">
+                      <span className="text-white p-cursor">Compounding</span>
+                      <i className="fa fa-angle-down m-l-5 text-white "></i>
+                    </DropdownToggle>
+                    <DropdownMenu className="b-none animated fadeInUp">
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link href="/general-compounding">
+                            <span className="text-primary p-cursor">
+                              General Compounding
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link href="/hormone-replacement-therapy">
+                            <span className="text-primary p-cursor">
+                              Hormone Replacement Therapy (HRT)
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link href="/pain-management">
+                            <span className="text-primary p-cursor">
+                              Pain Management
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem header>
+                        <NavItem>
+                          <Link href="/veterinary-compounding">
+                            <span className="text-primary p-cursor">
+                              Veterinary Compounding
+                            </span>
+                          </Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem>Referals</DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                  {cookies.auth?.token && (
+                    <NavItem>
+                      <Link href="/orders">
+                        <span className="text-white p-cursor">Orders</span>
+                      </Link>
+                    </NavItem>
+                  )}
+                  <NavItem>
+                    <Link href="/contact">
+                      <span className="text-white p-cursor">Contact Us</span>
+                    </Link>
+                  </NavItem>{" "}
+                </Nav>
+              </Collapse>
+            </div>
+          </Container>
+        </Navbar>
       </div>
-    </div>
+    </header>
   );
 };
 

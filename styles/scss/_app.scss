@@ -593,6 +593,17 @@ Text Colors
 .text-uppercase {
   text-transform: uppercase !important;
 }
+.text-bullet {
+  content: "";
+  display: block;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-color: #bebdbd;
+  border-radius: 10px;
+  margin-right: 5px;
+  align-items: center;
+}
 
 html body {
   .text-blue {
@@ -1779,4 +1790,8 @@ a.btn-outline-success {
 .detail-box {
   box-shadow: 30px 40px 100px #bebdbd;
   border-radius: 20px;
+}
+
+header {
+  z-index: 999;
 }

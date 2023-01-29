@@ -3,12 +3,12 @@ import C2aComponent from "../components/contact/c2a";
 // import NotifyHeader from "./header/NotifyHeader";
 import Footer from "./footer/Footer";
 import { CookiesProvider } from "react-cookie";
-const Layout = ({ children }) => {
+const Layout = ({ children, mweb }) => {
   return (
     <CookiesProvider>
       <div id="main-wrapper">
         {/* <NotifyHeader /> */}
-        <Header />
+        <Header mweb={mweb} />
         <div className="page-wrapper">
           <div className="container-fluid">{children}</div>
         </div>

@@ -14,10 +14,10 @@ const Home = (props) => {
   const [cookies] = useCookies(["auth"]);
   return (
     <>
-      <div className="static-slider-head banner2">
+      <div className="static-slider-head banner2 p-t-30">
         <Container>
           <Row className="">
-            <Col lg="6" md="6" className="align-self-center">
+            <Col lg="6" md="6" className="m-b-20 align-self-center">
               <h1 className="title">{props.websiteTitle}</h1>
               <h4 className="subtitle font-light">
                 Providing our patients and colleagues with quality compounded
@@ -82,7 +82,7 @@ const Home = (props) => {
               xs="12"
               className="p-1 text-center w-100 bg-primary text-white round-5"
             >
-              <a href="/" className="text-white">
+              <a href="/contact-us" className="text-white">
                 Call or visit to discuss how we can partner to enhance your
                 bussiness with customized compounding solutions.
               </a>
