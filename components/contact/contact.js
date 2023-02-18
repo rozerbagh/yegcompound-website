@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
+import validator from "validator";
+import Image from "next/image";
 import {
   Row,
   Col,
@@ -7,9 +10,18 @@ import {
   FormGroup,
   Input,
   Button,
+  Alert,
 } from "reactstrap";
-
+import { toast } from "react-toastify";
+import Map from "./Map";
+import profilepic from "../../assets/images/landingpage/profile-pic.jpg";
 const ContactComponent = (props) => {
+  const [formInputs, setFormInputs] = useState({
+    email: "",
+    name: "",
+    subject: "",
+    message: "",
+  });
   const [storeTimings, setStoreTimings] = useState([
     {
       day: "Mon",
@@ -54,7 +66,46 @@ const ContactComponent = (props) => {
       dayNum: 0,
     },
   ]);
+  const [successMessage, setSuccessMessage] = useState(null);
+  useEffect(() => {
+    emailjs.init("S09-WBx17FUpA9z5D");
+    console.log(emailjs);
+  }, []);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
 
+    try {
+      emailjs
+        .send("service_pcdrk86", "template_lcwvb0c", {
+          from_name: formInputs.name,
+          to_name: "Valay Rajgor",
+          subject: formInputs.subject,
+          message: formInputs.message,
+          reply_to: formInputs.email,
+          person_email: formInputs.email,
+        })
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response, response.status, response.text);
+            setSuccessMessage("Thanks for contacting, Our team will reach us");
+            setTimeout(() => {
+              setSuccessMessage(null);
+            }, 5000);
+            setFormInputs((ps) => ({
+              ...ps,
+              name: "",
+              email: "",
+              subject: "",
+              message: "",
+            }));
+            toast.success("Thanks for contacting us, Our team will reach us");
+          },
+          function (err) {
+            console.log("FAILED...", err);
+          }
+        );
+    } catch (err) {}
+  };
   return (
     <div>
       <div className="spacer bg-light">
@@ -79,21 +130,51 @@ const ContactComponent = (props) => {
                 <Col lg="8">
                   <div className="contact-box p-r-40">
                     <h4 className="title">Quick Contact</h4>
-                    <Form>
+                    <Form onSubmit={handleFormSubmit}>
                       <Row>
                         <Col lg="6">
                           <FormGroup className="m-t-15">
-                            <Input type="text" placeholder="name" />
+                            <Input
+                              type="text"
+                              placeholder="name"
+                              value={formInputs.name}
+                              onChange={(e) =>
+                                setFormInputs((ps) => ({
+                                  ...ps,
+                                  name: e?.target?.value,
+                                }))
+                              }
+                            />
                           </FormGroup>
                         </Col>
                         <Col lg="6">
                           <FormGroup className="m-t-15">
-                            <Input type="email" placeholder="email" />
+                            <Input
+                              type="email"
+                              placeholder="email"
+                              value={formInputs.email}
+                              onChange={(e) =>
+                                setFormInputs((ps) => ({
+                                  ...ps,
+                                  email: e?.target?.value,
+                                }))
+                              }
+                            />
                           </FormGroup>
                         </Col>
                         <Col lg="12">
                           <FormGroup className="m-t-15">
-                            <Input type="text" placeholder="subject" />
+                            <Input
+                              type="text"
+                              placeholder="subject"
+                              value={formInputs.subject}
+                              onChange={(e) =>
+                                setFormInputs((ps) => ({
+                                  ...ps,
+                                  subject: e?.target?.value,
+                                }))
+                              }
+                            />
                           </FormGroup>
                         </Col>
                         <Col lg="12">
@@ -102,10 +183,17 @@ const ContactComponent = (props) => {
                               type="textarea"
                               name="text"
                               placeholder="message"
+                              value={formInputs.message}
+                              onChange={(e) =>
+                                setFormInputs((ps) => ({
+                                  ...ps,
+                                  message: e?.target?.value,
+                                }))
+                              }
                             />
                           </FormGroup>
                         </Col>
-                        <Col lg="12">
+                        <Col lg="12" className="d-flex align-items-center">
                           <Button
                             type="submit"
                             className="btn btn-danger-gradiant m-t-20 btn-arrow"
@@ -115,6 +203,12 @@ const ContactComponent = (props) => {
                               Submit <i className="ti-arrow-right"></i>
                             </span>
                           </Button>
+                          &nbsp;
+                          {successMessage ? (
+                            <div className="m-t-20">
+                              <Alert>{successMessage}</Alert>
+                            </div>
+                          ) : null}
                         </Col>
                       </Row>
                     </Form>
@@ -157,12 +251,19 @@ const ContactComponent = (props) => {
         </Row>
       </div>
       <Container>
-        <Row className="align-items-center">
+        <Row className="align-items-baseline">
           <Col xs="12" md="10">
             <h2 className="text-primary">{props.websiteTitle}</h2>
-            <h6 className="text-primary">
+            <h6 className="text-primary d-flex align-items-center">
               Pharmacist Owner :{" "}
               <a href="mailto:valayrajgor.@gmail.com">Valay Rajgor</a>
+              &nbsp;
+              <Image
+                src={profilepic}
+                alt="valay rajgor"
+                width={"60px"}
+                height="60px"
+              />
             </h6>
           </Col>
           <Col xs="12" md="2">
@@ -191,6 +292,10 @@ const ContactComponent = (props) => {
                 </h6>
               </div>
             ))}
+          </Col>
+          <Col xs="12" md="7">
+            <h4 className="text-primary">Location</h4>
+            <Map />
           </Col>
         </Row>
       </Container>

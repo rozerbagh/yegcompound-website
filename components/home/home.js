@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container, Row, Col, Card, CardBody } from "reactstrap";
 import { useCookies } from "react-cookie";
-import bannerimg from "../../assets/images/landingpage/banner-img.jpeg";
+import bannerimg from "../../assets/images/landingpage/banner-img.png";
 import pcca from "../../assets/images/logos/pcca.svg";
 import TestimonialComponent from "../custom/sections/testimonialcomponent";
 import { services, products, compounding } from "../../helper/index";
@@ -46,7 +46,11 @@ const Home = (props) => {
               {/* <Image src={pcca} alt="pcca" /> */}
             </Col>
             <Col lg="6" md="6">
-              <Image src={bannerimg} alt="hero banner" className="banner-img" />
+              <Image
+                src={bannerimg}
+                alt="hero banner"
+                className="banner-img bg-white"
+              />
             </Col>
           </Row>
         </Container>
@@ -147,7 +151,7 @@ const Home = (props) => {
           </Row>
         </Container>
       </div> */}
-      <TestimonialComponent />
+      {/* <TestimonialComponent /> */}
     </>
   );
 };
