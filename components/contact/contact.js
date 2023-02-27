@@ -13,7 +13,7 @@ import {
   Alert,
 } from "reactstrap";
 import { toast } from "react-toastify";
-import Map from "./Map";
+import Map from "./MapFrame";
 import profilepic from "../../assets/images/landingpage/profile-pic.jpg";
 const ContactComponent = (props) => {
   const [formInputs, setFormInputs] = useState({
@@ -230,18 +230,18 @@ const ContactComponent = (props) => {
                       Fax: 78070 57150
                       <br />
                       <a
-                        href="mailto:yegc@gmail.com"
+                        href="mailto:valayrajgor@gmail.com"
                         className="text-white link"
                       >
-                        yegc@gmail.com
+                        valayrajgor@gmail.com
                       </a>
                     </p>
                     <p className="text-white op-8">
                       THE MEDICINE SHOPPE PHARMACY #377
                       <br />
-                      2905 17th Ave S E
+                      00610 132 Ave NW
                       <br />
-                      Calgary, (Alberta), T2A 0P7
+                      Edmonton, (Alberta), T5C 0A2
                     </p>
                   </div>
                 </Col>
@@ -252,11 +252,13 @@ const ContactComponent = (props) => {
       </div>
       <Container>
         <Row className="align-items-baseline">
-          <Col xs="12" md="10">
+          <Col xs="12" md="11">
             <h1 className="text-primary">{props.websiteTitle}</h1>
-            <h2 className="text-primary title d-flex align-items-center">
-              Pharmacist Owner : &nbsp;
-              <a href="mailto:valayrajgor.@gmail.com">Valay Rajgor</a>
+            <h3 className="text-primary title d-flex align-items-center">
+              Pharmacist Manager & Owner : &nbsp;
+              <a href="mailto:valayrajgor.@gmail.com">
+                Valay Rajgor (MBA, B.Pharm, APA)
+              </a>
               &nbsp;
               <Image
                 src={profilepic}
@@ -264,9 +266,9 @@ const ContactComponent = (props) => {
                 width={"100px"}
                 height="100px"
               />
-            </h2>
+            </h3>
           </Col>
-          <Col xs="12" md="2">
+          <Col xs="12" md="1">
             <h6 className="text-primary">Store #377</h6>
           </Col>
         </Row>
