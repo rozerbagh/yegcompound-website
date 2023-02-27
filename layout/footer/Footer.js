@@ -26,37 +26,37 @@ const Footer = ({ ...props }) => {
       <Container>
         {/* <hr className="m-b-30" /> */}
         <Row>
-          <Col lg="5" md="6" className="m-b-30">
+          <Col lg="5" md="5" className="m-b-30">
             <h5 className="text-white m-b-20">
               {/* <TiLocation /> */}
-              &nbsp; Address
+              Address
             </h5>
             <p>
               THE MEDICINE SHOPPE PHARMACY #377
               <br />
               00610 132 Ave NW
               <br />
-              Edmonton, (Alberta), T5C 0A2
+              Edmonton, (Alberta), T5C OA2
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="text-white m-b-20">
               {/* <TiPhone /> */}
-              &nbsp; Phone
+              Phone
             </h5>
             <p>
               Office :{" "}
               <a id="link-pharmacy-detail-page-phone" href="tel:7807057150">
-                ‭78070 57150‬
+                ‭780 705 7150‬
               </a>
               <br />
-              Fax: ‭78070 57140‬
+              Fax: ‭780 705 7140‬
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
             <h5 className="text-white m-b-20">
               {/* <TiMail /> */}
-              &nbsp; Email
+              Email
             </h5>
             <p>
               Office :

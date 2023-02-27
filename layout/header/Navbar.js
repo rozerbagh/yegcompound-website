@@ -50,7 +50,11 @@ const HeaderComponent = ({ mweb }) => {
                 <span className="ti-menu text-white"></span>
               </NavbarToggler>
               {/* <RiSearch2Fill /> */}
-              <div className="w-100 d-flex align-items-center bg-white searchbar">
+              <div
+                className={`${
+                  cookies.auth?.token ? "w-50" : "w-100"
+                } d-flex align-items-center bg-white searchbar`}
+              >
                 {mweb ? (
                   <RiSearch2Fill />
                 ) : (
@@ -70,14 +74,14 @@ const HeaderComponent = ({ mweb }) => {
               )}
               {cookies.auth?.token && (
                 <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav>
+                  <DropdownToggle nav className="text-white">
                     <i className="fa fa-user"></i>&nbsp;&nbsp;
                     <span>{cookies.auth?.userName}</span>{" "}
                     <i className="fa fa-angle-down m-l-5"></i>
                   </DropdownToggle>
                   <DropdownMenu className="b-none animated fadeInUp">
                     <DropdownItem>
-                      <NavItem>
+                      <NavItem className="text-white">
                         <Link href="/profile">Profile</Link>
                       </NavItem>
                     </DropdownItem>
@@ -214,7 +218,7 @@ const HeaderComponent = ({ mweb }) => {
                     </DropdownMenu>
                   </UncontrolledDropdown>
                   {cookies.auth?.token && (
-                    <NavItem>
+                    <NavItem className="m-r-20">
                       <Link href="/orders">
                         <span className="text-white p-cursor">Orders</span>
                       </Link>

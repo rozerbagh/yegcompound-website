@@ -224,10 +224,10 @@ const ContactComponent = (props) => {
                         id="link-pharmacy-detail-page-phone"
                         href="tel:78070 57150"
                       >
-                        78070 57150
+                        780 705 7150
                       </a>
                       <br />
-                      Fax: 78070 57150
+                      Fax: 780 705 7150
                       <br />
                       <a
                         href="mailto:valayrajgor@gmail.com"
@@ -241,7 +241,7 @@ const ContactComponent = (props) => {
                       <br />
                       00610 132 Ave NW
                       <br />
-                      Edmonton, (Alberta), T5C 0A2
+                      Edmonton, (Alberta), T5C OA2
                     </p>
                   </div>
                 </Col>
