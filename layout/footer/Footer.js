@@ -4,10 +4,10 @@ import { Container, Row, Col } from "reactstrap";
 import Link from "next/link";
 import { footerMenus } from "../../helper/index";
 import { TiLocation, TiPhone, TiMail } from "react-icons/ti";
-const Footer = () => {
+const Footer = ({ ...props }) => {
   return (
     <div className="footer4 b-t spacer bg-primary">
-      <Container>
+      {/* <Container>
         <Row>
           {footerMenus.map((item, idx) => (
             <Col lg="3" md="6" className="m-b-30" key={idx}>
@@ -22,11 +22,11 @@ const Footer = () => {
             </Col>
           ))}
         </Row>
-      </Container>
+      </Container> */}
       <Container>
-        <hr className="m-b-30" />
+        {/* <hr className="m-b-30" /> */}
         <Row>
-          <Col lg="3" md="6" className="m-b-30">
+          <Col lg="5" md="6" className="m-b-30">
             <h5 className="text-white m-b-20">
               {/* <TiLocation /> */}
               &nbsp; Address
@@ -34,9 +34,9 @@ const Footer = () => {
             <p>
               THE MEDICINE SHOPPE PHARMACY #377
               <br />
-              6610 132 Ave NW
+              2905 17th Ave S E
               <br />
-              Edmonton AB
+              Calgary, (Alberta), T2A 0P7
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">
@@ -46,7 +46,7 @@ const Footer = () => {
             </h5>
             <p>
               Office :{" "}
-              <a id="link-pharmacy-detail-page-phone" href="tel:403.235.0888">
+              <a id="link-pharmacy-detail-page-phone" href="tel:7807057150">
                 ‭78070 57150‬
               </a>
               <br />
@@ -70,7 +70,7 @@ const Footer = () => {
               </a>
             </p>
           </Col>
-          <Col lg="3" md="6">
+          <Col lg="1" md="6">
             <h5 className="text-white m-b-20">Social</h5>
             <div className="footer-sq-icons">
               <Link href="https://www.facebook.com/medicineshoppecanada/">

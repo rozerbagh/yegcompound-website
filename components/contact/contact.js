@@ -13,7 +13,7 @@ import {
   Alert,
 } from "reactstrap";
 import { toast } from "react-toastify";
-import Map from "./Map";
+import Map from "./Mapbox";
 import profilepic from "../../assets/images/landingpage/profile-pic.jpg";
 const ContactComponent = (props) => {
   const [formInputs, setFormInputs] = useState({
@@ -55,7 +55,7 @@ const ContactComponent = (props) => {
     },
     {
       day: "Sat",
-      timing: "09:00 AM - 05:00 PM",
+      timing: "CLOSED",
       active: false,
       dayNum: 6,
     },
@@ -127,16 +127,16 @@ const ContactComponent = (props) => {
           <Container>
             <div className="spacer">
               <Row className="m-0">
-                <Col lg="8">
+                <Col lg="6">
                   <div className="contact-box p-r-40">
                     <h4 className="title">Quick Contact</h4>
                     <Form onSubmit={handleFormSubmit}>
                       <Row>
-                        <Col lg="6">
+                        <Col lg="12">
                           <FormGroup className="m-t-15">
                             <Input
                               type="text"
-                              placeholder="name"
+                              placeholder="Name"
                               value={formInputs.name}
                               onChange={(e) =>
                                 setFormInputs((ps) => ({
@@ -147,11 +147,11 @@ const ContactComponent = (props) => {
                             />
                           </FormGroup>
                         </Col>
-                        <Col lg="6">
+                        <Col lg="12">
                           <FormGroup className="m-t-15">
                             <Input
                               type="email"
-                              placeholder="email"
+                              placeholder="Email"
                               value={formInputs.email}
                               onChange={(e) =>
                                 setFormInputs((ps) => ({
@@ -166,7 +166,7 @@ const ContactComponent = (props) => {
                           <FormGroup className="m-t-15">
                             <Input
                               type="text"
-                              placeholder="subject"
+                              placeholder="Subject"
                               value={formInputs.subject}
                               onChange={(e) =>
                                 setFormInputs((ps) => ({
@@ -182,7 +182,7 @@ const ContactComponent = (props) => {
                             <Input
                               type="textarea"
                               name="text"
-                              placeholder="message"
+                              placeholder="Message"
                               value={formInputs.message}
                               onChange={(e) =>
                                 setFormInputs((ps) => ({
@@ -214,20 +214,20 @@ const ContactComponent = (props) => {
                     </Form>
                   </div>
                 </Col>
-                <Col lg="4">
+                <Col lg="6">
                   <div className="detail-box p-40 bg-primary">
-                    <h2 className="text-white">{props.websiteTitle}</h2>
+                    <h3 className="text-white">{props.websiteTitle}</h3>
                     <p className="text-white m-t-30 op-8">
                       Office :{" "}
                       <a
                         className="text-white"
                         id="link-pharmacy-detail-page-phone"
-                        href="tel:403.235.0888"
+                        href="tel:78070 57150"
                       >
-                        403.235.0888
+                        78070 57150
                       </a>
                       <br />
-                      Fax: 403.235.0878
+                      Fax: 78070 57150
                       <br />
                       <a
                         href="mailto:yegc@gmail.com"
@@ -237,7 +237,7 @@ const ContactComponent = (props) => {
                       </a>
                     </p>
                     <p className="text-white op-8">
-                      THE MEDICINE SHOPPE PHARMACY #212
+                      THE MEDICINE SHOPPE PHARMACY #377
                       <br />
                       2905 17th Ave S E
                       <br />
@@ -253,18 +253,18 @@ const ContactComponent = (props) => {
       <Container>
         <Row className="align-items-baseline">
           <Col xs="12" md="10">
-            <h2 className="text-primary">{props.websiteTitle}</h2>
-            <h6 className="text-primary d-flex align-items-center">
-              Pharmacist Owner :{" "}
+            <h1 className="text-primary">{props.websiteTitle}</h1>
+            <h2 className="text-primary title d-flex align-items-center">
+              Pharmacist Owner : &nbsp;
               <a href="mailto:valayrajgor.@gmail.com">Valay Rajgor</a>
               &nbsp;
               <Image
                 src={profilepic}
                 alt="valay rajgor"
-                width={"60px"}
-                height="60px"
+                width={"100px"}
+                height="100px"
               />
-            </h6>
+            </h2>
           </Col>
           <Col xs="12" md="2">
             <h6 className="text-primary">Store #377</h6>

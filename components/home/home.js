@@ -17,8 +17,8 @@ const Home = (props) => {
       <div className="static-slider-head banner2 p-t-30">
         <Container>
           <Row className="">
-            <Col lg="6" md="6" className="m-b-20 align-self-center">
-              <h1 className="title">{props.websiteTitle}</h1>
+            <Col lg="8" md="8" xs="12" className="m-b-20 align-self-center">
+              <h1 className="text-white">{props.websiteTitle}</h1>
               <h4 className="subtitle font-light">
                 Providing our patients and colleagues with quality compounded
                 medications and pharmaceutical services.
@@ -45,7 +45,7 @@ const Home = (props) => {
               )}
               {/* <Image src={pcca} alt="pcca" /> */}
             </Col>
-            <Col lg="6" md="6">
+            <Col lg="4" md="4">
               <Image
                 src={bannerimg}
                 alt="hero banner"
@@ -75,9 +75,9 @@ const Home = (props) => {
                     </div>
                     <h5 className="font-medium">{ele.name}</h5>
                     <p className="m-t-20">{ele.description}</p>
-                    {/* <a href="#" className="linking text-themecolor">
+                    <a href={ele.path} className="linking text-themecolor">
                       Explore More<i className="ti-arrow-right"></i>
-                    </a> */}
+                    </a>
                   </CardBody>
                 </Card>
               </Col>
@@ -86,7 +86,7 @@ const Home = (props) => {
               xs="12"
               className="p-1 text-center w-100 bg-primary text-white round-5"
             >
-              <a href="/contact-us" className="text-white">
+              <a href="/contact" className="text-white">
                 Call or visit to discuss how we can partner to enhance your
                 bussiness with customized compounding solutions.
               </a>

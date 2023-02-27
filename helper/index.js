@@ -100,6 +100,7 @@ export const compounding = [
     Would a loved one benefit from having multiple medications combined into a single dose?
     Compounding pharmacists provide solutions to all these problems, and more.`,
     icon: genCompounding,
+    path: "/general-compounding",
   },
   {
     name: "Hormone Replacement Therapy (HRT)",
@@ -107,6 +108,7 @@ export const compounding = [
     Hormones have a powerful effect on your body and many areas of your health, including your mood, your metabolism, 
     and your sexual and reproductive function.`,
     icon: hormoneReplacement,
+    path: "/hormone-replacement-therapy",
   },
   {
     name: "Pain Management",
@@ -117,6 +119,7 @@ export const compounding = [
     can also have unwanted side effects like drowsiness, dizziness or stomach irritation.
     While many patients just accept these side effects as the cost of pain relief, there may be a better solution for them: pharmacy compounding.`,
     icon: painManagement,
+    path: "/pain-management",
   },
   {
     name: "Veterinary Compounding",
@@ -126,6 +129,7 @@ export const compounding = [
     Today’s veterinarians understand this, and many rely on compounding as one way to deliver this advanced level of care.
     Consider how hard it is to get your cat to swallow a pill, and you'll start to understand the advantages of compounding for pets.`,
     icon: veterinaryCompounding,
+    path: "/veterinary-compounding",
   },
 ];
 
@@ -357,3 +361,5 @@ export const footerMenus = [
     ],
   },
 ];
+
+export const googleDetails = {};

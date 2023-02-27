@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Script from "next/script";
 import "../styles/scss/style.scss";
 import Layout from "../layout/Layout";
 import { websiteTitle } from "../helper/index";
@@ -21,9 +22,12 @@ function MyApp({ Component, pageProps }) {
     getMobileOS();
   }, []);
   return (
-    <Layout mweb={mweb}>
-      <Component {...pageProps} websiteTitle={websiteTitle} mweb={mweb} />
-    </Layout>
+    <>
+      <Script src="https://accounts.google.com/gsi/client" async defer />
+      <Layout mweb={mweb}>
+        <Component {...pageProps} websiteTitle={websiteTitle} mweb={mweb} />
+      </Layout>
+    </>
   );
 }
 

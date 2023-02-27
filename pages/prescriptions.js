@@ -105,8 +105,8 @@ export default function Services(props) {
                           <div className="m-r-20">
                             <Image
                               src={pres.img}
-                              height="70"
-                              width="100"
+                              // height="70"
+                              // width="100"
                               className="rounded"
                               alt="img"
                             />
@@ -119,7 +119,7 @@ export default function Services(props) {
                       </Col>
                       <Col md="4" className="text-center">
                         <a
-                          href="tel:403.235.0888"
+                          href="tel:7807057150"
                           className="text-white linking bg-info"
                         >
                           Lets Talk <i className="ti-arrow-right"></i>
