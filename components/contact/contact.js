@@ -13,7 +13,7 @@ import {
   Alert,
 } from "reactstrap";
 import { toast } from "react-toastify";
-import Map from "./Mapbox";
+import Map from "./Map";
 import profilepic from "../../assets/images/landingpage/profile-pic.jpg";
 const ContactComponent = (props) => {
   const [formInputs, setFormInputs] = useState({
