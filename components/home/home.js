@@ -14,7 +14,7 @@ const Home = (props) => {
   const [cookies] = useCookies(["auth"]);
   return (
     <>
-      <div className="static-slider-head banner2 p-t-30">
+      <div className="static-slider-head p-t-30">
         <Container>
           <Row className="">
             <Col lg="8" md="8" xs="12" className="m-b-20 align-self-center">

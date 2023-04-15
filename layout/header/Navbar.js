@@ -29,6 +29,7 @@ const HeaderComponent = ({ mweb }) => {
       // alert("Seraching... Coming Soon");
     }
   };
+
   return (
     <header id="header-section">
       <div className="header1 po-relative">
