@@ -169,7 +169,9 @@ const HeaderComponent = ({ mweb }) => {
                         </NavItem>
                       </DropdownItem>
                       <DropdownItem divider />
-                      <DropdownItem>Referals</DropdownItem>
+                      <DropdownItem>
+                        <Link href="/contact">Referals</Link>
+                      </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav inNavbar>
@@ -215,7 +217,9 @@ const HeaderComponent = ({ mweb }) => {
                         </NavItem>
                       </DropdownItem>
                       <DropdownItem divider />
-                      <DropdownItem>Referals</DropdownItem>
+                      <DropdownItem>
+                        <Link href="/contact">Referals</Link>
+                      </DropdownItem>
                     </DropdownMenu>
                   </UncontrolledDropdown>
                   {cookies.auth?.token && (

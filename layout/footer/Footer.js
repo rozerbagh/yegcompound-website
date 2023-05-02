@@ -34,9 +34,9 @@ const Footer = ({ ...props }) => {
             <p>
               THE MEDICINE SHOPPE PHARMACY #377
               <br />
-              00610 132 Ave NW
+              6610 132 Ave NW
               <br />
-              Edmonton, (Alberta), T5C OA2
+              Edmonton, (Alberta), T5C 0A2
             </p>
           </Col>
           <Col lg="3" md="6" className="m-b-30">

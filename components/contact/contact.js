@@ -239,9 +239,9 @@ const ContactComponent = (props) => {
                     <p className="text-white op-8">
                       THE MEDICINE SHOPPE PHARMACY #377
                       <br />
-                      00610 132 Ave NW
+                      6610 132 Ave NW
                       <br />
-                      Edmonton, (Alberta), T5C OA2
+                      Edmonton, (Alberta), T5C 0A2
                     </p>
                   </div>
                 </Col>
