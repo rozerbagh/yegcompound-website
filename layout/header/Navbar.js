@@ -21,6 +21,7 @@ import { RiSearch2Fill } from "react-icons/ri";
 import { useCookies } from "react-cookie";
 const HeaderComponent = ({ mweb }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["auth"]);
   const toggle = () => setIsOpen(!isOpen);
   const handleSearch = (e) => {
@@ -35,7 +36,7 @@ const HeaderComponent = ({ mweb }) => {
       <div className="header1 po-relative">
         <Navbar className="navbar-expand-lg h3-nav navbar fixed-top navbar-dark bg-primary">
           <Container fluid="xl" className="d-flex flex-column">
-            <div className="w-100 d-flex align-items-center">
+            <div className="w-100 d-flex align-items-center justify-content-between">
               <div className="p-cursor m-r-10">
                 <Link href="/">
                   <Image
@@ -52,9 +53,7 @@ const HeaderComponent = ({ mweb }) => {
               </NavbarToggler>
               {/* <RiSearch2Fill /> */}
               <div
-                className={`${
-                  cookies.auth?.token ? "w-50" : "w-100"
-                } d-flex align-items-center bg-white searchbar`}
+                className={`w-50 d-flex align-items-center bg-white searchbar`}
               >
                 {mweb ? (
                   <RiSearch2Fill />
@@ -74,34 +73,41 @@ const HeaderComponent = ({ mweb }) => {
                 </div>
               )}
               {cookies.auth?.token && (
-                <UncontrolledDropdown nav inNavbar>
-                  <DropdownToggle nav className="text-white">
-                    <i className="fa fa-user"></i>&nbsp;&nbsp;
-                    <span>{cookies.auth?.userName}</span>{" "}
-                    <i className="fa fa-angle-down m-l-5"></i>
+                <UncontrolledDropdown>
+                  <DropdownToggle
+                    className="text-white bg-transparent border-0"
+                    onClick={() => setShowProfileMenu((ps) => !ps)}
+                  >
+                    <div className="d-flex align-items-center">
+                      <i className="fa fa-user"></i>&nbsp;&nbsp;
+                      <div>{cookies.auth?.userName}</div>{" "}
+                      <i className="fa fa-angle-down m-l-5"></i>
+                    </div>
                   </DropdownToggle>
-                  <DropdownMenu className="b-none animated fadeInUp">
-                    <DropdownItem>
-                      <NavItem className="text-white">
-                        <Link href="/profile">Profile</Link>
-                      </NavItem>
-                    </DropdownItem>
-                    <DropdownItem>
-                      <NavItem>
-                        <Link href="/profile">Settings</Link>
-                      </NavItem>
-                    </DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem
-                      onClick={() => {
-                        localStorage.clear();
-                        removeCookie("auth");
-                        window.location.href = "/";
-                      }}
-                    >
-                      Logout
-                    </DropdownItem>
-                  </DropdownMenu>
+                  {showProfileMenu && (
+                    <DropdownMenu className="b-none animated fadeInUp">
+                      <DropdownItem>
+                        <NavItem className="text-white">
+                          <Link href="/profile">Profile</Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem>
+                        <NavItem>
+                          <Link href="/profile">Settings</Link>
+                        </NavItem>
+                      </DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem
+                        onClick={() => {
+                          localStorage.clear();
+                          removeCookie("auth");
+                          window.location.href = "/";
+                        }}
+                      >
+                        Logout
+                      </DropdownItem>
+                    </DropdownMenu>
+                  )}
                 </UncontrolledDropdown>
               )}
             </div>
@@ -229,7 +235,7 @@ const HeaderComponent = ({ mweb }) => {
                       </Link>
                     </NavItem>
                   )}
-                  <NavItem>
+                  <NavItem className="m-r-20">
                     <Link href="/contact">
                       <span className="text-white p-cursor">Contact Us</span>
                     </Link>
