@@ -19,7 +19,7 @@ import {
 import logo from "../../assets/images/logos/logo-white.svg";
 import { RiSearch2Fill } from "react-icons/ri";
 import { useCookies } from "react-cookie";
-const HeaderComponent = ({ mweb }) => {
+const HeaderComponent = ({ mweb, mobileOS }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(["auth"]);

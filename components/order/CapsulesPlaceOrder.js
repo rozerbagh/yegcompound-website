@@ -6,22 +6,52 @@ import { formConstant, orderStatus } from "../../helper/index";
 import {
   addIngredientsCost,
   restAllCalculations,
-} from "../../helper/calculation";
+} from "../../helper/capsules_calculations";
 import { createOrders, fetchSetting } from "../../services/apis";
-import ingredients from "../../helper/ingredients.json";
-
-function PlaceOrder() {
+import ingredients from "../../helper/ingredients_capsule.json";
+const ingCelluloseDatta = ingredients.filter((ele) => ele.name === "Cellulose");
+const ingCapsuleDatta = ingredients.filter((ele) => ele.name === "Capsule");
+function CapsulesPlaceOrder() {
   const [cookies, setCookie] = useCookies(["auth", "orders"]);
   const [comments, setComments] = useState("");
+  const [ingredientForm, setIngredientForm] = useState([
+    {
+      value: "",
+      ingredients: ingredients,
+      percent: "",
+      selected_ing_packsize: "",
+      selected_ing_price: "",
+      selected_name: "",
+      disabled: false,
+    },
+    {
+      value: JSON.stringify(ingCelluloseDatta[0]),
+      ingredients: ingredients,
+      percent: 0.225,
+      selected_ing_packsize: ingCelluloseDatta[0].pack_size,
+      selected_ing_price: ingCelluloseDatta[0].price,
+      selected_name: ingCelluloseDatta[0].name,
+      disabled: true,
+    },
+    {
+      value: JSON.stringify(ingCapsuleDatta[0]),
+      ingredients: ingredients,
+      percent: 1.0,
+      selected_ing_packsize: ingCapsuleDatta[0].pack_size,
+      selected_ing_price: ingCapsuleDatta[0].price,
+      selected_name: ingCapsuleDatta[0].name,
+      disabled: true,
+    },
+  ]);
   const [formValues, setFormValues] = useState({
     compoundname: {
       label: "Compound Name",
-      value: "",
+      value: ingredientForm[0].selected_name,
       valid: false,
       type: "text",
       name: "compoundname",
       validfunc: (val) => val.length >= 3,
-      disabled: false,
+      disabled: true,
     },
     rebate: {
       label: "Rebate %",
@@ -32,8 +62,17 @@ function PlaceOrder() {
       validfunc: (val) => parseInt(val.length) >= 0,
       disabled: true,
     },
+    strength: {
+      label: "Strength (milligram - mg)",
+      value: "",
+      valid: false,
+      type: "number",
+      name: "strength",
+      validfunc: (val) => val.length >= 0,
+      disabled: false,
+    },
     quantity: {
-      label: "Qunatity",
+      label: "Qunatity (nos)",
       value: "",
       valid: false,
       type: "number",
@@ -42,21 +81,25 @@ function PlaceOrder() {
       disabled: false,
     },
   });
-  const [ingredientForm, setIngredientForm] = useState([
-    {
-      value: "",
-      ingredients: ingredients,
-      percent: "",
-    },
-  ]);
+
   const [setting, setSetting] = useState({
     markup: 80,
     rebate: 20,
-    labour_hour_rate: 35,
+    labour_hour_rate: 25,
     container_cost: 2,
     delivery_fee: 30,
     setting_name: "compound",
   });
+
+  useEffect(() => {
+    setFormValues((ps) => ({
+      ...ps,
+      compoundname: {
+        ...ps.compoundname,
+        value: ingredientForm[0].selected_name,
+      },
+    }));
+  }, [ingredientForm]);
 
   const fetchSettings = () => {
     const token = cookies?.auth?.token;
@@ -66,13 +109,16 @@ function PlaceOrder() {
       })
       .then(({ data }) => {
         console.log(data.data[0]);
+        const filterData = data.data?.filter(
+          (ele) => ele.setting_name === "capsule"
+        );
         setSetting((ps) => ({
           ...ps,
-          markup: data.data[0].markup,
-          rebate: data.data[0].rebate,
-          labour_hour_rate: data.data[0].labour_hour_rate,
-          container_cost: data.data[0].container_cost,
-          delivery_fee: data.data[0].delivery_fee,
+          markup: filterData[0].markup || 80,
+          rebate: filterData[0].rebate,
+          labour_hour_rate: filterData[0].labour_hour_rate || 25,
+          container_cost: filterData[0].container_cost,
+          delivery_fee: filterData[0].delivery_fee,
         }));
         setFormValues((ps) => ({
           ...ps,
@@ -109,27 +155,29 @@ function PlaceOrder() {
       let updateForm = [...ingredientForm];
       if (controlType === formConstant.orders.ingredient) {
         updateForm[index].value = value;
+        updateForm[index].selected_ing_packsize = JSON.parse(value).pack_size;
+        updateForm[index].selected_ing_price = JSON.parse(value).price;
+        updateForm[index].selected_name = JSON.parse(value).name;
       } else if (controlType === formConstant.orders.percentage) {
         updateForm[index].percent = value;
       }
       setIngredientForm(updateForm);
-      // const ingredients = [];
-      // ingredients.push(JSON.parse(value));
-      // window.ingredients = ingredients;
-      // if (value != "" && value != null && value != undefined) {
-
-      // } else {
-
-      // }
     },
     [ingredientForm]
   );
 
-  const handleAddIngredient = (e) => {
-    const updateForm = [...ingredientForm];
-    updateForm.push({ value: "", ingredients: ingredients, percent: "" });
-    setIngredientForm(updateForm);
-  };
+  // const handleAddIngredient = (e) => {
+  //   const updateForm = [...ingredientForm];
+  //   updateForm.push({
+  //     value: "",
+  //     ingredients: ingredients,
+  //     percent: "",
+  //     selected_ing_packsize: "",
+  //     selected_ing_price: "",
+  //     selected_name: "",
+  //   });
+  //   setIngredientForm(updateForm);
+  // };
 
   const handleRemoveIngredient = (e, idx) => {
     const updateForm = [...ingredientForm];
@@ -148,35 +196,53 @@ function PlaceOrder() {
   });
   const handleSumOfAllIngredients = () => {
     if (
-      formValues.quantity.value != "" &&
+      formValues.strength.value !== "" &&
+      formValues.quantity.value !== "" &&
       parseInt(formValues.quantity.value) > 0 &&
-      ingredientForm[0].value != ""
+      (ingredientForm[0].value !== "" ||
+        parseInt(formValues.strength.value) !== 0)
     ) {
-      debugger;
-      const ingredients = [];
-      Object.keys(ingredientForm).map((ele) => {
-        if (
-          ingredientForm[ele].value != "" &&
-          ingredientForm[ele].value != undefined &&
-          ingredientForm[ele].value != null
-        ) {
-          debugger;
-          ingredients.push({
-            ...JSON.parse(ingredientForm[ele].value),
-            percentage: ingredientForm[ele].percent,
-          });
-        }
-      });
+      const ingredients = [...ingredientForm];
+      ingredients[0] = {
+        ...JSON.parse(ingredientForm[0].value),
+        ...ingredients[0],
+        percent: parseInt(formValues.strength.value) / 1000,
+        percentage: parseInt(formValues.strength.value) / 1000,
+      };
+      ingredients[1] = {
+        ...JSON.parse(ingredientForm[1].value),
+        ...ingredients[1],
+        percentage: ingredientForm[1].percent,
+      };
+      ingredients[2] = {
+        ...JSON.parse(ingredientForm[2].value),
+        ...ingredients[2],
+        percentage: ingredientForm[2].percent,
+      };
+      // Object.keys(ingredientForm).map((ele) => {
+      //   if (
+      //     ingredientForm[ele].value != "" &&
+      //     ingredientForm[ele].value != undefined &&
+      //     ingredientForm[ele].value != null
+      //   ) {
+      //     ingredients.push({
+      //       ...JSON.parse(ingredientForm[ele].value),
+      //       percentage: ingredientForm[ele].percent,
+      //     });
+      //   }
+      // });
+      console.log(ingredients, "::::::::: :::::::: ::::::::");
       const sumOfAllIngredients = addIngredientsCost(
         ingredients,
         formValues.quantity.value
       );
-      debugger;
+
       console.log("::: sumOfAllIngredients :::", sumOfAllIngredients);
       // setCostOfAllIngredients(sumOfAllIngredients);
       window.sumOfAllIngredients = sumOfAllIngredients;
       return sumOfAllIngredients;
     } else {
+      alert("Check the strength and Quantity input values");
       return 0;
     }
   };
@@ -187,7 +253,7 @@ function PlaceOrder() {
       const deliveryFee = setting.delivery_fee;
       const profit = setting.markup;
       const rebate = setting.rebate;
-      const labourCost = setting.labour_hour_rate * 10; // hour * rate;
+      const labourCost = setting.labour_hour_rate * 1.0; // hour * rate;
       const restAllValues = restAllCalculations(
         sumIngredients,
         profit,
@@ -285,12 +351,12 @@ function PlaceOrder() {
       <Row>
         <Col xs={5} className="d-flex align-items-center my-2">
           <h2>Ingredients</h2>&nbsp;&nbsp;
-          <Button onClick={handleAddIngredient} color="primary">
+          {/* <Button onClick={handleAddIngredient} color="primary">
             Add Ingredients
-          </Button>
+          </Button> */}
         </Col>
         <Col xs={5} className="d-flex align-items-center my-2">
-          <h2>Percentage</h2>
+          <h2>Amount (gm) per Capsule</h2>
         </Col>
         <br />
       </Row>
@@ -310,12 +376,13 @@ function PlaceOrder() {
                 name="select"
                 id={"ingredients-select-" + idx}
                 value={ingInput.value}
+                disabled={ingInput.disabled}
                 onChange={(e) =>
                   handleIngredientChange(e, idx, formConstant.orders.ingredient)
                 }
               >
                 {ingInput.ingredients.map((ingredient, idx) => (
-                  <option value={JSON.stringify(ingredient)}>
+                  <option value={JSON.stringify(ingredient)} key={idx}>
                     {ingredient.name}
                   </option>
                 ))}
@@ -330,7 +397,12 @@ function PlaceOrder() {
               className="my-1"
             >
               <Input
-                value={ingInput.percent || ""}
+                disabled={true}
+                value={
+                  idx === 0
+                    ? parseInt(formValues.strength.value) / 1000 || ""
+                    : ingInput.percent || ""
+                }
                 onChange={(e) =>
                   handleIngredientChange(e, idx, formConstant.orders.percentage)
                 }
@@ -338,6 +410,7 @@ function PlaceOrder() {
             </Col>
             <Col xs={12} md={2} className="my-1">
               <Button
+                disabled={true}
                 color="danger"
                 onClick={(e) => handleRemoveIngredient(e, idx)}
               >
@@ -390,6 +463,17 @@ function PlaceOrder() {
         </Col>
       </Row>
       <br />
+      <div className="w-100 d-flex flex-row">
+        <div className="subtitle">
+          If you encounter any pricing issues, require assistance with
+          formulation, or need any other kind of help, please do not hesitate to
+          contact us at{" "}
+          <a href="tel:+1-5877807057150" className="text-danger">
+            780-705-7150
+          </a>
+        </div>
+        {/* <Link href={"/contact"}>Contact Us</Link> */}
+      </div>
       <div className="w-100 d-flex flex-row-reverse">
         <Button
           type="submit"
@@ -403,4 +487,4 @@ function PlaceOrder() {
   );
 }
 
-export default PlaceOrder;
+export default CapsulesPlaceOrder;

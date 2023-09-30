@@ -363,3 +363,10 @@ export const footerMenus = [
 ];
 
 export const googleDetails = {};
+
+export const mobile_os = {
+  android: "android",
+  ios: "ios",
+  window: "window",
+  other: "other",
+};
