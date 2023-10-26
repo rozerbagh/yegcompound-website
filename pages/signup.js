@@ -75,31 +75,31 @@ export default function Signup(props) {
   };
   const handleSignup = (e) => {
     e.preventDefault();
-    // axios
-    //     .post(signup, {
-    //         username: userData.fullname.value,
-    //         fullname: userData.fullname.value,
-    //         email: userData.email.value,
-    //         password: userData.password.value,
-    //         phoneno: userData.phoneno.value,
-    //         role: 0,
-    //         status: 1,
-    //         image: "https://storebucket.fra1.digitaloceanspaces.com/user.png",
-    //     })
-    //     .then(({ data }) => {
-    //         console.log(data);
-    //         setCookie("auth", data);
-    //         localStorage.setItem("user_data", JSON.stringify(data));
-    //         setErrorMsg(null);
-    //         window.location.href = '/orders';
-    //     })
-    //     .catch((err) => {
-    //         if (err.response) {
-    //             setErrorMsg(err.response.data.message);
-    //         } else {
-    //             setErrorMsg("something went wrong");
-    //         }
-    //     });
+    axios
+      .post(signup, {
+        username: userData.fullname.value.trim().toLowerCase(),
+        fullname: userData.fullname.value,
+        email: userData.email.value,
+        password: userData.password.value,
+        phoneno: userData.phoneno.value,
+        role: 0,
+        status: 1,
+        image: "https://storebucket.fra1.digitaloceanspaces.com/user.png",
+      })
+      .then(({ data }) => {
+        console.log(data);
+        setCookie("auth", data);
+        localStorage.setItem("user_data", JSON.stringify(data));
+        setErrorMsg(null);
+        window.location.href = "/orders";
+      })
+      .catch((err) => {
+        if (err.response) {
+          setErrorMsg(err.response.data.message);
+        } else {
+          setErrorMsg("something went wrong");
+        }
+      });
   };
   const handleShowPassword = (e) => {
     setShowPwd(e.target.checked);
@@ -177,6 +177,7 @@ export default function Signup(props) {
                             <Button
                               onClick={handleSignup}
                               type="submit"
+                              size="large"
                               className="btn btn-danger-gradiant m-t-20 btn-arrow"
                             >
                               Signup
