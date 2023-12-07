@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container, Row, Col, Card, CardBody } from "reactstrap";
 import { useCookies } from "react-cookie";
-import bannerimg from "../../assets/images/landingpage/banner-img.png";
+import bannerimg from "../../assets/images/landingpage/main-photo.jpg";
 import pcca from "../../assets/images/logos/pcca.svg";
 import TestimonialComponent from "../custom/sections/testimonialcomponent";
 import { services, products, compounding } from "../../helper/index";
@@ -24,7 +24,7 @@ const Home = (props) => {
                 medications and pharmaceutical services.
               </h4>
               <div
-                className="btn btn-danger m-r-20 btn-md m-t-30"
+                className="btn btn-outline-light m-r-20 btn-md m-t-30"
                 onClick={() => {
                   window.scrollTo({
                     top: 700,
@@ -38,7 +38,7 @@ const Home = (props) => {
 
               {!cookies?.auth?.token && (
                 <Link href="/signup">
-                  <a className="btn btn-md m-t-30  btn-outline-light ">
+                  <a className="btn btn-md m-t-30  btn-outline-light">
                     Sign up
                   </a>
                 </Link>

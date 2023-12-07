@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 import { useCookies } from "react-cookie";
 import { signup } from "../services/apis";
+import { toast } from "react-toastify";
 
 export default function Signup(props) {
   const [cookies, setCookie, removeCookie] = useCookies(["auth"]);
@@ -91,7 +92,12 @@ export default function Signup(props) {
         // setCookie("auth", data);
         // localStorage.setItem("user_data", JSON.stringify(data));
         // setErrorMsg(null);
-        window.location.href = "/";
+        toast.success(
+          "Registred successfully, Once the administration on board u can make out your orders"
+        );
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 2000);
       })
       .catch((err) => {
         if (err.response) {
