@@ -87,11 +87,11 @@ export default function Signup(props) {
         image: "https://storebucket.fra1.digitaloceanspaces.com/user.png",
       })
       .then(({ data }) => {
-        console.log(data);
-        setCookie("auth", data);
-        localStorage.setItem("user_data", JSON.stringify(data));
-        setErrorMsg(null);
-        window.location.href = "/orders";
+        // console.log(data);
+        // setCookie("auth", data);
+        // localStorage.setItem("user_data", JSON.stringify(data));
+        // setErrorMsg(null);
+        window.location.href = "/";
       })
       .catch((err) => {
         if (err.response) {
@@ -178,7 +178,7 @@ export default function Signup(props) {
                               onClick={handleSignup}
                               type="submit"
                               size="large"
-                              className="btn btn-danger-gradiant m-t-20 btn-arrow"
+                              className="btn btn-danger-gradiant m-t-20 btn-arrow "
                             >
                               Signup
                             </Button>

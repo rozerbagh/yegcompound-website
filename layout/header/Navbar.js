@@ -36,7 +36,7 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
       <div className="header1 po-relative">
         <Navbar className="navbar-expand-lg h3-nav navbar fixed-top navbar-dark bg-primary">
           <Container fluid="xl" className="d-flex flex-column">
-            <div className="w-100 d-flex align-items-center justify-content-between">
+            <div className="w-100 d-flex flex-row align-items-center justify-content-between header-items">
               <div className="p-cursor m-r-10">
                 <Link href="/">
                   <Image
@@ -48,9 +48,6 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
                   />
                 </Link>
               </div>
-              <NavbarToggler onClick={toggle}>
-                <span className="ti-menu text-white"></span>
-              </NavbarToggler>
               {/* <RiSearch2Fill /> */}
               <div
                 className={`w-50 d-flex align-items-center bg-white searchbar`}
@@ -66,11 +63,9 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
                 )}
               </div>
               {cookies.auth?.token ? null : (
-                <div>
-                  <Link href="/login">
-                    <div className="btn btn-primary">Login</div>
-                  </Link>
-                </div>
+                <Link href="/login">
+                  <div className="btn btn-primary">Login</div>
+                </Link>
               )}
               {cookies.auth?.token && (
                 <UncontrolledDropdown>
@@ -111,6 +106,9 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
                 </UncontrolledDropdown>
               )}
             </div>
+            <NavbarToggler onClick={toggle}>
+              <span className="ti-menu text-white"></span>
+            </NavbarToggler>
             <div className="w-100">
               <Collapse isOpen={isOpen} navbar id="header1">
                 <Nav

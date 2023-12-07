@@ -364,21 +364,21 @@ function PlaceOrder() {
       <hr />
       <Row>
         <Col xs={12} sm={12} md={6} lg={6}>
-          <Label>CA. $ Total Price</Label>
+          <Label>Total Price (CAD)</Label>
           <Input
             value={customerInfoPay.totalPrice}
             disabled={true}
             valid={true}
           />
         </Col>
-        <Col xs={12} sm={12} md={6} lg={6}>
+        {/* <Col xs={12} sm={12} md={6} lg={6}>
           <Label>CA. $ Need To Pay</Label>
           <Input
             value={customerInfoPay.needToPay}
             disabled={true}
             valid={true}
           />
-        </Col>
+        </Col> */}
       </Row>
       <br />
       <Row>

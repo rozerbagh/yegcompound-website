@@ -216,3 +216,8 @@
     display: block;
   }
 }
+@media screen and (max-width: 900px) {
+  .header-items {
+    flex-direction: row;
+  }
+}
