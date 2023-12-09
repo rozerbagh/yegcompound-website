@@ -266,6 +266,7 @@ function PlaceOrder() {
         alert(data.message);
         console.log(data);
         setCookie("orders", data.data);
+        window.location.reload();
       })
       .catch((err) => {
         alert("order has not been placed");

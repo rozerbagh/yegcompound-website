@@ -84,7 +84,7 @@ export default function Signup(props) {
         password: userData.password.value,
         phoneno: userData.phoneno.value,
         role: 0,
-        status: 1,
+        status: 0,
         image: "https://storebucket.fra1.digitaloceanspaces.com/user.png",
       })
       .then(({ data }) => {

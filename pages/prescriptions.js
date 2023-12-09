@@ -58,43 +58,7 @@ export default function Services(props) {
                 </h6>
               </Col>
             </Row>
-            {/* <section>
-                            <div id="banner1" className="banner spacer">
-                                <Container>
-                                    <Row>
-                                        <Col lg="5" md="7" className="align-self-center">
-                                            <h2 className="title font-bold">
-                                                Give your Business Real boost Now!
-                                            </h2>
-                                            <p className="m-t-40 m-b-30">
-                                                To accomplish great things, we must not only act, but also
-                                                dream; not only plan, but also believe.
-                                            </p>
-                                            <Form className="m-t-40">
-                                                <input
-                                                    type="text"
-                                                    name="email"
-                                                    placeholder="Enter Email Address"
-                                                    className="font-16"
-                                                />
-                                                <input
-                                                    type="submit"
-                                                    value="Get Started"
-                                                    className="bg-info font-semibold font-16 btn-rounded text-uppercase text-white text-center"
-                                                />
-                                            </Form>
-                                        </Col>
-                                        <Col lg="6" md="5" className="align-self-center ml-auto">
-                                            <Image
-                                                src={banner}
-                                                alt="We are Digital Agency"
-                                                className="img-fluid"
-                                            />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </div>
-                        </section> */}
+
             <Row className="wrap-feature-20">
               {prescription_content.map((pres, idx) => (
                 <Col xs="12" key={idx}>
@@ -102,15 +66,6 @@ export default function Services(props) {
                     <Row>
                       <Col md="8">
                         <CardBody className="d-flex no-block">
-                          <div className="m-r-20">
-                            <Image
-                              src={pres.img}
-                              // height="70"
-                              // width="100"
-                              className="rounded"
-                              alt="img"
-                            />
-                          </div>
                           <div className="w-100 d-flex flex-column align-items-center justify-content-center">
                             <h5 className="font-medium">{pres.title}</h5>
                             <p className="font-medium">{pres.content}</p>
