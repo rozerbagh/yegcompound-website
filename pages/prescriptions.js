@@ -18,7 +18,7 @@ import {
   TabPane,
 } from "reactstrap";
 import { prescription_content } from "../helper/index";
-import banner from "../assets/images/form-banners/banner1/banner-img.png";
+// import banner from "../assets/images/form-banners/banner1/banner-img.png";
 export default function Services(props) {
   return (
     <>
@@ -26,7 +26,7 @@ export default function Services(props) {
         <title>{props.websiteTitle} | Prescriptions - Services</title>
         <meta
           name="description"
-          content="Nikis Pharmacy Dispensary contact form"
+          content="The Medicine Shoppe Pharmacy #377 Dispensary contact form"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

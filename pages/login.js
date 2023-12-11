@@ -99,7 +99,10 @@ export default function Login(props) {
     <>
       <Head>
         <title>{props.websiteTitle} | login</title>
-        <meta name="description" content="Nikis Pharmacy login form" />
+        <meta
+          name="description"
+          content="The Medicine Shoppe Pharmacy #377 login form"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>

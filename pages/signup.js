@@ -133,7 +133,7 @@ export default function Signup(props) {
         <title>{props.websiteTitle} | login</title>
         <meta
           name="description"
-          content="Nikis Pharmacy Dispensary login form"
+          content="The Medicine Shoppe Pharmacy #377 Dispensary login form"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

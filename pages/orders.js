@@ -21,13 +21,18 @@ const Order = (props) => {
   const [capsuleFormType, setCapsuleFormType] = useState("");
   useEffect(() => {
     const btnType = localStorage.getItem("buttontype");
-    setCapsuleFormType(btnType);
+    if (btnType) setCapsuleFormType(btnType);
+    const currentTab = localStorage.getItem("currentordertabs");
+    if (currentTab) setTab(parseInt(currentTab));
   }, []);
   return (
     <>
       <Head>
         <title>{props.websiteTitle} | Orders</title>
-        <meta name="description" content="Nikis Pharmacy Dispensary" />
+        <meta
+          name="description"
+          content="The Medicine Shoppe Pharmacy #377 Dispensary"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner
@@ -42,7 +47,10 @@ const Order = (props) => {
           <NavItem>
             <NavLink
               className={{ active: tab === 1 }}
-              onClick={() => setTab(1)}
+              onClick={() => {
+                setTab(1);
+                localStorage.setItem("currentordertabs", 1);
+              }}
             >
               Place Order
             </NavLink>
@@ -50,7 +58,10 @@ const Order = (props) => {
           <NavItem>
             <NavLink
               className={{ active: tab === 2 }}
-              onClick={() => setTab(2)}
+              onClick={() => {
+                setTab(2);
+                localStorage.setItem("currentordertabs", 2);
+              }}
             >
               All Orders
             </NavLink>

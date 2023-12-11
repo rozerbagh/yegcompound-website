@@ -5,14 +5,11 @@ export default function Home(props) {
     <div>
       <Head>
         <title>{props.websiteTitle}</title>
-        <meta
-          name="description"
-          content="Niks Pharmacy"
-        />
+        <meta name="description" content="The Medicine Shoppe Pharmacy #377" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <h1>Site is under maintainance</h1> */}
-      <HomeComponent websiteTitle={props.websiteTitle}/>
+      <HomeComponent websiteTitle={props.websiteTitle} />
     </div>
   );
 }
