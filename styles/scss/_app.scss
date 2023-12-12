@@ -1795,3 +1795,19 @@ a.btn-outline-success {
 header {
   z-index: 999;
 }
+
+.yegc-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.yegc-navbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.navbar--logo {
+  width: 150px !important;
+}

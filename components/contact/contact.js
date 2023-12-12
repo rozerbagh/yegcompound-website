@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
 import validator from "validator";
 import Image from "next/image";
 import {
@@ -10,17 +9,27 @@ import {
   FormGroup,
   Input,
   Button,
-  Alert,
 } from "reactstrap";
+import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import Map from "./MapFrame";
 import profilepic from "../../assets/images/landingpage/profile-pic.jpg";
+import axios from "axios";
+import { contactApi } from "../../services/apis";
 const ContactComponent = (props) => {
-  const [formInputs, setFormInputs] = useState({
-    email: "",
-    name: "",
-    subject: "",
-    message: "",
+  const [loading, setLoading] = useState(false);
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      fullname: "",
+      subject: "",
+      message: "",
+    },
+    onSubmit: (values) => {
+      if (validator.isEmail(values.email)) {
+        handleFormSubmit(values);
+      }
+    },
   });
   const [storeTimings, setStoreTimings] = useState([
     {
@@ -66,45 +75,23 @@ const ContactComponent = (props) => {
       dayNum: 0,
     },
   ]);
-  const [successMessage, setSuccessMessage] = useState(null);
-  useEffect(() => {
-    emailjs.init("S09-WBx17FUpA9z5D");
-    console.log(emailjs);
-  }, []);
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
 
-    try {
-      emailjs
-        .send("service_pcdrk86", "template_lcwvb0c", {
-          from_name: formInputs.name,
-          to_name: "Valay Rajgor",
-          subject: formInputs.subject,
-          message: formInputs.message,
-          reply_to: formInputs.email,
-          person_email: formInputs.email,
-        })
-        .then(
-          function (response) {
-            console.log("SUCCESS!", response, response.status, response.text);
-            setSuccessMessage("Thanks for contacting, Our team will reach us");
-            setTimeout(() => {
-              setSuccessMessage(null);
-            }, 5000);
-            setFormInputs((ps) => ({
-              ...ps,
-              name: "",
-              email: "",
-              subject: "",
-              message: "",
-            }));
-            toast.success("Thanks for contacting us, Our team will reach us");
-          },
-          function (err) {
-            console.log("FAILED...", err);
-          }
-        );
-    } catch (err) {}
+  const handleFormSubmit = (values) => {
+    setLoading(true);
+    const url = contactApi;
+    axios
+      .post(url, { ...values })
+      .then(({ data }) => {
+        console.log(data);
+        alert(data.message);
+        toast.success(data.message);
+        setLoading(false);
+      })
+      .catch((err) => {
+        alert("Unable to contact, something went wrong");
+        toast.error("Unable to contact, something went wrong");
+        setLoading(false);
+      });
   };
   return (
     <div>
@@ -113,11 +100,6 @@ const ContactComponent = (props) => {
           <Row className="justify-content-center">
             <Col md="7" className="text-center">
               <h1 className="title font-bold">Contact Us</h1>
-              {/* <h6 className="subtitle">
-                Here you can check Demos we created based on WrapKit. Its quite
-                easy to Create your own dream website &amp; dashboard in
-                No-time.
-              </h6> */}
             </Col>
           </Row>
         </Container>
@@ -130,85 +112,67 @@ const ContactComponent = (props) => {
                 <Col lg="6">
                   <div className="contact-box p-r-40">
                     <h4 className="title">Quick Contact</h4>
-                    <Form onSubmit={handleFormSubmit}>
+                    <Form onSubmit={formik.handleSubmit}>
                       <Row>
                         <Col lg="12">
                           <FormGroup className="m-t-15">
                             <Input
+                              name="fullname"
                               type="text"
                               placeholder="Name"
-                              value={formInputs.name}
-                              onChange={(e) =>
-                                setFormInputs((ps) => ({
-                                  ...ps,
-                                  name: e?.target?.value,
-                                }))
-                              }
+                              onChange={formik.handleChange}
+                              value={formik.values.fullname}
                             />
                           </FormGroup>
                         </Col>
                         <Col lg="12">
                           <FormGroup className="m-t-15">
                             <Input
+                              name="email"
                               type="email"
                               placeholder="Email"
-                              value={formInputs.email}
-                              onChange={(e) =>
-                                setFormInputs((ps) => ({
-                                  ...ps,
-                                  email: e?.target?.value,
-                                }))
-                              }
+                              onChange={formik.handleChange}
+                              value={formik.values.email}
                             />
                           </FormGroup>
                         </Col>
                         <Col lg="12">
                           <FormGroup className="m-t-15">
                             <Input
+                              name="subject"
                               type="text"
                               placeholder="Subject"
-                              value={formInputs.subject}
-                              onChange={(e) =>
-                                setFormInputs((ps) => ({
-                                  ...ps,
-                                  subject: e?.target?.value,
-                                }))
-                              }
+                              onChange={formik.handleChange}
+                              value={formik.values.subject}
                             />
                           </FormGroup>
                         </Col>
                         <Col lg="12">
                           <FormGroup className="m-t-15">
                             <Input
+                              name="message"
                               type="textarea"
-                              name="text"
                               placeholder="Message"
-                              value={formInputs.message}
-                              onChange={(e) =>
-                                setFormInputs((ps) => ({
-                                  ...ps,
-                                  message: e?.target?.value,
-                                }))
-                              }
+                              onChange={formik.handleChange}
+                              value={formik.values.message}
                             />
                           </FormGroup>
                         </Col>
                         <Col lg="12" className="d-flex align-items-center">
                           <Button
+                            disabled={loading}
+                            onClick={formik.handleSubmit}
+                            onSubmit={formik.handleSubmit}
                             type="submit"
-                            className="btn btn-danger-gradiant m-t-20 btn-arrow"
+                            className="btn btn-success-gradiant m-t-20 btn-arrow"
                           >
                             <span>
                               {" "}
-                              Submit <i className="ti-arrow-right"></i>
+                              {loading ? "Sending..." : "Submit"}{" "}
+                              <i className="ti-arrow-right"></i>
                             </span>
                           </Button>
                           &nbsp;
-                          {successMessage ? (
-                            <div className="m-t-20">
-                              <Alert>{successMessage}</Alert>
-                            </div>
-                          ) : null}
                         </Col>
                       </Row>
                     </Form>

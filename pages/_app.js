@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }) {
   const getMobileOS = () => {
     const ua = navigator.userAgent;
     if (/android/i.test(ua)) {
+      setmweb(true);
       return "android";
     } else if (
       /iPad|iPhone|iPod/.test(ua) ||

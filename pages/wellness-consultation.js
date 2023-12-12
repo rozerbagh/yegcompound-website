@@ -36,7 +36,7 @@ export default function Services(props) {
             <Row className="justify-content-center">
               <Col md="7" className="text-center">
                 {/* <span className="label label-info label-rounded">Feature 2</span> */}
-                <h2 className="title">YNeed support? Look no further.</h2>
+                <h2 className="title">Need support? Look no further.</h2>
                 <h6 className="subtitle">
                   Book a private consultation with your pharmacist to assess
                   your personal situation.

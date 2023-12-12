@@ -136,21 +136,27 @@ export default function Login(props) {
                           ))}
                           <Col
                             xs={12}
-                            className="w-100 d-flex justify-content-start"
+                            className="w-100 d-flex justify-content-between align-items-center"
                           >
-                            <Input
-                              addon
-                              type="checkbox"
-                              checked={showPwd}
-                              onChange={handleShowPassword}
-                            />{" "}
-                            &nbsp;&nbsp;Show Password
+                            <div>
+                              <Input
+                                addon
+                                type="checkbox"
+                                checked={showPwd}
+                                onChange={handleShowPassword}
+                              />{" "}
+                              &nbsp;Show Password
+                            </div>
+                            <Link href={"/forgot-password"}>
+                              Forgot Password
+                            </Link>
                           </Col>
+
                           <Col lg="12">
                             <Button
                               onClick={handleLogin}
                               type="submit"
-                              className="btn btn-danger-gradiant m-t-20 btn-arrow"
+                              className="btn btn-success-gradiant m-t-20 btn-arrow"
                             >
                               Login
                             </Button>

@@ -40,7 +40,7 @@ const Layout = ({ children, mweb }) => {
         </div>
       </CookiesProvider>
       <ToastContainer
-        position="bottom-right"
+        position="top-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
@@ -49,7 +49,7 @@ const Layout = ({ children, mweb }) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="dark"
       />
     </>
   );

@@ -33,6 +33,9 @@ function OrderDetails(props) {
                 )}
                 btnText="Cancel"
                 btnColor="danger"
+                handleClick={(e) => {
+                  alert("Please contact to support team to cancel the order");
+                }}
               />
               <Progress multi>
                 {order.status === "pending" ? (

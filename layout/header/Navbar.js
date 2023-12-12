@@ -16,9 +16,9 @@ import {
   Collapse,
   Input,
 } from "reactstrap";
-import logo from "../../assets/images/logos/logo-white.svg";
 import { RiSearch2Fill } from "react-icons/ri";
 import { useCookies } from "react-cookie";
+import Logo from "../../assets/svgs/Logo";
 const HeaderComponent = ({ mweb, mobileOS }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -35,25 +35,20 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
     <header id="header-section">
       <div className="header1 po-relative">
         <Navbar className="navbar-expand-lg h3-nav navbar fixed-top navbar-dark bg-primary">
-          <Container fluid="xl" className="d-flex flex-column">
-            <div className="w-100 d-flex flex-row align-items-center justify-content-between header-items">
-              <div className="p-cursor m-r-10">
+          <Container fluid="xl" className="flex flex-column">
+            <div className="w-100 yegc-navbar">
+              <div className="navbar--logo p-cursor m-r-10">
                 <Link href="/">
-                  <Image
-                    src={logo}
-                    alt="yegcompunding.com"
-                    className="logo-image"
-                    // height={"80px"}
-                    width={"150px"}
-                  />
+                  <Logo />
                 </Link>
               </div>
-              {/* <RiSearch2Fill /> */}
               <div
-                className={`w-50 d-flex align-items-center bg-white searchbar`}
+                className={`w-50 flex align-items-center bg-white searchbar`}
               >
                 {mweb ? (
-                  <RiSearch2Fill />
+                  <div className="pl-1 p-cursor">
+                    <RiSearch2Fill />
+                  </div>
                 ) : (
                   <Input
                     type="text"
@@ -68,52 +63,54 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
                 </Link>
               )}
               {cookies.auth?.token && (
-                <UncontrolledDropdown>
-                  <DropdownToggle
-                    className="text-white bg-transparent border-0"
-                    onClick={() => setShowProfileMenu((ps) => !ps)}
-                  >
-                    <div className="d-flex align-items-center">
-                      <i className="fa fa-user"></i>&nbsp;&nbsp;
-                      <div>{cookies.auth?.userName}</div>{" "}
-                      <i className="fa fa-angle-down m-l-5"></i>
-                    </div>
-                  </DropdownToggle>
-                  {showProfileMenu && (
-                    <DropdownMenu className="b-none animated fadeInUp">
-                      <DropdownItem>
-                        <NavItem className="text-white">
-                          <Link href="/profile">Profile</Link>
-                        </NavItem>
-                      </DropdownItem>
-                      <DropdownItem>
-                        <NavItem>
-                          <Link href="/profile">Settings</Link>
-                        </NavItem>
-                      </DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem
-                        onClick={() => {
-                          localStorage.clear();
-                          removeCookie("auth");
-                          window.location.href = "/";
-                        }}
-                      >
-                        Logout
-                      </DropdownItem>
-                    </DropdownMenu>
-                  )}
-                </UncontrolledDropdown>
+                <>
+                  <UncontrolledDropdown>
+                    <DropdownToggle
+                      className="text-white bg-transparent border-0"
+                      onClick={() => setShowProfileMenu((ps) => !ps)}
+                    >
+                      <div className="yegc-navbar-btn">
+                        <i className="fa fa-user"></i>&nbsp;&nbsp;
+                        <div>{cookies.auth?.userName}</div>{" "}
+                        <i className="fa fa-angle-down m-l-5"></i>
+                      </div>
+                    </DropdownToggle>
+                    {showProfileMenu && (
+                      <DropdownMenu className="b-none animated fadeInUp">
+                        <DropdownItem>
+                          <NavItem className="text-white">
+                            <Link href="/profile">Profile</Link>
+                          </NavItem>
+                        </DropdownItem>
+                        <DropdownItem>
+                          <NavItem>
+                            <Link href="/profile">Settings</Link>
+                          </NavItem>
+                        </DropdownItem>
+                        <DropdownItem divider />
+                        <DropdownItem
+                          onClick={() => {
+                            localStorage.clear();
+                            removeCookie("auth");
+                            window.location.href = "/";
+                          }}
+                        >
+                          Logout
+                        </DropdownItem>
+                      </DropdownMenu>
+                    )}
+                  </UncontrolledDropdown>
+                </>
               )}
+              <NavbarToggler onClick={toggle}>
+                <span className="ti-menu text-white"></span>
+              </NavbarToggler>
             </div>
-            <NavbarToggler onClick={toggle}>
-              <span className="ti-menu text-white"></span>
-            </NavbarToggler>
-            <div className="w-100">
+            <div className="w-100 mt-4">
               <Collapse isOpen={isOpen} navbar id="header1">
                 <Nav
                   navbar
-                  className="text-white w-100 mb-3 mt-2 mt-lg-0 align-items-center d-flex justify-content-start"
+                  className="text-white w-100 mb-3 mt-4 mt-lg-0 align-items-center flex justify-content-start"
                 >
                   <NavItem className="active m-r-10">
                     <Link href="/">
