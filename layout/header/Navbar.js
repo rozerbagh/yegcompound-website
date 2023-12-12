@@ -15,6 +15,7 @@ import {
   NavbarToggler,
   Collapse,
   Input,
+  Dropdown,
 } from "reactstrap";
 import { RiSearch2Fill } from "react-icons/ri";
 import { useCookies } from "react-cookie";
@@ -27,7 +28,7 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
   const handleSearch = (e) => {
     const { name, value } = e.target;
     if (value.length >= 3) {
-      // alert("Seraching... Coming Soon");
+      alert("Searching... Coming Soon");
     }
   };
 
@@ -52,7 +53,7 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
                 ) : (
                   <Input
                     type="text"
-                    placeholder="Search..."
+                    placeholder="Search... Coming soon"
                     onChange={(e) => handleSearch(e)}
                   />
                 )}
@@ -64,11 +65,11 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
               )}
               {cookies.auth?.token && (
                 <>
-                  <UncontrolledDropdown>
-                    <DropdownToggle
-                      className="text-white bg-transparent border-0"
-                      onClick={() => setShowProfileMenu((ps) => !ps)}
-                    >
+                  <Dropdown
+                    isOpen={showProfileMenu}
+                    toggle={() => setShowProfileMenu((ps) => !ps)}
+                  >
+                    <DropdownToggle className="text-white bg-transparent border-0">
                       <div className="yegc-navbar-btn">
                         <i className="fa fa-user"></i>&nbsp;&nbsp;
                         <div>{cookies.auth?.userName}</div>{" "}
@@ -99,7 +100,7 @@ const HeaderComponent = ({ mweb, mobileOS }) => {
                         </DropdownItem>
                       </DropdownMenu>
                     )}
-                  </UncontrolledDropdown>
+                  </Dropdown>
                 </>
               )}
               <NavbarToggler onClick={toggle}>
