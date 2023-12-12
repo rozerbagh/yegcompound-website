@@ -46,6 +46,7 @@ export default function ForgotPassword(props) {
       .post(url, { email: email })
       .then(({ data }) => {
         console.log(data);
+        alert("OTP has been send to your email");
         setShowOtpInput(true);
         setLoading(false);
       })
@@ -65,6 +66,7 @@ export default function ForgotPassword(props) {
         window.location.href = "/reset-password?token=" + data.token;
       })
       .catch((err) => {
+        alert("Unable to verify otp");
         toast.error("Unable to verify otp");
         setLoading(false);
       });
