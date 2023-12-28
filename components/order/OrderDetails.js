@@ -57,7 +57,7 @@ function OrderDetails(props) {
                     </span>
                   </Progress>
                 ) : order.status === "processing" ? (
-                  <Progress bar color="blue" value={50}>
+                  <Progress bar color="info" value={50}>
                     <span>
                       Processing -{" "}
                       {moment(order.updatedAt).format("DD/MM/YYYY")}
