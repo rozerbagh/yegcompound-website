@@ -24,15 +24,27 @@ function OrderDetails(props) {
       <Row>
         {orders.length > 0 &&
           orders.map((order, id) => (
-            <Col xs={12} key={id} className="p-2">
+            <Col xs={12} md={6} key={id} className="p-2">
               <ResponsiveCard
                 title={order.compound_name}
                 subtitle={order.quantity + " " + order.quantity_unit}
                 description={order.ingredients.map(
                   (e, i) => `${e.name}-${e?.percent}, `
                 )}
-                btnText="Cancel"
-                btnColor="danger"
+                btnText={
+                  order.status === "pending" ||
+                  order.status === "processing" ||
+                  order.status === "dispatched"
+                    ? "Cancel"
+                    : "Info"
+                }
+                btnColor={
+                  order.status === "pending" ||
+                  order.status === "processing" ||
+                  order.status === "dispatched"
+                    ? "danger"
+                    : "info"
+                }
                 handleClick={(e) => {
                   alert("Please contact to support team to cancel the order");
                 }}
@@ -51,7 +63,7 @@ function OrderDetails(props) {
                       {moment(order.updatedAt).format("DD/MM/YYYY")}
                     </span>
                   </Progress>
-                ) : order.status === "info" ? (
+                ) : order.status === "dispatched" ? (
                   <Progress bar animated color="blue" value={75}>
                     <span>
                       {" "}
