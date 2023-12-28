@@ -45,13 +45,13 @@ function OrderDetails(props) {
                     </span>
                   </Progress>
                 ) : order.status === "processing" ? (
-                  <Progress bar color="white" value={25}>
+                  <Progress bar color="blue" value={25}>
                     <span>
                       Processing -{" "}
                       {moment(order.updatedAt).format("DD/MM/YYYY")}
                     </span>
                   </Progress>
-                ) : order.status === "dispatched" ? (
+                ) : order.status === "info" ? (
                   <Progress bar animated color="blue" value={25}>
                     <span>
                       {" "}
@@ -60,7 +60,7 @@ function OrderDetails(props) {
                     </span>
                   </Progress>
                 ) : (
-                  <Progress bar color="white" value={25}>
+                  <Progress bar color="success" value={25}>
                     <span>
                       Delivered - {moment(order.updatedAt).format("DD/MM/YYYY")}
                     </span>

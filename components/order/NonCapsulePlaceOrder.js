@@ -241,6 +241,7 @@ function PlaceOrder() {
         percent: parseInt(ingredientForm[ele].percent),
       })
     );
+    debugger;
     const orderDetails = {
       user: cookies?.auth?.userId,
       compound_name: formValues.compoundname.value,
