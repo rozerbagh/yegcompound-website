@@ -276,20 +276,23 @@ function PlaceOrder() {
   return (
     <Form onSubmit={handleOrderSubmit}>
       <Row>
-        {Object.keys(formValues).map((input, key) => (
-          <Col xs={12} sm={12} md={6} lg={6} key={key}>
-            <Label>{formValues[input].label}</Label>
-            <Input
-              type={formValues[input].type}
-              name={formValues[input].name}
-              valid={formValues[input].valid}
-              value={formValues[input].value || ""}
-              onChange={(e) => handleInputChange(e, input)}
-              disabled={formValues[input].disabled}
-            />
-            <br />
-          </Col>
-        ))}
+        {Object.keys(formValues).map(
+          (input, key) =>
+            formValues[input].rebate !== "rebate" && (
+              <Col xs={12} sm={12} md={6} lg={6} key={key}>
+                <Label>{formValues[input].label}</Label>
+                <Input
+                  type={formValues[input].type}
+                  name={formValues[input].name}
+                  valid={formValues[input].valid}
+                  value={formValues[input].value || ""}
+                  onChange={(e) => handleInputChange(e, input)}
+                  disabled={formValues[input].disabled}
+                />
+                <br />
+              </Col>
+            )
+        )}
       </Row>
       <hr />
       <Row>
