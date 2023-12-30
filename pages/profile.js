@@ -2,11 +2,13 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useFormik } from "formik";
-import { userUpdate, userdetails } from "../services/apis";
+import { fecthPincode, userUpdate, userdetails } from "../services/apis";
 function Profile() {
   const [cookies] = useCookies(["auth"]);
   const [loading, setLoading] = useState(true);
   const [addresses, setAddresses] = useState([]);
+  const [selectedAdr, setSelectedAdr] = useState(null);
+  const streetInput = useRef(null);
   const pwdFormik = useFormik({
     initialValues: { curpwd: "", newpwd: "", cnfpwd: "" },
     onSubmit: (values) => {
@@ -24,16 +26,36 @@ function Profile() {
         ...user,
         ...values,
         username: values.fullname.split(" ").join("").toLowerCase(),
+        address: [
+          {
+            street: streetInput.current?.value,
+            houseno: streetInput.current?.value,
+            landmark: "",
+            town: "",
+            pincode: selectedAdr.postal_code,
+            district: selectedAdr.city_en,
+            state: selectedAdr.state_en,
+            country: selectedAdr.country_code,
+            latitude: selectedAdr.latitude,
+            longitude: selectedAdr.longitude,
+          },
+        ],
       });
     },
   });
 
   function fetchPincodeAddr(pincode) {
-    if (pincode.length >= 6) {
+    if (pincode.length >= 3) {
+      const url = fecthPincode(pincode);
       axios
-        .get(`https://api.postalpincode.in/pincode/${pincode}`)
+        .get(url)
         .then(({ data }) => {
-          setAddresses(data[0].PostOffice);
+          if (data.data) {
+            setAddresses(data.data);
+            setSelectedAdr(data.data[0]);
+          } else {
+            alert(data.message);
+          }
         })
         .catch((err) => {});
     }
@@ -77,6 +99,11 @@ function Profile() {
         setUser(null);
         setLoading(false);
       });
+  };
+  const handleCurAdrChange = (e) => {
+    const { value } = e.target;
+    const adr = JSON.parse(value);
+    setSelectedAdr(adr);
   };
   return (
     <section className="profile-sections m-t-30">
@@ -181,13 +208,17 @@ function Profile() {
                             className="form-control"
                             id="address"
                             placeholder="Select Addrress Block"
+                            onChange={handleCurAdrChange}
                           >
                             <option value={""} disabled>
                               Select One
                             </option>
                             {addresses.map((ele, idx) => (
-                              <option key={idx} value={JSON.stringify(ele)}>
-                                {ele.Name}
+                              <option
+                                key={idx}
+                                value={JSON.stringify({ ...ele, curTdx: idx })}
+                              >
+                                {ele.city}
                               </option>
                             ))}
                           </select>
@@ -215,6 +246,7 @@ function Profile() {
                             className="form-control"
                             id="Street"
                             placeholder="Enter Street"
+                            ref={streetInput}
                           />
                         </div>
                       </div>
@@ -227,7 +259,11 @@ function Profile() {
                             id="ciTy"
                             placeholder="Enter City"
                             disabled
-                            value={""}
+                            value={
+                              selectedAdr?.province != ""
+                                ? selectedAdr?.province
+                                : selectedAdr?.city_en || ""
+                            }
                           />
                         </div>
                       </div>
@@ -240,7 +276,7 @@ function Profile() {
                             id="sTate"
                             placeholder="Enter State"
                             disabled
-                            value={""}
+                            value={selectedAdr?.state_en || ""}
                           />
                         </div>
                       </div>

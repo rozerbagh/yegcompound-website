@@ -14,3 +14,5 @@ export const fetchOrders = (userid) =>
   `${baseURL}/app/order/getUserOrder/${userid}`;
 export const fetchSetting = `${baseURL}/app/setting/all`;
 export const testimonials = `${baseURL}/app/testimonial/all`;
+export const fecthPincode = (pincode) =>
+  `${baseURL}/app/fetch-pincode-address/${pincode}`;
