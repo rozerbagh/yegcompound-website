@@ -332,20 +332,23 @@ function CapsulesPlaceOrder() {
   return (
     <Form onSubmit={handleOrderSubmit}>
       <Row>
-        {Object.keys(formValues).map((input, key) => (
-          <Col xs={12} sm={12} md={6} lg={6} key={key}>
-            <Label>{formValues[input].label}</Label>
-            <Input
-              type={formValues[input].type}
-              name={formValues[input].name}
-              valid={formValues[input].valid}
-              value={formValues[input].value || ""}
-              onChange={(e) => handleInputChange(e, input)}
-              disabled={formValues[input].disabled}
-            />
-            <br />
-          </Col>
-        ))}
+        {Object.keys(formValues).map(
+          (input, key) =>
+            formValues[input].name !== "rebate" && (
+              <Col xs={12} sm={12} md={6} lg={6} key={key}>
+                <Label>{formValues[input].label}</Label>
+                <Input
+                  type={formValues[input].type}
+                  name={formValues[input].name}
+                  valid={formValues[input].valid}
+                  value={formValues[input].value || ""}
+                  onChange={(e) => handleInputChange(e, input)}
+                  disabled={formValues[input].disabled}
+                />
+                <br />
+              </Col>
+            )
+        )}
       </Row>
       <hr />
       <Row>
@@ -356,7 +359,7 @@ function CapsulesPlaceOrder() {
           </Button> */}
         </Col>
         <Col xs={5} className="d-flex align-items-center my-2">
-          <h2>Amount (gm) per Capsule</h2>
+          <h2>Percent (%) per Capsule</h2>
         </Col>
         <br />
       </Row>
@@ -436,14 +439,14 @@ function CapsulesPlaceOrder() {
             valid={true}
           />
         </Col>
-        <Col xs={12} sm={12} md={6} lg={6}>
+        {/* <Col xs={12} sm={12} md={6} lg={6}>
           <Label>CA. $ Need To Pay</Label>
           <Input
             value={customerInfoPay.needToPay}
             disabled={true}
             valid={true}
           />
-        </Col>
+        </Col> */}
       </Row>
       <br />
       <Row>
