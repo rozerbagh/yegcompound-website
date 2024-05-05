@@ -90,7 +90,7 @@ export default function HormoneReplacementTherapy(props) {
                 xs="7"
                 className="m-t-20 p-20 text-center w-100 bg-primary text-white round-5 p-cursor"
               >
-                <Link href="/contact">
+                <Link legacyBehavior href="/contact">
                   <span className="text-white">
                     Call or visit to discuss how we can partner to enhance your
                     bussiness with customized compounding solutions.
@@ -140,7 +140,7 @@ export default function HormoneReplacementTherapy(props) {
                 xs="7"
                 className="m-t-20 p-20 text-center w-100 bg-primary text-white round-5 p-cursor"
               >
-                <Link href="/contact">
+                <Link legacyBehavior href="/contact">
                   <span className="text-white">
                     Call or visit to discuss how we can partner to enhance your
                     bussiness with customized compounding solutions.
@@ -170,7 +170,7 @@ export default function HormoneReplacementTherapy(props) {
                 xs="7"
                 className="m-t-20 p-20 text-center w-100 bg-primary text-white round-5 p-cursor"
               >
-                <Link href="/contact">
+                <Link legacyBehavior href="/contact">
                   <span className="text-white">
                     Call or visit to discuss how we can partner to enhance your
                     bussiness with customized compounding solutions.
@@ -180,55 +180,6 @@ export default function HormoneReplacementTherapy(props) {
             </Row>
           </Container>
         </div>
-        {/* <div className="bg-light spacer feature20 up">
-          <Container>
-            <Row className="justify-content-center">
-              <Col md="7" className="text-center">
-                <span className="label label-info label-rounded">Feature 2</span>
-                <h2 className="title">Your medication should work for you</h2>
-                <h6 className="subtitle">
-                  When it comes to medication, you can choose how it is given
-                  and presented to you. Here’s what your pharmacist can do.
-                </h6>
-              </Col>
-            </Row>
-            <Row className="wrap-feature-20">
-              {medication_cus_content.map((pres, idx) => (
-                <Col xs="12" key={idx}>
-                  <Card>
-                    <Row>
-                      <Col md="8">
-                        <CardBody className="d-flex no-block">
-                          <div className="m-r-20">
-                            <Image
-                              src={pres.img}
-                              height="70"
-                              width="100"
-                              className="rounded"
-                              alt="img"
-                            />
-                          </div>
-                          <div className="w-100 d-flex flex-column align-items-center justify-content-center">
-                            <h5 className="font-medium">{pres.title}</h5>
-                            <p className="font-medium">{pres.content}</p>
-                          </div>
-                        </CardBody>
-                      </Col>
-                      <Col md="4" className="text-center">
-                        <a
-                          href="tel:403.235.0888"
-                          className="text-white linking bg-info"
-                        >
-                          Lets Talk <i className="ti-arrow-right"></i>
-                        </a>
-                      </Col>
-                    </Row>
-                  </Card>
-                </Col>
-              ))}
-            </Row>
-          </Container>
-        </div> */}
       </div>
     </>
   );

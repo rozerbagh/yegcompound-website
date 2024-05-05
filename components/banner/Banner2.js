@@ -23,7 +23,7 @@ const Banner2 = () => {
             >
               Download Free
             </a>
-            <Link href="/#coming">
+            <Link legacyBehavior href="/#coming">
               <a className="btn btn-md m-t-30  btn-outline-light ">
                 Upgrade To Pro
               </a>

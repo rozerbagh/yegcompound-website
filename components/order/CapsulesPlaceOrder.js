@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useCallback, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import axios from "axios";
@@ -9,6 +10,7 @@ import {
 } from "../../helper/capsules_calculations";
 import { createOrders, fetchSetting } from "../../services/apis";
 import ingredients from "../../helper/ingredients_capsule.json";
+import { toast } from "react-toastify";
 const ingCelluloseDatta = ingredients.filter((ele) => ele.name === "Cellulose");
 const ingCapsuleDatta = ingredients.filter((ele) => ele.name === "Capsule");
 function CapsulesPlaceOrder() {
@@ -242,7 +244,7 @@ function CapsulesPlaceOrder() {
       window.sumOfAllIngredients = sumOfAllIngredients;
       return sumOfAllIngredients;
     } else {
-      alert("Check the strength and Quantity input values");
+      toast.warn("Check the strength and Quantity input values");
       return 0;
     }
   };
@@ -266,7 +268,7 @@ function CapsulesPlaceOrder() {
       console.log(":::: restAllValues ::::", restAllValues);
       setCustomerInfoPay(restAllValues);
     } else {
-      alert("ingredeints are not added");
+      toast.error("ingredeints are not added");
     }
   };
 
@@ -314,21 +316,36 @@ function CapsulesPlaceOrder() {
       status: orderStatus.order,
       comments: comments,
     };
-    debugger;
     console.log(orderDetails);
     axios
       .post(createOrders, orderDetails, {
         headers: { authorization: `bearer ${cookies?.auth?.token}` },
       })
       .then(({ data }) => {
-        alert(data.message);
+        toast.success(data.message);
         console.log(data);
         setCookie("orders", data.data);
       })
       .catch((err) => {
-        alert("order has not been placed");
+        toast.error("order has not been placed");
       });
   };
+  useEffect(() => {
+    const isIngredientFormValid =
+      ingredientForm[0].value !== "" &&
+      ingredientForm[0].percent !== "" &&
+      parseInt(formValues.quantity.value) > 0 &&
+      formValues.compoundname.value !== "" &&
+      formValues.strength.value !== "";
+    if (isIngredientFormValid) {
+      try {
+        handleCalculatePrice();
+      } catch (error) {
+        // Handle specific errors if needed
+        console.error("Error calculating price:", error);
+      }
+    }
+  }, [ingredientForm, formValues.quantity.value, formValues.strength.value]);
   return (
     <Form onSubmit={handleOrderSubmit}>
       <Row>
@@ -475,7 +492,7 @@ function CapsulesPlaceOrder() {
             780-705-7150
           </a>
         </div>
-        {/* <Link href={"/contact"}>Contact Us</Link> */}
+        {/* <Link legacyBehavior href={"/contact"}>Contact Us</Link> */}
       </div>
       <div className="w-100 d-flex flex-row-reverse">
         <Button

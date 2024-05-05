@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Link from "next/link";
 import React, { useState, useCallback, useEffect } from "react";
 import { useCookies } from "react-cookie";
@@ -10,6 +11,7 @@ import {
 } from "../../helper/calculation";
 import { createOrders, fetchSetting } from "../../services/apis";
 import ingredients from "../../helper/ingredients.json";
+import { toast } from "react-toastify";
 
 function PlaceOrder() {
   const [cookies, setCookie] = useCookies(["auth", "orders"]);
@@ -190,7 +192,7 @@ function PlaceOrder() {
   };
   const handleCalculatePrice = (e) => {
     const sumIngredients = handleSumOfAllIngredients();
-    if (sumIngredients > 0) {
+    try {
       const containerCost = setting.container_cost || 2;
       const deliveryFee = setting.delivery_fee || 30;
       const markup = setting.markup;
@@ -207,9 +209,7 @@ function PlaceOrder() {
 
       console.log(":::: restAllValues ::::", restAllValues);
       setCustomerInfoPay(restAllValues);
-    } else {
-      alert("ingredeints are not added");
-    }
+    } catch {}
   };
 
   const ingredeintsvalidations = (ing_data = []) => {
@@ -241,7 +241,6 @@ function PlaceOrder() {
         percent: parseInt(ingredientForm[ele].percent),
       })
     );
-    debugger;
     const orderDetails = {
       user: cookies?.auth?.userId,
       compound_name: formValues.compoundname.value,
@@ -257,22 +256,36 @@ function PlaceOrder() {
       status: orderStatus.order,
       comments: comments,
     };
-    debugger;
     console.log(orderDetails);
     axios
       .post(createOrders, orderDetails, {
         headers: { authorization: `bearer ${cookies?.auth?.token}` },
       })
       .then(({ data }) => {
-        alert(data.message);
+        toast.success(data.message);
         console.log(data);
         setCookie("orders", data.data);
         window.location.reload();
       })
       .catch((err) => {
-        alert("order has not been placed");
+        toast.error("order has not been placed");
       });
   };
+  useEffect(() => {
+    const isIngredientFormValid =
+      ingredientForm.every((ele) => ele.value !== "" && ele.percent !== "") &&
+      parseInt(formValues.quantity.value) > 0 &&
+      formValues.compoundname.value !== "";
+    if (isIngredientFormValid) {
+      try {
+        handleCalculatePrice();
+      } catch (error) {
+        // Handle specific errors if needed
+        console.error("Error calculating price:", error);
+      }
+    }
+  }, [ingredientForm, formValues.quantity.value]);
+
   return (
     <Form onSubmit={handleOrderSubmit}>
       <Row>
@@ -371,7 +384,7 @@ function PlaceOrder() {
         <Col xs={12} sm={12} md={6} lg={6}>
           <Label>Total Price (CAD)</Label>
           <Input
-            value={customerInfoPay.totalPrice}
+            value={customerInfoPay.totalPrice || ""}
             disabled={true}
             valid={true}
           />
@@ -409,7 +422,7 @@ function PlaceOrder() {
           formulation, or need any other kind of help, please do not hesitate to
           contact us at 780-705-7150.
         </div>
-        {/* <Link href={"/contact"}>Contact Us</Link> */}
+        {/* <Link legacyBehavior href={"/contact"}>Contact Us</Link> */}
       </div>
       <div className="w-100 d-flex flex-row-reverse">
         <Button

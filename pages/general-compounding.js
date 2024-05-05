@@ -44,7 +44,7 @@ export default function GeneralCompounding(props) {
                 xs="7"
                 className="m-t-20 p-20 text-center w-100 bg-primary text-white round-5 p-cursor"
               >
-                <Link href="/contact">
+                <Link legacyBehavior href="/contact">
                   <span className="text-white">
                     Call or visit to discuss how we can partner to enhance your
                     bussiness with customized compounding solutions.
@@ -95,7 +95,7 @@ export default function GeneralCompounding(props) {
                 xs="7"
                 className="m-t-20 p-20 text-center w-100 bg-primary text-white round-5 p-cursor"
               >
-                <Link href="/contact">
+                <Link legacyBehavior href="/contact">
                   <span className="text-white">
                     Call or visit to discuss how we can partner to enhance your
                     bussiness with customized compounding solutions.
@@ -177,7 +177,7 @@ export default function GeneralCompounding(props) {
                 xs="7"
                 className="m-t-20 p-20 text-center w-100 bg-primary text-white round-5 p-cursor"
               >
-                <Link href="/contact">
+                <Link legacyBehavior href="/contact">
                   <span className="text-white">
                     Call or visit to discuss how we can partner to enhance your
                     bussiness with customized compounding solutions.

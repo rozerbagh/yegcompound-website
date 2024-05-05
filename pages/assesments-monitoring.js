@@ -4,6 +4,7 @@ import Image from "next/head";
 import { Card, CardBody, Col, Container, Form, Row } from "reactstrap";
 import { assesment_monitor_content } from "../helper/index";
 import banner from "../assets/images/form-banners/banner1/banner-img.png";
+import Link from "next/link";
 export default function Services(props) {
   return (
     <>
@@ -49,43 +50,6 @@ export default function Services(props) {
                 </h6>
               </Col>
             </Row>
-            {/* <section>
-                            <div id="banner1" className="banner spacer">
-                                <Container>
-                                    <Row>
-                                        <Col lg="5" md="7" className="align-self-center">
-                                            <h2 className="title font-bold">
-                                                Give your Business Real boost Now!
-                                            </h2>
-                                            <p className="m-t-40 m-b-30">
-                                                To accomplish great things, we must not only act, but also
-                                                dream; not only plan, but also believe.
-                                            </p>
-                                            <Form className="m-t-40">
-                                                <input
-                                                    type="text"
-                                                    name="email"
-                                                    placeholder="Enter Email Address"
-                                                    className="font-16"
-                                                />
-                                                <input
-                                                    type="submit"
-                                                    value="Get Started"
-                                                    className="bg-info font-semibold font-16 btn-rounded text-uppercase text-white text-center"
-                                                />
-                                            </Form>
-                                        </Col>
-                                        <Col lg="6" md="5" className="align-self-center ml-auto">
-                                            <Image
-                                                src={banner}
-                                                alt="We are Digital Agency"
-                                                className="img-fluid"
-                                            />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </div>
-                        </section> */}
             <Row className="wrap-feature-20">
               {assesment_monitor_content.map((pres, idx) => (
                 <Col xs="12" key={idx}>
@@ -109,12 +73,15 @@ export default function Services(props) {
                         </CardBody>
                       </Col>
                       <Col md="4" className="text-center">
-                        <a
+                        <Link
+                          legacyBehavior
                           href="tel:7807057150"
                           className="text-white linking bg-info"
                         >
-                          Lets Talk <i className="ti-arrow-right"></i>
-                        </a>
+                          <a>
+                            Lets Talk <i className="ti-arrow-right"></i>
+                          </a>
+                        </Link>
                       </Col>
                     </Row>
                   </Card>

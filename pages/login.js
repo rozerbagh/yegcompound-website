@@ -14,6 +14,7 @@ import {
 import { useCookies } from "react-cookie";
 import validator from "validator";
 import { login } from "../services/apis";
+import { toast } from "react-toastify";
 export default function Login(props) {
   const [userData, setUserData] = useState({
     email: {
@@ -58,7 +59,7 @@ export default function Login(props) {
         if (err.response) {
           setErrorMsg(err.response.data.message);
         } else {
-          alert("something went wrong");
+          toast.error("something went wrong");
         }
       });
   };
@@ -147,7 +148,7 @@ export default function Login(props) {
                               />{" "}
                               &nbsp;Show Password
                             </div>
-                            <Link href={"/forgot-password"}>
+                            <Link legacyBehavior href={"/forgot-password"}>
                               Forgot Password
                             </Link>
                           </Col>
@@ -164,7 +165,9 @@ export default function Login(props) {
                           <Col lg="12" className="m-0 justify-content-between">
                             <p>
                               Do not have an account !{" "}
-                              <Link href="/signup">SignUp Here</Link>
+                              <Link legacyBehavior href="/signup">
+                                SignUp Here
+                              </Link>
                             </p>
                           </Col>
                         </Row>

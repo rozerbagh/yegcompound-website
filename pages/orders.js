@@ -35,11 +35,11 @@ const Order = (props) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Banner
+      {/* <Banner
         heading={"Place Your Orders"}
         subHeading={"Orders details"}
         btnFlag={0}
-      />
+      /> */}
       <br />
       {/* <h1>Site is under maintainance</h1> */}
       <Container>

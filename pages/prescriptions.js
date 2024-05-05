@@ -18,6 +18,7 @@ import {
   TabPane,
 } from "reactstrap";
 import { prescription_content } from "../helper/index";
+import Link from "next/link";
 // import banner from "../assets/images/form-banners/banner1/banner-img.png";
 export default function Services(props) {
   return (
@@ -73,12 +74,15 @@ export default function Services(props) {
                         </CardBody>
                       </Col>
                       <Col md="4" className="text-center">
-                        <a
+                        <Link
+                          legacyBehavior
                           href="tel:7807057150"
                           className="text-white linking bg-info"
                         >
-                          Lets Talk <i className="ti-arrow-right"></i>
-                        </a>
+                          <a>
+                            Lets Talk <i className="ti-arrow-right"></i>
+                          </a>
+                        </Link>
                       </Col>
                     </Row>
                   </Card>

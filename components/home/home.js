@@ -6,8 +6,6 @@ import Link from "next/link";
 import { Container, Row, Col, Card, CardBody } from "reactstrap";
 import { useCookies } from "react-cookie";
 import bannerimg from "../../assets/images/landingpage/main-photo.jpg";
-import pcca from "../../assets/images/logos/pcca.svg";
-import TestimonialComponent from "../custom/sections/testimonialcomponent";
 import { services, products, compounding } from "../../helper/index";
 const Home = (props) => {
   console.log(props);
@@ -37,20 +35,15 @@ const Home = (props) => {
               </div>
 
               {!cookies?.auth?.token && (
-                <Link href="/signup">
+                <Link legacyBehavior href="/signup">
                   <a className="btn btn-md m-t-30  btn-outline-light">
                     Sign up
                   </a>
                 </Link>
               )}
-              {/* <Image src={pcca} alt="pcca" /> */}
             </Col>
             <Col lg="4" md="4">
-              <Image
-                src={bannerimg}
-                alt="hero banner"
-                className="banner-img bg-white"
-              />
+              <div className="profile-pic-hero"></div>
             </Col>
           </Row>
         </Container>
@@ -122,36 +115,6 @@ const Home = (props) => {
           </Row>
         </Container>
       </div>
-      {/* <div className="spacer">
-        <Container>
-          <Row className="justify-content-center">
-            <Col md="7" className="text-center">
-              <h1 className="title font-bold">Products Services</h1>
-              <h6 className="subtitle">lorem ipsum</h6>
-            </Col>
-          </Row>
-          <Row className="m-t-40">
-            {products.map((ele, key) => (
-              <Col md="6" className="wrap-feature4-box" key={key}>
-                <Card className="card-shadow">
-                  <a href="#" className="img-ho">
-                    <Image
-                      className="card-img-top"
-                      src={ele.img}
-                      alt="wrappixel kit"
-                    />
-                  </a>
-                  <CardBody>
-                    <h5 className="font-medium m-b-0">{ele.name}</h5>
-                    <p className="m-b-0 font-14">{ele.description}</p>
-                  </CardBody>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </div> */}
-      {/* <TestimonialComponent /> */}
     </>
   );
 };

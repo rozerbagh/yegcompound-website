@@ -1,4 +1,5 @@
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Header from "./header/Navbar";
 import C2aComponent from "../components/contact/c2a";
 // import NotifyHeader from "./header/NotifyHeader";
@@ -38,19 +39,8 @@ const Layout = ({ children, mweb }) => {
           <C2aComponent />
           <Footer />
         </div>
+        <ToastContainer />
       </CookiesProvider>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
     </>
   );
 };

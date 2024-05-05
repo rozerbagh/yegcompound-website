@@ -5,6 +5,7 @@ import { Row, Col, Progress, Card } from "reactstrap";
 import { useCookies } from "react-cookie";
 import { fetchOrders } from "../../services/apis";
 import ResponsiveCard from "../card/ResponsiveCard";
+import { toast } from "react-toastify";
 function OrderDetails(props) {
   const [cookies] = useCookies(["auth"]);
   const [orders, setOrders] = useState([]);
@@ -24,7 +25,7 @@ function OrderDetails(props) {
       <Row>
         {orders.length > 0 &&
           orders.map((order, id) => (
-            <Col xs={12} md={6} key={id} className="p-2">
+            <Col xs={12} md={12} key={id} className="p-2">
               <ResponsiveCard
                 title={order.compound_name}
                 subtitle={order.quantity + " " + order.quantity_unit}
@@ -46,7 +47,9 @@ function OrderDetails(props) {
                     : "info"
                 }
                 handleClick={(e) => {
-                  alert("Please contact to support team to cancel the order");
+                  toast.info(
+                    "Please contact to support team to cancel the order"
+                  );
                 }}
               />
               <Progress multi>

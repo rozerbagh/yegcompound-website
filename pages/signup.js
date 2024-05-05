@@ -29,6 +29,16 @@ export default function Signup(props) {
       validFunc: (val) => val.length >= 3,
       validText: "enter atlease 3 characters",
     },
+    company: {
+      name: "company",
+      label: "Company Name",
+      type: "text",
+      placeholder: "Company Name",
+      value: "",
+      valid: true,
+      validFunc: (val) => val.length >= 3,
+      validText: "enter atlease 3 characters",
+    },
     email: {
       name: "email",
       label: "Email",
@@ -192,7 +202,9 @@ export default function Signup(props) {
                           <Col lg="12" className="m-0 justify-content-between">
                             <p>
                               Already have account ?
-                              <Link href="/login">&nbsp;Please Login</Link>
+                              <Link legacyBehavior href="/login">
+                                &nbsp;Please Login
+                              </Link>
                             </p>
                           </Col>
                         </Row>

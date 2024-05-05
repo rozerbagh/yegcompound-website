@@ -4,6 +4,7 @@ import Image from "next/head";
 import { Card, CardBody, Col, Container, Form, Row } from "reactstrap";
 import { wellness_consultant_content } from "../helper/index";
 import banner from "../assets/images/form-banners/banner1/banner-img.png";
+import Link from "next/link";
 export default function Services(props) {
   return (
     <>
@@ -103,12 +104,15 @@ export default function Services(props) {
                         </CardBody>
                       </Col>
                       <Col md="4" className="text-center">
-                        <a
+                        <Link
+                          legacyBehavior
                           href="tel:7807057150"
                           className="text-white linking bg-info"
                         >
-                          Lets Talk <i className="ti-arrow-right"></i>
-                        </a>
+                          <a>
+                            Lets Talk <i className="ti-arrow-right"></i>
+                          </a>
+                        </Link>
                       </Col>
                     </Row>
                   </Card>

@@ -19,7 +19,6 @@ export const restAllCalculations = (
   deliveryFee,
   rebate
 ) => {
-  debugger;
   const markup = ingredientsCost * (profit / 100);
   const subTotal =
     ingredientsCost + markup + labourCost + containerCost + deliveryFee;

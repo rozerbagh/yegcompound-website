@@ -25,6 +25,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script src="https://accounts.google.com/gsi/client" async defer />
+      <Script src="js/jquery-3.3.1.min.js" />
+      <Script src="js/popper.min.js" />
+      <Script src="js/bootstrap.min.js" />
+      <Script src="js/jquery.sticky.js" />
+      <Script src="js/main.js" />
+      {/* <Script src={require("../public/js/")} /> */}
       <Layout mweb={mweb}>
         <Component {...pageProps} websiteTitle={websiteTitle} mweb={mweb} />
       </Layout>
